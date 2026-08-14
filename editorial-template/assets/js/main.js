@@ -272,7 +272,7 @@
 
 	item.className = 'header-work-item';
 	link.className = 'header-work-button';
-	link.href = '/media-kit/#work-with-me';
+	link.href = '/media-kit/';
 	link.textContent = 'Work with me';
 	link.setAttribute('aria-label', 'Work with Ollie and view collaboration options');
 
