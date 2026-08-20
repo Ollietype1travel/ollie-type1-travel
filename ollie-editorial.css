@@ -2044,7 +2044,7 @@ body.link-bio-page {
 
 .link-bio-shell {
   position: relative;
-  width: min(100% - 1.5rem, 44rem);
+  width: min(calc(100% - 1.5rem), 44rem);
   margin: 0 auto;
   padding: 0.9rem 0 3rem;
 }
@@ -2176,6 +2176,7 @@ body.link-bio-page {
 }
 
 .link-bio-kit-field label {
+  margin: 0;
   color: #3d4449;
   font-size: 0.82rem;
   font-weight: 600;
@@ -2184,7 +2185,7 @@ body.link-bio-page {
 
 .link-bio-kit-field input {
   width: 100%;
-  min-height: 3rem;
+  height: 3rem;
   padding: 0.65rem 0.8rem;
   border: 1px solid #9fa3a6;
   border-radius: 0.3rem;
@@ -2200,7 +2201,9 @@ body.link-bio-page {
 
 .link-bio-kit-submit {
   width: 100%;
-  min-height: 3rem;
+  height: 3rem;
+  padding: 0 1.25rem;
+  line-height: 3rem;
   margin: 0;
   text-align: center;
 }
