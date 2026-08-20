@@ -17,7 +17,7 @@
 		<meta name="twitter:description" content="Type 1 travel guides, tried and tested gear and my free packing checklist." />
 		<meta name="twitter:image" content="https://ollietype1travel.com/Website%20assets/editorial-photos/selected/vietnam-river-selfie.jpg" />
 		<link rel="stylesheet" href="/editorial-template/assets/css/main.css" />
-		<link rel="stylesheet" href="/ollie-editorial.css?v=20260820-start-home-link" />
+		<link rel="stylesheet" href="/ollie-editorial.css?v=20260820-compact-kit-form" />
 	</head>
 	<body class="link-bio-page">
 		<main class="link-bio-shell">
@@ -37,14 +37,22 @@
 
 			<section class="link-bio-primary" aria-label="Free Type 1 travel checklist signup">
 				<div class="link-bio-feature-copy">
-					<p class="eyebrow">Featured free guide</p>
-					<h2>Free Type 1 Travel Packing Checklist</h2>
-					<p>My practical packing list for travelling with Type 1 diabetes and severe allergies.</p>
+					<h2>The Ultimate Type 1 Diabetes &amp; Allergy Travel Packing Checklist</h2>
 				</div>
-				<div class="link-bio-kit-wrap">
-					<iframe class="link-bio-kit-frame" src="https://travel-with-ollie.kit.com/efe60fb8e9" title="Sign up for Ollie’s free Type 1 travel packing checklist" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-				</div>
-				<p class="link-bio-fallback">Form not loading? <a href="https://travel-with-ollie.kit.com/efe60fb8e9" data-link-action="checklist-fallback">Open the existing Kit signup page</a>.</p>
+				<form action="https://app.kit.com/forms/9728611/subscriptions" method="post" class="link-bio-kit-form formkit-form" data-sv-form="9728611" data-uid="efe60fb8e9" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;powered_by&quot;:{&quot;show&quot;:false},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null}}}">
+					<ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert" aria-live="polite"></ul>
+					<div data-element="fields" class="formkit-fields link-bio-kit-fields">
+						<div class="formkit-field link-bio-kit-field">
+							<label for="start-checklist-name">Name</label>
+							<input id="start-checklist-name" type="text" name="fields[first_name]" autocomplete="given-name" class="formkit-input" />
+						</div>
+						<div class="formkit-field link-bio-kit-field">
+							<label for="start-checklist-email">Email address</label>
+							<input id="start-checklist-email" type="email" name="email_address" autocomplete="email" class="formkit-input" required />
+						</div>
+						<button type="submit" data-element="submit" class="button primary link-bio-kit-submit" data-link-action="checklist-submit">Continue →</button>
+					</div>
+				</form>
 			</section>
 
 			<nav class="link-bio-actions" aria-label="Ollie Type 1 Travel links">
@@ -66,5 +74,6 @@
 				<p><a href="/">ollietype1travel.com</a></p>
 			</footer>
 		</main>
+		<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 	</body>
 </html>

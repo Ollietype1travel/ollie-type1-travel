@@ -2140,7 +2140,7 @@ body.link-bio-page {
 }
 
 .link-bio-primary {
-  padding: 1rem;
+  padding: 1.15rem;
   border-top: 0.35rem solid #f56a6a;
   border-radius: 0.6rem;
   background: #fff;
@@ -2148,44 +2148,74 @@ body.link-bio-page {
 }
 
 .link-bio-feature-copy {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.9rem;
   text-align: center;
-}
-
-.link-bio-feature-copy .eyebrow {
-  margin-bottom: 0.25rem;
 }
 
 .link-bio-feature-copy h2 {
-  margin-bottom: 0.35rem;
-  font-size: clamp(1.35rem, 6vw, 1.85rem);
-}
-
-.link-bio-feature-copy p:last-child {
+  max-width: 25ch;
   margin: 0 auto;
-  max-width: 34rem;
-  color: #5b6268;
-  font-size: 0.88rem;
+  font-size: clamp(1.3rem, 6vw, 1.75rem);
+  line-height: 1.2;
 }
 
-.link-bio-kit-wrap {
-  overflow: hidden;
-  border: 1px solid #d8dadd;
-  border-radius: 0.45rem;
-  background: #f9f7f4;
+.link-bio-kit-form,
+.link-bio-kit-fields {
+  margin: 0;
 }
 
-.link-bio-kit-frame {
-  display: block;
+.link-bio-kit-fields {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.link-bio-kit-field {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+}
+
+.link-bio-kit-field label {
+  color: #3d4449;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.link-bio-kit-field input {
   width: 100%;
-  height: 34rem;
-  border: 0;
+  min-height: 3rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #9fa3a6;
+  border-radius: 0.3rem;
+  background: #f9f7f4;
+  color: #3d4449;
+  font-size: 1rem;
 }
 
-.link-bio-fallback {
-  margin: 0.85rem 0 0;
-  font-size: 0.78rem;
+.link-bio-kit-field input:focus {
+  border-color: #f56a6a;
+  box-shadow: 0 0 0 0.15rem rgba(245, 106, 106, 0.2);
+}
+
+.link-bio-kit-submit {
+  width: 100%;
+  min-height: 3rem;
+  margin: 0;
   text-align: center;
+}
+
+.link-bio-kit-form .formkit-alert {
+  display: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  color: #c62828;
+  font-size: 0.85rem;
+  list-style: none;
+}
+
+.link-bio-kit-form .formkit-alert:not(:empty) {
+  display: block;
 }
 
 .link-bio-actions {
@@ -2264,7 +2294,7 @@ body.link-bio-page {
   }
 
   .link-bio-primary {
-    padding: 1.25rem;
+    padding: 1.4rem;
   }
 
   .link-bio-actions {
