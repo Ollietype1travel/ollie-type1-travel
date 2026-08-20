@@ -44,7 +44,7 @@ There is no automated test suite. Before publishing, manually check:
 - `/work-with-me/`
 - `/contact/`
 - Mobile menu
-- Checklist and media kit download links
+- Checklist signup and media kit download links
 - Contact email and social links
 
 ## Build

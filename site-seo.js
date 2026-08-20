@@ -41,7 +41,7 @@
     var checklist = document.createElement("aside");
     checklist.className = "inline-checklist-cta article-checklist-cta";
     checklist.setAttribute("aria-label", "Free Type 1 travel packing checklist");
-    checklist.innerHTML = '<div><p class="eyebrow">Planning a trip with Type 1?</p><h3>The packing checklist I wish I had.</h3><p>Diabetes kit, documents, backups, allergy equipment and the things I nearly forgot before backpacking Southeast Asia.</p></div><a href="/downloads/type-1-travel-checklist.pptx" class="button primary" download data-conversion="checklist-download">Get the free checklist</a>';
+    checklist.innerHTML = '<div><p class="eyebrow">Planning a trip with Type 1?</p><h3>The packing checklist I wish I had.</h3><p>Diabetes kit, documents, backups, allergy equipment and the things I nearly forgot before backpacking Southeast Asia. Add your email in Kit and I’ll send it over.</p></div><a href="https://travel-with-ollie.kit.com/efe60fb8e9" data-conversion="checklist-cta" class="button primary">Send me the checklist</a>';
     headings[1].parentNode.insertBefore(checklist, headings[1]);
   }
 
