@@ -2100,6 +2100,15 @@ body.link-bio-page {
   font-size: clamp(1.65rem, 8vw, 2.35rem);
 }
 
+.link-bio-hero h1 a {
+  color: inherit;
+}
+
+.link-bio-hero h1 a:hover,
+.link-bio-hero h1 a:focus-visible {
+  color: #f56a6a;
+}
+
 .link-bio-hero p {
   max-width: 29rem;
   margin: 0 auto 0.7rem;
@@ -2147,9 +2156,37 @@ body.link-bio-page {
   box-shadow: 0 0.75rem 2rem rgba(61, 68, 73, 0.1);
 }
 
+.link-bio-checklist-photos {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.45rem;
+}
+
+.link-bio-checklist-photos img {
+  display: block;
+  width: 3.75rem;
+  height: 3.75rem;
+  border: 0.18rem solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0.3rem 0.85rem rgba(61, 68, 73, 0.15);
+  object-fit: cover;
+}
+
+.link-bio-checklist-photos img + img {
+  margin-left: -0.75rem;
+}
+
 .link-bio-feature-copy {
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.75rem;
   text-align: center;
+}
+
+.link-bio-checklist-label {
+  margin: 0 0 0.25rem;
+  color: #f56a6a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .link-bio-feature-copy h2 {
@@ -2157,6 +2194,12 @@ body.link-bio-page {
   margin: 0 auto;
   font-size: clamp(1.3rem, 6vw, 1.75rem);
   line-height: 1.2;
+}
+
+.link-bio-feature-copy > p:last-child {
+  margin: 0.35rem 0 0;
+  color: #5b6268;
+  font-size: 0.82rem;
 }
 
 .link-bio-kit-form,
@@ -2291,6 +2334,15 @@ body.link-bio-page {
   font-size: 0.78rem;
 }
 
+.link-bio-footer a {
+  color: #6b7278;
+}
+
+.link-bio-footer a:hover,
+.link-bio-footer a:focus-visible {
+  color: #f56a6a;
+}
+
 @media screen and (min-width: 737px) {
   .link-bio-shell {
     padding-top: 2rem;
@@ -2298,6 +2350,11 @@ body.link-bio-page {
 
   .link-bio-primary {
     padding: 1.4rem;
+  }
+
+  .link-bio-checklist-photos img {
+    width: 4.25rem;
+    height: 4.25rem;
   }
 
   .link-bio-actions {
