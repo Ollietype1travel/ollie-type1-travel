@@ -2043,6 +2043,7 @@ body.link-bio-page {
 }
 
 .link-bio-shell {
+  position: relative;
   width: min(100% - 1.5rem, 44rem);
   margin: 0 auto;
   padding: 0.9rem 0 3rem;
@@ -2053,19 +2054,34 @@ body.link-bio-page {
 }
 
 .link-bio-brand {
+  position: absolute;
+  top: 0.65rem;
+  left: 0;
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.45rem;
-  margin-bottom: 0.65rem;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding: 0 0.65rem;
+  border: 1px solid #d8dadd;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
   color: #3d4449;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0.2rem 0.65rem rgba(61, 68, 73, 0.06);
   text-transform: uppercase;
+  z-index: 1;
 }
 
-.link-bio-brand strong {
+.link-bio-brand:hover,
+.link-bio-brand:focus-visible {
+  border-color: #f56a6a;
   color: #f56a6a;
-  font-size: 1rem;
+}
+
+.link-bio-brand:focus-visible {
+  outline: 0.2rem solid rgba(245, 106, 106, 0.35);
+  outline-offset: 0.15rem;
 }
 
 .link-bio-hero img {
