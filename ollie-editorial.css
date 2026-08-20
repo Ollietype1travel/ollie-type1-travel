@@ -2036,6 +2036,189 @@ button:hover,
 
 }
 
+/* Mobile-first social bio landing page */
+body.link-bio-page {
+  min-width: 0;
+  background: #f7f6f2;
+}
+
+.link-bio-shell {
+  width: min(100% - 1.5rem, 44rem);
+  margin: 0 auto;
+  padding: 0.9rem 0 3rem;
+}
+
+.link-bio-hero {
+  text-align: center;
+}
+
+.link-bio-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  margin-bottom: 0.65rem;
+  color: #3d4449;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.link-bio-brand strong {
+  color: #f56a6a;
+  font-size: 1rem;
+}
+
+.link-bio-hero img {
+  display: block;
+  width: 5.25rem;
+  height: 5.25rem;
+  margin: 0 auto 0.65rem;
+  border: 0.3rem solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0.5rem 1.5rem rgba(61, 68, 73, 0.14);
+  object-fit: cover;
+}
+
+.link-bio-hero h1 {
+  margin-bottom: 0.25rem;
+  font-size: clamp(1.65rem, 8vw, 2.35rem);
+}
+
+.link-bio-hero p {
+  max-width: 29rem;
+  margin: 0 auto 0.85rem;
+  color: #5b6268;
+  font-size: 1rem;
+}
+
+.link-bio-primary {
+  padding: 0.55rem;
+  border-top: 0.35rem solid #f56a6a;
+  border-radius: 0.6rem;
+  background: #fff;
+  box-shadow: 0 0.75rem 2rem rgba(61, 68, 73, 0.1);
+}
+
+.link-bio-kit-wrap {
+  overflow: hidden;
+  border: 1px solid #d8dadd;
+  border-radius: 0.45rem;
+  background: #f9f7f4;
+}
+
+.link-bio-kit-frame {
+  display: block;
+  width: 100%;
+  height: 70rem;
+  border: 0;
+}
+
+.link-bio-fallback {
+  margin: 0.85rem 0 0;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.link-bio-actions {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.link-bio-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 5.25rem;
+  padding: 1rem;
+  border: 1px solid #d8dadd;
+  border-radius: 0.55rem;
+  background: #fff;
+  color: #3d4449;
+  box-shadow: 0 0.35rem 1rem rgba(61, 68, 73, 0.06);
+}
+
+.link-bio-card:hover,
+.link-bio-card:focus-visible {
+  border-color: #f56a6a;
+  color: #f56a6a;
+  transform: translateY(-1px);
+}
+
+.link-bio-card:focus-visible {
+  outline: 0.2rem solid rgba(245, 106, 106, 0.35);
+  outline-offset: 0.15rem;
+}
+
+.link-bio-card strong,
+.link-bio-card small {
+  display: block;
+}
+
+.link-bio-card strong {
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.link-bio-card small {
+  color: #6b7278;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.link-bio-card-icon {
+  font-size: 1.35rem;
+}
+
+.link-bio-arrow {
+  font-size: 1.25rem;
+}
+
+.link-bio-card-charity {
+  border-color: rgba(245, 106, 106, 0.6);
+}
+
+.link-bio-footer {
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.link-bio-footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.link-bio-footer nav a {
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1px solid #d8dadd;
+  border-radius: 50%;
+  background: #fff;
+  place-items: center;
+}
+
+.link-bio-footer p {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+}
+
+@media screen and (min-width: 737px) {
+  .link-bio-shell {
+    padding-top: 2rem;
+  }
+
+  .link-bio-primary {
+    padding: 0.75rem;
+  }
+
+  .link-bio-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* Content discovery and contextual checklist journey */
 .blog-hub-intro {
   max-width: 58rem;
