@@ -53,16 +53,10 @@ No build command is required. The site is static.
 
 ## Deployment
 
-Netlify publish directory:
+The production site is hosted on Cloudflare and deploys from the connected GitHub repository. The site is static, so the publish directory is `.` and there is no build command.
 
-`.`
-
-Netlify build command:
-
-Leave blank, or use no build command.
-
-Deploy by pushing to GitHub and letting Netlify redeploy from the connected repository.
+Deploy by pushing to the production branch on GitHub and allowing the existing Cloudflare project to redeploy. Do not create a separate Cloudflare Pages or Netlify project.
 
 ## Security
 
-Do not commit passwords, API keys, Outlook credentials, Netlify tokens or private documents.
+Do not commit passwords, API keys, Outlook credentials, Cloudflare tokens or private documents.

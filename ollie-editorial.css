@@ -1944,6 +1944,18 @@ button:hover,
 }
 
 @media screen and (max-width: 480px) {
+  .article-actions .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .article-actions .actions li,
+  .article-actions .actions .button {
+    width: 100%;
+    margin: 0;
+  }
+
   .featured-cases .case-study-copy div,
   .featured-cases .case-study-copy div:first-child {
     grid-template-columns: 1fr;
@@ -2022,4 +2034,124 @@ button:hover,
     font-size: 0.56rem;
   }
 
+}
+
+/* Content discovery and contextual checklist journey */
+.blog-hub-intro {
+  max-width: 58rem;
+  padding-bottom: 1rem;
+}
+
+.blog-hub-intro h1 {
+  max-width: 18ch;
+}
+
+.start-here-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.start-here-grid article {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.75rem;
+  border: 1px solid rgba(210, 215, 217, 0.9);
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+.start-here-grid article h3 {
+  margin-bottom: 0.65rem;
+}
+
+.start-here-grid article p:not(.eyebrow) {
+  flex: 1;
+}
+
+.start-here-grid.compact article {
+  padding: 1.4rem;
+}
+
+.inline-checklist-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding: 1.75rem 2rem;
+  border-left: 0.35rem solid #f56a6a;
+  background: #f7f7f7;
+}
+
+.inline-checklist-cta h3,
+.inline-checklist-cta p:last-child {
+  margin-bottom: 0;
+}
+
+.article-checklist-cta {
+  margin: 2.5rem 0;
+}
+
+.keep-reading {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #f56a6a;
+}
+
+.keep-reading-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.keep-reading-grid a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid rgba(210, 215, 217, 0.9);
+  border-radius: 0.45rem;
+  color: #3d4449;
+}
+
+.keep-reading-grid a:hover,
+.keep-reading-grid a:focus-visible {
+  border-color: #f56a6a;
+  color: #f56a6a;
+}
+
+.keep-reading-grid strong {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 736px) {
+  .start-here-grid,
+  .inline-checklist-cta,
+  .keep-reading-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .start-here-grid {
+    gap: 1rem;
+  }
+
+  .start-here-grid article,
+  .inline-checklist-cta {
+    padding: 1.35rem;
+  }
+
+  .inline-checklist-cta {
+    gap: 1.25rem;
+  }
+
+  .inline-checklist-cta .button {
+    width: 100%;
+    text-align: center;
+  }
 }

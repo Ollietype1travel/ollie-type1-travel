@@ -88,18 +88,18 @@ There is no build step. This is a static site.
 
 Production files are the files in this folder.
 
-## 8. How to deploy through GitHub and Netlify
+## 8. How to deploy through GitHub and Cloudflare
 
 1. Make edits locally.
 2. Commit changes in GitHub Desktop or Git.
 3. Push to GitHub.
-4. Netlify redeploys from the GitHub repo if the site is connected.
+4. The existing Cloudflare project redeploys from the connected GitHub repo.
 
 For this branch, review the changes first before merging or publishing.
 
 ## 9. Files that must never contain passwords or API keys
 
-Never put passwords, API keys, Netlify tokens, email passwords or private credentials in:
+Never put passwords, API keys, Cloudflare tokens, email passwords or private credentials in:
 
 - `index.html`
 - any file inside `blog/`
