@@ -2156,37 +2156,9 @@ body.link-bio-page {
   box-shadow: 0 0.75rem 2rem rgba(61, 68, 73, 0.1);
 }
 
-.link-bio-checklist-photo {
-  width: 5.25rem;
-  height: 5.25rem;
-  margin: 0 auto 0.45rem;
-  overflow: hidden;
-  border: 0.18rem solid #fff;
-  border-radius: 50%;
-  box-shadow: 0 0.3rem 0.85rem rgba(61, 68, 73, 0.15);
-}
-
-.link-bio-checklist-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 42%;
-  transform: scale(1.45);
-  transform-origin: center 42%;
-}
-
 .link-bio-feature-copy {
   margin-bottom: 0.75rem;
   text-align: center;
-}
-
-.link-bio-checklist-label {
-  margin: 0 0 0.25rem;
-  color: #f56a6a;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
 }
 
 .link-bio-feature-copy h2 {
@@ -2450,11 +2422,6 @@ body.link-bio-page {
 
   .link-bio-primary {
     padding: 1.4rem;
-  }
-
-  .link-bio-checklist-photo {
-    width: 5.75rem;
-    height: 5.75rem;
   }
 
   .link-bio-actions {
