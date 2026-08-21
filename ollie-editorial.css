@@ -2251,6 +2251,14 @@ body.link-bio-page {
   text-align: center;
 }
 
+.link-bio-kit-reassurance {
+  margin: -0.45rem 0 0;
+  color: #6b7278;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
 .link-bio-kit-form .formkit-alert {
   display: none;
   margin: 0 0 0.75rem;
