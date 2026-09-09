@@ -1,0 +1,323 @@
+[
+  {
+    "id": "cao-bang-loop-solo",
+    "title": "How to Do the Cao Bang Loop Solo: My Northern Vietnam Guide",
+    "shortTitle": "How I Did the Cao Bang Loop Solo",
+    "slug": "cao-bang-loop",
+    "url": "/destinations/vietnam/cao-bang-loop/",
+    "description": "My first-hand guide to riding the Cao Bang Loop solo, including getting there, where I stayed, Ban Gioc, Angel Eye Mountain and Cao Bang vs Ha Giang.",
+    "excerpt": "Three days, a 120cc bike and the northern Vietnam loop that became my favourite experience in the country.",
+    "contentType": "destination-guide",
+    "category": "Travel tips",
+    "country": "Vietnam",
+    "region": "Northern Vietnam",
+    "city": "Cao Bang",
+    "tags": [
+      "motorbike loop",
+      "solo travel",
+      "Cao Bang",
+      "northern Vietnam"
+    ],
+    "heroImage": "/Website assets/editorial-photos/selected/vietnam-karst-landscape.jpg",
+    "heroAlt": "Karst mountains and winding roads in northern Vietnam",
+    "published": "2026-09-02",
+    "updated": "2026-09-02",
+    "readingTime": "8 min",
+    "featured": true,
+    "popular": false,
+    "affiliatePartners": [
+      "airalo"
+    ],
+    "relatedArticles": [
+      "insulin-froze-ha-giang",
+      "keeping-insulin-cool"
+    ]
+  },
+  {
+    "id": "insulin-froze-ha-giang",
+    "title": "The Day My Insulin Froze on the Ha Giang Loop",
+    "shortTitle": "The Day My Insulin Froze in Vietnam",
+    "slug": "insulin-froze-ha-giang-loop-vietnam",
+    "url": "/blog/insulin-froze-ha-giang-loop-vietnam/",
+    "description": "What happened when my insulin froze during the Ha Giang Loop and how I replaced it.",
+    "excerpt": "Five months of medication, one hostel freezer and a can of Fanta.",
+    "contentType": "story",
+    "category": "Stories from the road",
+    "country": "Vietnam",
+    "region": "Northern Vietnam",
+    "city": "Ha Giang",
+    "tags": [
+      "insulin",
+      "hostels",
+      "Ha Giang"
+    ],
+    "heroImage": "/Website assets/editorial-photos/selected/ha-giang-back.jpg",
+    "heroAlt": "Ollie looking across the mountain scenery of the Ha Giang Loop",
+    "published": "2026-08-05",
+    "updated": "2026-08-05",
+    "readingTime": "3 min",
+    "featured": true,
+    "popular": true,
+    "affiliatePartners": [],
+    "relatedArticles": [
+      "cao-bang-loop-solo",
+      "keeping-insulin-cool",
+      "hostels-type-1"
+    ]
+  },
+  {
+    "id": "keeping-insulin-cool",
+    "title": "How I Keep Insulin Cool While Backpacking in Hot Countries",
+    "shortTitle": "Keeping Insulin Cool While Backpacking",
+    "slug": "keeping-insulin-cool-southeast-asia",
+    "url": "/blog/keeping-insulin-cool-southeast-asia/",
+    "description": "FRIO wallets, hostel fridges and the storage mistake I will not repeat.",
+    "excerpt": "The system I used across five months in Southeast Asia.",
+    "contentType": "type-1-guide",
+    "category": "Type 1 travel",
+    "country": null,
+    "region": "Southeast Asia",
+    "city": null,
+    "tags": [
+      "insulin",
+      "cooling",
+      "FRIO"
+    ],
+    "heroImage": "/Website assets/editorial-photos/selected/volcano-close.jpg",
+    "heroAlt": "Ollie backpacking beside a volcano in Indonesia",
+    "published": "2026-08-05",
+    "updated": "2026-08-05",
+    "readingTime": "2 min",
+    "featured": true,
+    "popular": true,
+    "affiliatePartners": [],
+    "relatedArticles": [
+      "insulin-froze-ha-giang",
+      "hostels-type-1"
+    ]
+  },
+  {
+    "id": "hostels-type-1",
+    "title": "Can You Stay in Hostels With Type 1 Diabetes?",
+    "shortTitle": "Hostels With Type 1 Diabetes",
+    "slug": "can-you-stay-in-hostels-with-type-1-diabetes",
+    "url": "/blog/can-you-stay-in-hostels-with-type-1-diabetes/",
+    "description": "Hostel fridges, insulin storage, diabetes equipment and nighttime hypos.",
+    "excerpt": "The questions I ask before trusting a hostel with my insulin.",
+    "contentType": "type-1-guide",
+    "category": "Type 1 travel",
+    "country": null,
+    "region": "Southeast Asia",
+    "city": null,
+    "tags": [
+      "hostels",
+      "insulin",
+      "accommodation"
+    ],
+    "heroImage": "/Website assets/editorial-photos/selected/ollie-portrait-hue.jpg",
+    "heroAlt": "Ollie travelling in Vietnam",
+    "published": "2026-08-05",
+    "updated": "2026-08-05",
+    "readingTime": "3 min",
+    "featured": true,
+    "popular": true,
+    "affiliatePartners": [],
+    "relatedArticles": [
+      "keeping-insulin-cool",
+      "insulin-froze-ha-giang"
+    ]
+  },
+  {
+    "id": "flying-with-insulin",
+    "title": "Flying With Insulin Pens, Needles and a CGM",
+    "shortTitle": "Flying With Insulin and a CGM",
+    "slug": "flying-from-uk-with-insulin-pens-needles-cgm",
+    "url": "/blog/flying-from-uk-with-insulin-pens-needles-cgm/",
+    "description": "What I pack in hand luggage and what airport security actually did.",
+    "excerpt": "Medical supplies, baggage allowance and the argument nobody started.",
+    "contentType": "type-1-guide",
+    "category": "Type 1 travel",
+    "country": null,
+    "region": "Southeast Asia",
+    "city": null,
+    "tags": [
+      "flying",
+      "hand luggage",
+      "CGM",
+      "insulin"
+    ],
+    "heroImage": "/Website assets/editorial-photos/selected/mountain-viewpoint.jpg",
+    "heroAlt": "Ollie travelling with a backpack in Southeast Asia",
+    "published": "2026-08-05",
+    "updated": "2026-09-02",
+    "readingTime": "3 min",
+    "featured": true,
+    "popular": true,
+    "affiliatePartners": [
+      "airalo"
+    ],
+    "relatedArticles": [
+      "hostels-type-1",
+      "keeping-insulin-cool"
+    ]
+  },
+  {
+    "id": "first-meal-severe-allergies",
+    "title": "The First Time I Ate Out Abroad With Severe Allergies",
+    "shortTitle": "My First Meal Abroad With Severe Allergies",
+    "slug": "first-time-ate-out-abroad-severe-allergies",
+    "url": "/blog/first-time-ate-out-abroad-severe-allergies/",
+    "description": "Allergy cards, kitchen questions and the fear that arrived before the food.",
+    "excerpt": "The honest version of eating abroad with severe peanut and shellfish allergies.",
+    "contentType": "story",
+    "category": "Stories from the road",
+    "country": null,
+    "region": "Southeast Asia",
+    "city": null,
+    "tags": [
+      "food allergies",
+      "eating out",
+      "allergy cards"
+    ],
+    "heroImage": "/Website assets/blog-photos/southeast-asia-shared-meal.jpg",
+    "heroAlt": "A shared meal while backpacking in Southeast Asia",
+    "published": "2026-08-05",
+    "updated": "2026-08-05",
+    "readingTime": "3 min",
+    "featured": false,
+    "popular": false,
+    "affiliatePartners": [
+      "equal-eats"
+    ],
+    "relatedArticles": [
+      "allergy-cards-southeast-asia"
+    ]
+  },
+  {
+    "id": "allergy-cards-southeast-asia",
+    "title": "Food Allergy Translation Cards in Southeast Asia: Do You Really Need Them?",
+    "shortTitle": "Food Allergy Translation Cards in Southeast Asia",
+    "slug": "food-allergy-translation-cards-southeast-asia",
+    "url": "/blog/food-allergy-translation-cards-southeast-asia/",
+    "description": "How useful allergy cards were across Thailand, Vietnam, Laos, Cambodia, Malaysia and Indonesia.",
+    "excerpt": "What helped across six countries—and when I still chose to walk away.",
+    "contentType": "allergy-guide",
+    "category": "Travel tips",
+    "country": null,
+    "region": "Southeast Asia",
+    "city": null,
+    "tags": [
+      "food allergies",
+      "translation cards",
+      "Southeast Asia"
+    ],
+    "heroImage": "/Website assets/blog-photos/southeast-asia-shared-meal.jpg",
+    "heroAlt": "A shared meal while backpacking in Southeast Asia",
+    "published": "2026-08-05",
+    "updated": "2026-08-05",
+    "readingTime": "3 min",
+    "featured": true,
+    "popular": true,
+    "affiliatePartners": [
+      "equal-eats"
+    ],
+    "relatedArticles": [
+      "first-meal-severe-allergies"
+    ]
+  },
+  {
+    "id": "solo-travel-lessons",
+    "title": "6 Things Solo Travelling Taught Me About Living With Type 1 Diabetes",
+    "shortTitle": "Six Things Solo Travel Taught Me",
+    "slug": "solo-travel-type-1-diabetes-lessons",
+    "url": "/blog/solo-travel-type-1-diabetes-lessons/",
+    "description": "Capability, preparation, hypos, community and the healthcare access I had taken for granted.",
+    "excerpt": "What five months away taught me about Type 1 diabetes and independence.",
+    "contentType": "story",
+    "category": "Stories from the road",
+    "country": null,
+    "region": "Southeast Asia",
+    "city": null,
+    "tags": [
+      "solo travel",
+      "Type 1 diabetes",
+      "Action4Diabetes"
+    ],
+    "heroImage": "/Website assets/blog-photos/cambodia-community-meal.jpg",
+    "heroAlt": "Ollie sharing a meal with young people in Cambodia",
+    "published": "2026-08-05",
+    "updated": "2026-08-05",
+    "readingTime": "4 min",
+    "featured": false,
+    "popular": false,
+    "affiliatePartners": [],
+    "relatedArticles": [
+      "travel-with-type-1",
+      "type-1-travel-fear"
+    ]
+  },
+  {
+    "id": "travel-with-type-1",
+    "title": "I Thought Diabetes Would Stop Me Travelling. It Didn’t.",
+    "shortTitle": "I Thought Diabetes Would Stop Me Travelling",
+    "slug": "travel-with-type-1-diabetes",
+    "url": "/blog/travel-with-type-1-diabetes/",
+    "description": "How the world felt smaller after diagnosis and what five months in Southeast Asia taught me instead.",
+    "excerpt": "Type 1 changed how I travel, not whether I travel.",
+    "contentType": "story",
+    "category": "Stories from the road",
+    "country": null,
+    "region": "Southeast Asia",
+    "city": null,
+    "tags": [
+      "Type 1 diabetes",
+      "solo travel",
+      "diagnosis"
+    ],
+    "heroImage": "/Website assets/editorial-photos/selected/vietnam-river-selfie.jpg",
+    "heroAlt": "Ollie travelling beside a river in Vietnam",
+    "published": "2026-08-05",
+    "updated": "2026-09-02",
+    "readingTime": "3 min",
+    "featured": true,
+    "popular": false,
+    "affiliatePartners": [
+      "airalo"
+    ],
+    "relatedArticles": [
+      "type-1-travel-fear",
+      "solo-travel-lessons"
+    ]
+  },
+  {
+    "id": "type-1-travel-fear",
+    "title": "What Travelling With Type 1 Diabetes Taught Me About Fear",
+    "shortTitle": "What Travelling Taught Me About Fear",
+    "slug": "type-1-diabetes-travel-fear",
+    "url": "/blog/type-1-diabetes-travel-fear/",
+    "description": "Why confidence is not believing a trip will be smooth, but trusting yourself to make the next decision when it is not.",
+    "excerpt": "Confidence had very little to do with expecting everything to go well.",
+    "contentType": "story",
+    "category": "Stories from the road",
+    "country": null,
+    "region": "Southeast Asia",
+    "city": null,
+    "tags": [
+      "fear",
+      "confidence",
+      "Type 1 diabetes"
+    ],
+    "heroImage": "/Website assets/editorial-photos/selected/volcano-close.jpg",
+    "heroAlt": "Ollie beside an Indonesian volcano",
+    "published": "2026-08-05",
+    "updated": "2026-08-05",
+    "readingTime": "2 min",
+    "featured": true,
+    "popular": false,
+    "affiliatePartners": [],
+    "relatedArticles": [
+      "travel-with-type-1",
+      "solo-travel-lessons"
+    ]
+  }
+]
