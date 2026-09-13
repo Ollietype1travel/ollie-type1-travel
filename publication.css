@@ -138,7 +138,7 @@ body.publication-page #header .publication-brand {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(1rem, 2.35vw, 2.3rem);
+  gap: clamp(0.65rem, 1.3vw, 1.3rem);
   margin: 0;
   padding: 0 1.5rem;
   list-style: none;
@@ -156,6 +156,7 @@ body.publication-page #header .publication-brand {
   font-weight: 600;
   letter-spacing: 0.01em;
   text-transform: none;
+  white-space: nowrap;
 }
 
 .publication-nav a::after {
@@ -2034,4 +2035,169 @@ body.publication-page .keep-reading-grid strong {
   .guide-tile > img {
     transition: none;
   }
+}
+
+/* Homepage photography: explicit frames override intrinsic HTML image heights. */
+.home-page .editorial-split {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.home-page .editorial-split figure {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 0.3rem;
+}
+.home-page .editorial-split figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 60%;
+}
+.home-page .discovery-card {
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+}
+.home-page .lead-story {
+  min-height: 0;
+  grid-template-rows: auto 1fr;
+  align-self: start;
+}
+.home-page .lead-story img {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  object-position: 50% 65%;
+}
+.home-page .stacked-stories {
+  align-content: start;
+}
+.home-page .stacked-story img {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+  align-self: start;
+  object-position: 50% 60%;
+}
+@media screen and (max-width: 980px) {
+  .home-page .editorial-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media screen and (max-width: 680px) {
+  .home-page .discovery-card {
+    aspect-ratio: 4 / 3;
+  }
+  .home-page .discovery-card img {
+    object-position: 50% 60%;
+  }
+  .home-page .lead-story img {
+    aspect-ratio: 4 / 3;
+  }
+}
+@media screen and (max-width: 680px) {
+  /* Keep the portrait clear of the introduction on narrow screens. */
+  .home-page .publication-hero {
+    display: block;
+    min-height: 0;
+  }
+  .home-page .publication-hero > img {
+    position: relative;
+    inset: auto;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-position: 50% 60%;
+  }
+  .home-page .publication-hero::after {
+    display: none;
+  }
+  .home-page .publication-hero-copy {
+    padding: 2rem 1.15rem 4.2rem;
+  }
+}
+
+/* A persistent partnership CTA alongside the main navigation. */
+.publication-partnership {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid var(--pub-coral);
+  border-radius: 999px;
+  background: var(--pub-coral);
+  color: var(--pub-teal-dark) !important;
+  font-size: 0.875rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.publication-partnership:hover,
+.publication-partnership:focus-visible,
+.publication-partnership[aria-current="page"] {
+  background: #fff;
+  border-color: #fff;
+}
+.publication-mobile-partnership {
+  display: none;
+}
+body.publication-page #header > .publication-checklist {
+  display: none;
+}
+@media screen and (max-width: 980px) {
+  body.publication-page #header {
+    grid-template-columns: 1fr auto auto;
+    gap: 0.75rem;
+  }
+  .publication-partnership {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 0.8rem;
+    padding: 0.65rem 0.85rem;
+  }
+  .publication-menu-toggle {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .publication-mobile-partnership {
+    display: block;
+  }
+}
+
+/* Charity introduction and fundraising link. */
+.charity-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2.5rem;
+}
+.charity-section h2 {
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  line-height: 1.1;
+  margin: 0.5rem 0 1.25rem;
+}
+.charity-section p { max-width: 65ch; }
+.charity-action p { margin: 0.75rem 0 0; font-size: 0.85rem; }
+@media screen and (min-width: 981px) and (max-width: 1280px) {
+  .publication-nav { gap: 0.75rem; padding: 0 1rem; }
+  .publication-nav a { font-size: 0.8rem; }
+}
+@media screen and (max-width: 980px) {
+  .charity-section { grid-template-columns: minmax(0, 1fr); }
+  .publication-nav { max-height: calc(100svh - 5rem); overflow-y: auto; }
+}
+@media screen and (max-width: 680px) {
+  .charity-action .publication-button { white-space: normal; text-align: center; }
+}
+
+/* Quiet, readable disclosure beside activity recommendations. */
+body.publication-page .article-activities .activity-disclosure {
+  margin: 0.65rem 0 1rem;
+  color: #526367;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+body.publication-page .article-activities .activity-disclosure a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }

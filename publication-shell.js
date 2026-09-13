@@ -11,14 +11,18 @@
       '<a class="publication-brand" href="/" aria-label="Ollie Type 1 Travel home">Ollie<small>Type 1 Travel</small></a>',
       '<button class="publication-menu-toggle" type="button" aria-expanded="false" aria-controls="publication-nav"><span aria-hidden="true">☰</span><span class="label">Menu</span></button>',
       '<ul class="publication-nav" id="publication-nav">',
-      '<li><a href="/blog/">Travel guides</a></li>',
+      '<li><a href="/">Home</a></li>',
+      '<li><a href="/blog/">Type 1 travel guides</a></li>',
       '<li><a href="/destinations/">Destinations</a></li>',
       '<li><a href="/type-1-travel/">Type 1 travel</a></li>',
       '<li><a href="/travel-tips/">Travel tips</a></li>',
       '<li><a href="/stories/">Stories</a></li>',
       '<li><a href="/about/">About Ollie</a></li>',
       '<li><a href="/resources/">Resources</a></li>',
+      '<li><a href="https://www.justgiving.com/page/ollie-100km-a4d?utm_medium=FA&amp;utm_source=CL" aria-label="Donate to Action4Diabetes on JustGiving">Donate to A4D</a></li>',
+      '<li class="publication-mobile-partnership"><a href="/work-with-me/">Work with me</a></li>',
       '</ul>',
+      '<a class="publication-partnership" href="/work-with-me/">Work with me</a>',
       '<a class="publication-checklist" href="https://travel-with-ollie.kit.com/efe60fb8e9" data-conversion="checklist-cta">Free checklist</a>'
     ].join("");
   }
@@ -28,7 +32,7 @@
   if (/^\/destinations\/(thailand|laos|cambodia|indonesia|malaysia)\/$/.test(path)) {
     document.body.classList.add("thin-country-hub");
   }
-  document.querySelectorAll(".publication-nav a").forEach(function (link) {
+  document.querySelectorAll(".publication-nav a, .publication-partnership").forEach(function (link) {
     var href = link.getAttribute("href");
     var sectionLink = ["/blog/", "/destinations/", "/type-1-travel/", "/travel-tips/", "/stories/", "/about/", "/resources/"].indexOf(href) !== -1;
     if ((sectionLink && path.indexOf(href) === 0) || path === href) {

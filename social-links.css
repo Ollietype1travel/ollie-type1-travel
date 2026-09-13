@@ -1,0 +1,32 @@
+/* Shared, labelled contact links on every public page. */
+.site-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1.5rem 1rem;
+  background: #edf3f0;
+}
+.site-social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 1px solid #1f766f;
+  border-radius: 999px;
+  background: #fffefa;
+  color: #0b3537 !important;
+  font: 600 14px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-social-links a:hover,
+.site-social-links a:focus-visible {
+  background: #0b3537;
+  color: #fff !important;
+}
+.site-social-links a:focus-visible {
+  outline: 3px solid #e8785f;
+  outline-offset: 3px;
+}
