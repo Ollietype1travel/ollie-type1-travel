@@ -14,7 +14,6 @@
       '<li><a href="/">Home</a></li>',
       '<li><a href="/blog/">Type 1 travel guides</a></li>',
       '<li><a href="/destinations/">Destinations</a></li>',
-      '<li><a href="/type-1-travel/">Type 1 travel</a></li>',
       '<li><a href="/travel-tips/">Travel tips</a></li>',
       '<li><a href="/stories/">Stories</a></li>',
       '<li><a href="/about/">About Ollie</a></li>',

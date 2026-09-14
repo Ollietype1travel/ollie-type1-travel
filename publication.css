@@ -2201,3 +2201,75 @@ body.publication-page .article-activities .activity-disclosure a {
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
+
+/* Local conversion and discovery refinements: reuse the publication system. */
+.group-trip { background: #f4e4d7; border-block: 1px solid #e3c8b3; }
+.group-trip .publication-newsletter { align-items: center; }
+.group-trip h2 { max-width: 20ch; }
+.waitlist-pending { color: #43594f; font-weight: 600; }
+.country-links { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.5rem 0; }
+.country-links a { display: inline-flex; align-items: center; min-height: 44px; padding: .5rem 1rem; border: 1px solid #9caaa3; border-radius: 2px; color: #234c3d; }
+.country-links a:hover { background: #e4ede6; }
+.resource-card-link { display: block; color: inherit; border-bottom: 0; }
+.resource-card-link:hover { background: #edf2ed; }
+.publication-button, .article-actions .button { white-space: normal; height: auto; line-height: 1.45; padding-top: 1em; padding-bottom: 1em; text-align: center; }
+.article-activities { min-width: 0; margin-block: 2.5rem; }
+.article-activities iframe { max-width: 100%; }
+@media(max-width: 736px) { .home-page .creator-actions { align-items: stretch; } .home-page .creator-actions a { width: 100%; } .resource-toolkit-grid { grid-template-columns: 1fr; } }
+.group-trip .publication-newsletter h2, .group-trip .publication-newsletter p { color: #193b36 !important; }
+.group-trip .publication-newsletter .section-kicker { color: #8b4935; }
+/* Keep small action text readable on the existing cream and coral surfaces. */
+.publication-page .text-link { color: #874331; }
+.publication-page .publication-button:not(.secondary) { color: #193b36 !important; }
+.publication-page .publication-section:not(.dark) .section-kicker { color: #874331; }
+.publication-page .publication-section.dark .text-link { color: #fff; }
+.publication-page .article-opening .article-updated { color: #fff; font-family: var(--pub-sans); font-size: .85rem; letter-spacing: normal; text-transform: none; }
+
+/* Guide cards: keep readable copy on its own opaque panel below the photo. */
+.publication-page .guide-tile {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #d7ded8;
+  border-radius: .35rem;
+  background: #fffefa;
+}
+.publication-page .guide-tile > img {
+  position: static;
+  flex: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 0;
+}
+.publication-page .guide-tile > .article-card-copy {
+  position: static;
+  flex: 1;
+  padding: 1.4rem 1.5rem 1.6rem;
+  background: #fffefa;
+  color: #344c48;
+}
+.publication-page .guide-tile .article-card-copy h3 {
+  color: #193b36;
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-weight: 650;
+  line-height: 1.22;
+  letter-spacing: -.025em;
+  margin: .6rem 0 .85rem;
+}
+.publication-page .guide-tile .article-card-copy > p:last-child {
+  color: #344c48;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.publication-page .guide-tile .article-card-copy .card-kicker {
+  color: #245d50;
+  font-weight: 750;
+  font-size: .8rem;
+  line-height: 1.4;
+}
+.publication-page .guide-tile:hover > img,
+.publication-page .guide-tile:focus-visible > img { transform: none; }
+.publication-page .guide-tile:focus-visible { outline: 3px solid #245d50; outline-offset: 4px; }
