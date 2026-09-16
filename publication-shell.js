@@ -8,8 +8,8 @@
     header.className = "publication-masthead";
     header.setAttribute("data-publication-header", "enhanced");
     header.innerHTML = [
-      '<a class="publication-brand" href="/" aria-label="Ollie Type 1 Travel home">Ollie<small>Type 1 Travel</small></a>',
-      '<button class="publication-menu-toggle" type="button" aria-expanded="false" aria-controls="publication-nav"><span aria-hidden="true">☰</span><span class="label">Menu</span></button>',
+      '<a class="publication-brand" href="/" aria-label="Ollie Type 1 Travel home"><span>Ollie</span><small>Type 1 Travel</small></a>',
+      '<button class="publication-menu-toggle" type="button" aria-expanded="false" aria-controls="publication-nav"><span aria-hidden="true">Menu</span><span class="label">Open navigation</span></button>',
       '<ul class="publication-nav" id="publication-nav">',
       '<li><a href="/">Home</a></li>',
       '<li><a href="/blog/">Type 1 travel guides</a></li>',
@@ -21,8 +21,13 @@
       '<li><a href="https://www.justgiving.com/page/ollie-100km-a4d?utm_medium=FA&amp;utm_source=CL" aria-label="Donate to Action4Diabetes on JustGiving">Donate to A4D</a></li>',
       '<li class="publication-mobile-partnership"><a href="/work-with-me/">Work with me</a></li>',
       '</ul>',
+      '<div class="publication-utility">',
       '<a class="publication-partnership" href="/work-with-me/">Work with me</a>',
-      '<a class="publication-checklist" href="https://travel-with-ollie.kit.com/efe60fb8e9" data-conversion="checklist-cta">Free checklist</a>'
+      '<span class="publication-utility-rule" aria-hidden="true"></span>',
+      '<a href="https://www.instagram.com/ollietype1travel/" aria-label="Ollie Type 1 Travel on Instagram">Instagram</a>',
+      '<a href="https://www.youtube.com/@ollietype1travel" aria-label="Ollie Type 1 Travel on YouTube">YouTube</a>',
+      '<a class="publication-checklist" href="https://travel-with-ollie.kit.com/efe60fb8e9" data-conversion="checklist-cta">Free checklist</a>',
+      '</div>'
     ].join("");
   }
 
@@ -30,6 +35,17 @@
 
   if (/^\/destinations\/(thailand|laos|cambodia|indonesia|malaysia)\/$/.test(path)) {
     document.body.classList.add("thin-country-hub");
+  }
+
+  /* Keep the homepage's welcome rhythm: hero, introduction, then the practical toolkit. */
+  if (path === "/" || path === "/index.html") {
+    var homeMain = document.querySelector("main");
+    var homeAbout = document.getElementById("about-ollie");
+    var homeHero = homeMain && homeMain.querySelector(".publication-hero");
+    if (homeMain && homeAbout && homeHero) {
+      homeMain.insertBefore(homeAbout, homeHero.nextElementSibling);
+      document.body.classList.add("home-editorial-order");
+    }
   }
   document.querySelectorAll(".publication-nav a, .publication-partnership").forEach(function (link) {
     var href = link.getAttribute("href");

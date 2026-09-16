@@ -1,0 +1,555 @@
+You are working on my EXISTING live production website:
+
+https://ollietype1travel.com/
+
+This project has already been imported from GitHub and identified correctly as a static HTML/CSS/JavaScript website with no package manager or build step.
+
+Production already deploys through GitHub → Cloudflare.
+
+IMPORTANT:
+Do NOT rebuild the website from scratch.
+Do NOT migrate it to React, Next.js, Vite, WordPress, Webflow, Framer or another framework.
+Do NOT change my hosting or deployment setup.
+Do NOT change existing URLs.
+Do NOT redesign the rest of the website.
+
+For this task, redesign ONLY:
+
+/work-with-me/
+
+The purpose of this page is to sell me professionally to brands, tourism companies, travel-tech companies, diabetes brands, outdoor brands and potential long-term partners.
+
+The current page is too analytical, too cluttered and too focused on explaining statistics.
+
+I want it to feel like a premium creator portfolio / travel publication.
+
+Before editing:
+1. Audit the existing /work-with-me/ page.
+2. Inspect the existing site styles and code structure.
+3. Identify which existing assets/content can be reused.
+4. Show me your proposed page structure.
+5. Then build the redesign.
+6. Do not merge or push anything to production without my approval.
+
+Keep the existing static HTML/CSS/JS architecture exactly as it is.
+
+Set up only the minimal local static preview needed inside Replit.
+
+==================================================
+CREATOR POSITIONING
+==================================================
+
+I am Ollie Steadman, a UK travel creator.
+
+My content is about solo travel through the lens of:
+- Type 1 diabetes
+- severe peanut and shellfish allergies
+- adventure travel
+- backpacking
+- real-world travel problems
+- health/travel technology
+- travel safety
+- culture and experiences
+
+Travel must remain the PRIMARY identity.
+
+Type 1 diabetes and allergies make the stories distinctive, but the page must not look like a medical website.
+
+The overall impression should be:
+
+“This is a serious travel creator with a highly distinctive story and unusually strong organic reach.”
+
+NOT:
+
+“This is a diabetes information website that sometimes talks about travel.”
+
+==================================================
+CURRENT SOCIAL AUDIENCE
+==================================================
+
+Use these current figures:
+
+Meta combined audience:
+9.8K
+
+TikTok:
+3.2K
+
+Total social community:
+approximately 13K
+
+Do NOT invent statistics.
+
+Use other existing reach, views or interaction figures only if they already exist on the current site and are verified.
+
+Do NOT calculate strange engagement ratios.
+
+Do NOT use:
+- interactions ÷ followers
+- “838% engagement”
+- mixed reporting-period formulas
+- methodology explanations
+- long analytics caveats
+
+One small line is enough:
+
+“Latest available platform analytics. Detailed analytics available to potential partners on request.”
+
+==================================================
+VISUAL DIRECTION
+==================================================
+
+The design should feel like:
+
+Condé Nast Traveller
++
+independent backpacker documentary
++
+premium modern creator portfolio
+
+Use:
+- large real travel photography
+- strong editorial typography
+- lots of whitespace
+- clean hierarchy
+- understated luxury
+- subtle animation
+- thin dividers
+- asymmetric layouts where appropriate
+- strong mobile design
+- clean responsive spacing
+- minimal card styling
+- editorial image-led sections
+
+Avoid:
+- SaaS-style layouts
+- endless rounded cards
+- giant pill buttons
+- gradients
+- glassmorphism
+- glowing UI
+- generic AI aesthetic
+- stock photography
+- AI-generated images
+- excessive blue healthcare styling
+- clutter
+- dashboard-style analytics grids
+
+Use my real travel photography only.
+
+Do NOT generate images of me.
+
+If assets are missing, create obvious placeholders and tell me exactly what type of photo/video is needed.
+
+==================================================
+PAGE STRUCTURE
+==================================================
+
+SECTION 1 — HERO
+
+Large, powerful real travel photograph featuring me.
+
+Eyebrow:
+OLLIE STEADMAN · TRAVEL CREATOR
+
+Main headline:
+
+REAL TRAVEL STORIES.
+COMPLICATED CIRCUMSTANCES.
+CONTENT PEOPLE ACTUALLY WATCH.
+
+Supporting copy:
+
+Solo travel through the lens of Type 1 diabetes, severe allergies and everything that goes wrong along the way.
+
+Show three major proof points in clean typography:
+
+13K
+SOCIAL COMMUNITY
+
+[verified views/reach figure already on site]
+CONTENT VIEWS
+
+[verified interaction figure already on site]
+INTERACTIONS
+
+Primary CTA:
+DISCUSS A PARTNERSHIP
+
+Secondary CTA:
+SEE MY WORK
+
+==================================================
+
+SECTION 2 — FEATURED CONTENT
+
+Heading:
+
+DON’T TAKE MY WORD FOR IT.
+
+Show 3 strong vertical video/content previews.
+
+Each should have:
+- real thumbnail
+- short title
+- category
+- one useful verified result where available
+- clickable/playable link if already available
+
+Suggested content themes:
+
+1. My insulin froze in Vietnam
+2. Insulin cooling / slow boat / extreme heat travel story
+3. Pure travel/adventure story such as jungle trek, motorbike loop, hiking, Cambodia, Indonesia, Vietnam etc.
+
+IMPORTANT:
+Do not make all three examples diabetes-heavy.
+
+Show:
+- one health/travel disaster story
+- one practical travel/product story
+- one pure adventure/destination story
+
+The page must still sell me as a travel creator.
+
+==================================================
+
+SECTION 3 — POSITIONING
+
+Heading:
+
+TRAVEL CONTENT WITH STAKES BUILT IN.
+
+Use one strong travel image beside concise copy.
+
+Explain briefly:
+
+I travel solo with Type 1 diabetes and severe allergies, which means normal travel situations become stories involving:
+- insulin storage
+- pharmacies
+- airport security
+- food communication
+- remote journeys
+- transport
+- heat
+- hostels
+- language barriers
+- solving problems when plans go wrong
+
+Keep this short.
+
+Do not turn it into a medical biography.
+
+Add understated tags:
+
+TRAVEL
+ADVENTURE
+DIABETES
+ALLERGIES
+HEALTH TECH
+CULTURE
+
+==================================================
+
+SECTION 4 — PERFORMANCE
+
+Heading:
+
+THE NUMBERS
+
+Make this elegant and simple.
+
+Include:
+
+9.8K
+META COMMUNITY
+
+3.2K
+TIKTOK COMMUNITY
+
+~13K
+TOTAL SOCIAL COMMUNITY
+
+Then include only other verified current figures already present on the website.
+
+Use large editorial numbers and small labels.
+
+No formulas.
+
+No complicated engagement calculations.
+
+Add:
+
+Latest available platform analytics. Detailed analytics available to potential partners on request.
+
+==================================================
+
+SECTION 5 — AUDIENCE
+
+Heading:
+
+A TRAVEL AUDIENCE WITH A REASON TO LISTEN.
+
+Show only commercially relevant audience information already available.
+
+Possible fields:
+- age
+- gender
+- UK
+- US
+- Australia
+- audience messages / enquiries if verified
+
+Use clean visual bars or editorial labels rather than a corporate analytics dashboard.
+
+Supporting copy:
+
+Travellers, people living with Type 1 diabetes, parents, and people who want to travel but worry health, safety or confidence may stop them.
+
+==================================================
+
+SECTION 6 — SELECTED WORK
+
+Heading:
+
+SELECTED WORK
+
+Show only 3 case studies.
+
+Possible examples:
+
+1. Insulin cooling / travel product content
+2. Jungle trek / adventure / experience campaign
+3. Strongest paid creator collaboration
+
+Each case study should include:
+- large image or video
+- very short context
+- what was created
+- one verified result
+- watch/view link if available
+
+Do NOT use long paragraphs.
+
+Do NOT invent results.
+
+==================================================
+
+SECTION 7 — WAYS TO WORK TOGETHER
+
+Heading:
+
+WAYS TO WORK TOGETHER
+
+Use four clean offerings.
+
+CREATOR CAMPAIGNS
+
+Story-first sponsored content published across my audience.
+
+Reels · TikTok · Facebook · Stories
+
+UGC
+
+Short-form content created for brand-owned channels.
+
+Organic social · paid social · hooks · variants · raw footage
+
+TRAVEL CAMPAIGNS
+
+On-location storytelling.
+
+Tourism · hotels · hostels · experiences · travel tech · outdoor products
+
+LONG-TERM PARTNERSHIPS
+
+Brands naturally integrated across longer journeys.
+
+Ambassadorships · multi-video campaigns · field testing · recurring partnerships
+
+Add:
+
+Usage rights, licensing, exclusivity and paid-media usage are quoted separately.
+
+Do NOT publicly display rates.
+
+==================================================
+
+SECTION 8 — 2027 ASIA
+
+Make this visually strong.
+
+Heading:
+
+COMING IN 2027
+
+Subheading:
+
+FOUR MONTHS ACROSS ASIA
+
+Route:
+
+Hong Kong → China → Taiwan → Southeast Asia
+
+Explain briefly that I will be documenting an extended solo trip covering:
+- adventure
+- health
+- travel logistics
+- culture
+- technology
+- real-world travel problems
+
+Partnership categories:
+
+TRAVEL TECH
+DIABETES PRODUCTS
+OUTDOOR GEAR
+ESIMS / CONNECTIVITY
+LANGUAGE TOOLS
+ACCOMMODATION
+EXPERIENCES
+INSURANCE
+TRANSPORT
+
+CTA:
+
+DISCUSS THE 2027 SERIES
+
+This should feel like a commercial opportunity, not an itinerary page.
+
+==================================================
+
+SECTION 9 — FINAL CTA
+
+Use another strong real travel photograph.
+
+Heading:
+
+HAVE A STORY WE COULD TELL TOGETHER?
+
+Supporting copy:
+
+I’m interested in partnerships where the product genuinely fits the journey and there is something worth making a story about.
+
+Provide:
+- email
+- Instagram
+- TikTok
+- Facebook
+- media kit link if already available
+
+Use one strong primary contact CTA.
+
+Then END THE PAGE.
+
+Do not add:
+- another analytics section
+- another “Why Ollie” section
+- another audience section
+- FAQs
+- repeated CTAs
+- unnecessary filler
+
+==================================================
+ASSET RULES
+==================================================
+
+I will provide real photos and videos.
+
+Do not:
+- generate travel photos
+- generate fake photos of me
+- use random stock images
+- replace my real photography with AI images
+
+Use placeholders where necessary.
+
+Tell me specifically which assets you need, e.g.:
+
+“HERO: horizontal landscape image of Ollie in an adventurous travel setting”
+
+rather than choosing fake imagery.
+
+Optimise images properly:
+- responsive sizing
+- modern formats where appropriate
+- lazy loading below the fold
+- descriptive alt text
+- no layout shift
+
+For videos:
+- do not autoplay multiple heavy videos
+- use poster images/thumbnails
+- load video intelligently
+- protect page speed
+
+==================================================
+MOBILE
+==================================================
+
+Mobile is extremely important.
+
+Ensure:
+- hero remains visually strong
+- headings scale properly
+- no text overflows
+- stats remain readable
+- videos stack naturally
+- CTA buttons are obvious
+- spacing feels intentional
+- images crop well
+- page does not become excessively long or repetitive
+
+==================================================
+ACCESSIBILITY
+==================================================
+
+Maintain:
+- semantic HTML
+- correct heading hierarchy
+- keyboard focus states
+- useful alt text
+- good colour contrast
+- reduced-motion support where appropriate
+- descriptive link labels
+
+==================================================
+PERFORMANCE
+==================================================
+
+Do not introduce unnecessary JavaScript libraries.
+
+Prefer existing CSS/JS and native web functionality.
+
+Keep the page fast.
+
+Do not sacrifice performance for decorative animation.
+
+==================================================
+IMPORTANT DEVELOPMENT RULES
+==================================================
+
+Do NOT:
+- redesign other pages
+- change the homepage
+- change destination pages
+- change blog URLs
+- change SEO architecture
+- change Cloudflare settings
+- change deployment
+- convert the project to another framework
+- remove analytics scripts
+- remove affiliate links
+- merge automatically
+- push directly to production without approval
+
+Keep changes isolated to /work-with-me/ and any absolutely necessary shared CSS.
+
+At the end:
+
+1. Show me the page in preview.
+2. Tell me exactly which files changed.
+3. Confirm no other pages were intentionally redesigned.
+4. Confirm production deployment remains unchanged.
+5. Give me a list of any missing photos, videos, links or statistics you still need from me.
+6. Wait for my approval before merging anything.

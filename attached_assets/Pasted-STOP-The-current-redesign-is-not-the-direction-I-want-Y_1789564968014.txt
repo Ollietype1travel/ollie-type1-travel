@@ -1,0 +1,421 @@
+STOP.
+
+The current redesign is not the direction I want.
+
+You have retained far too much of the old /work-with-me/ page and simply restyled it.
+
+I want a genuine editorial redesign and major content reduction.
+
+KEEP:
+- existing site navigation
+- footer
+- existing static HTML/CSS/JS architecture
+- SEO/meta information where appropriate
+- working contact links
+- existing GitHub → Cloudflare deployment
+
+REPLACE THE ENTIRE MAIN CONTENT AREA OF /work-with-me/.
+
+Do NOT preserve the current section structure simply because it already exists.
+
+The page should become dramatically shorter, more visual and more premium.
+
+==================================================
+DELETE COMPLETELY
+==================================================
+
+Remove ALL of the following from the visible /work-with-me/ page:
+
+- “A useful fit”
+- the four Tourism / Travel-tech / Diabetes / Outdoor explanation cards
+- “supplied views”
+- “supplied followers”
+- “supplied analytics” wording throughout
+- engagement-rate calculations
+- “838%”
+- interaction ÷ follower calculations
+- interactions-per-view calculations
+- methodology explanations
+- explanations of mismatched reporting periods
+- direct links to every analytics screenshot
+- huge platform-by-platform demographic tables
+- detailed age breakdowns for every platform
+- the “The process” / Brief / Create / Deliver section
+- the “Project planning” service card
+- duplicated calls to action
+- duplicated media-kit buttons
+- anything that reads like an analytics audit
+- anything that reads like legal/compliance copy unless genuinely required
+- generic filler such as “content built around real use”
+- excessive explanatory paragraphs
+
+Do not move these lower down the page.
+DELETE them from the visible page.
+
+Analytics evidence can remain stored in the project for reference but should NOT appear as a giant visible section.
+
+==================================================
+THE PAGE MUST HAVE ONLY SIX MAIN SECTIONS
+==================================================
+
+1. HERO
+2. FEATURED CONTENT
+3. ABOUT / POSITIONING
+4. PROOF + AUDIENCE
+5. WORK WITH ME
+6. 2027 ASIA + CONTACT
+
+That is it.
+
+The page should be approximately HALF the current length.
+
+==================================================
+1. HERO
+==================================================
+
+Use a large real travel photograph.
+
+Small label:
+
+OLLIE STEADMAN
+TRAVEL CREATOR
+
+Main headline:
+
+TRAVEL STORIES WITH
+A BIT MORE AT STAKE.
+
+Supporting copy:
+
+I document solo travel with Type 1 diabetes and severe allergies — from motorbike loops and jungle treks to pharmacies, hostels and the moments when the plan goes completely wrong.
+
+Then three statistics only:
+
+16M+
+CONTENT VIEWS
+
+13K
+SOCIAL COMMUNITY
+
+[USE VERIFIED INTERACTIONS FIGURE IF CURRENT AND CONFIRMED]
+INTERACTIONS
+
+If an interaction figure cannot be confidently verified, use another strong verified metric instead.
+
+Do NOT use:
+88.1% female
+Facebook demographics
+engagement rate
+
+in the hero.
+
+Primary CTA:
+
+START A PARTNERSHIP
+
+Secondary:
+
+SEE MY WORK
+
+The hero should feel like a premium adventure-travel publication, not an influencer rate card.
+
+==================================================
+2. FEATURED CONTENT
+==================================================
+
+Headline:
+
+STORIES PEOPLE ACTUALLY STOP FOR.
+
+Show THREE large vertical pieces of content.
+
+Not small generic cards.
+
+Use real thumbnails/poster frames.
+
+One should demonstrate:
+- strong story / travel disaster
+
+One:
+- product / problem-solving integration
+
+One:
+- pure adventure / destination travel
+
+Example themes:
+
+MY INSULIN FROZE IN VIETNAM
+
+60 HOURS WITHOUT A FRIDGE
+
+SOLO THROUGH [STRONG ADVENTURE DESTINATION]
+
+Each item should have:
+- image/video thumbnail
+- short title
+- very short category
+- one verified performance result if available
+- WATCH button
+
+Do not write paragraphs underneath them.
+
+Make the content itself the star.
+
+==================================================
+3. ABOUT / POSITIONING
+==================================================
+
+Heading:
+
+TRAVEL CONTENT WITH
+STAKES BUILT IN.
+
+Use one strong real travel photograph.
+
+Copy:
+
+I’m Ollie, a UK travel creator documenting what ambitious solo travel actually looks like when you also have Type 1 diabetes and severe peanut and shellfish allergies.
+
+That means the story might begin with a mountain road, jungle trek or slow boat — and suddenly involve insulin storage, finding a pharmacy, explaining an allergy in another language or solving a problem thousands of miles from home.
+
+I make those realities part of the adventure rather than turning the adventure into a medical lecture.
+
+Then small understated labels:
+
+TRAVEL
+ADVENTURE
+TYPE 1 DIABETES
+ALLERGIES
+HEALTH TECH
+CULTURE
+
+No additional explanation is needed.
+
+==================================================
+4. PROOF + AUDIENCE
+==================================================
+
+This should be ONE compact section.
+
+Heading:
+
+THE AUDIENCE IS SMALLER
+THAN THE REACH.
+
+Supporting sentence:
+
+Around 13K people currently follow the journey, while story-led content has reached millions beyond that community.
+
+Use clean large typography.
+
+Show:
+
+9.8K
+META
+
+3.2K
+TIKTOK
+
+16M+
+CONTENT VIEWS
+
+[VERIFIED INTERACTION TOTAL]
+INTERACTIONS
+
+Then one concise audience line:
+
+Strong audiences across the UK, US and Australia, with particularly strong female audiences across Meta and TikTok.
+
+If useful, show only THREE demographic highlights.
+
+For example:
+
+35.5%
+US SHARE OF FACEBOOK FOLLOWERS
+
+42.5%
+INSTAGRAM AUDIENCE AGED 25–34
+
+52.4%
+TIKTOK AUDIENCE AGED 25–34
+
+Do NOT show full country lists.
+
+Do NOT show every age band.
+
+Do NOT show analytics screenshots.
+
+At the bottom in tiny text:
+
+Latest available platform analytics. Detailed screenshots and campaign analytics available to potential partners on request.
+
+That is all.
+
+==================================================
+5. WORK WITH ME
+==================================================
+
+Heading:
+
+WAYS WE CAN WORK TOGETHER.
+
+Use FOUR offerings only.
+
+CREATOR CAMPAIGNS
+
+Story-led sponsored content published across my Instagram, TikTok and Facebook channels.
+
+UGC + PAID CREATIVE
+
+Vertical video created for your brand’s organic channels, website or paid advertising.
+
+TRAVEL CAMPAIGNS
+
+On-location storytelling for destinations, accommodation, tours, experiences and travel products.
+
+LONG-TERM PARTNERSHIPS
+
+Brands integrated naturally across a longer journey rather than appearing in a single disconnected post.
+
+Do not use six cards.
+
+Do not include a separate photography card.
+
+Photography can be mentioned underneath:
+
+Photography, raw footage, additional variants, licensing, exclusivity and paid-media usage can be included where required.
+
+Then ONE CTA:
+
+DISCUSS A CAMPAIGN
+
+==================================================
+6. 2027 ASIA + CONTACT
+==================================================
+
+This should be the visually strongest section after the hero.
+
+Use an excellent travel image.
+
+Small label:
+
+NEXT CHAPTER
+
+Heading:
+
+FOUR MONTHS.
+ONE VERY LONG WAY EAST.
+
+Large route:
+
+HONG KONG → CHINA → TAIWAN → SOUTHEAST ASIA
+
+Copy:
+
+From February 2027 I’ll be documenting four months across Asia — combining adventure, culture and the real logistics of travelling long-term with Type 1 diabetes and severe allergies.
+
+I’m currently speaking with selected brands whose products or services have a genuine role in that journey.
+
+Show understated partnership categories:
+
+TRAVEL TECH
+OUTDOOR
+DIABETES
+CONNECTIVITY
+LANGUAGE
+ACCOMMODATION
+EXPERIENCES
+INSURANCE
+
+Then final headline:
+
+HAVE A STORY WE COULD TELL TOGETHER?
+
+Button:
+
+EMAIL OLLIE
+
+Show social links beneath.
+
+Then END THE PAGE.
+
+==================================================
+VISUAL RULES
+==================================================
+
+This is crucial.
+
+The page currently feels too much like a collection of website sections.
+
+I want it to feel like an EDITORIAL CREATOR PORTFOLIO.
+
+Use:
+- huge real photography
+- oversized typography
+- strong image crops
+- generous whitespace
+- alternating image/text composition
+- editorial asymmetry
+- thin dividers
+- minimal UI decoration
+- subtle scroll effects where performance allows
+- restrained typography
+- strong mobile layouts
+
+Reduce the amount of boxed content dramatically.
+
+Most sections should NOT sit inside cards.
+
+Avoid:
+- rows of identical cards
+- rounded rectangles everywhere
+- generic icon boxes
+- blue SaaS design
+- statistics dashboards
+- corporate consultancy language
+- tiny photographs
+- giant blocks of body copy
+
+If no suitable image exists for a section, PLACE A CLEAR IMAGE PLACEHOLDER rather than making the section text-heavy.
+
+Label placeholders like:
+
+HERO PHOTO NEEDED
+Recommended: horizontal image of Ollie in a dramatic Asian travel setting.
+
+Do not use stock photography.
+Do not generate AI travel imagery.
+
+==================================================
+COPY TONE
+==================================================
+
+Rewrite any remaining copy that sounds corporate.
+
+Avoid phrases such as:
+- useful content
+- supplied analytics
+- real role to play
+- clear deliverables
+- result you need
+- practical decisions that shape a journey
+- informed human point of view
+
+The writing should sound confident, simple and human.
+
+Ollie is an adventurous travel creator, not a marketing consultancy.
+
+==================================================
+FINAL CHECK
+==================================================
+
+Before telling me the redesign is finished:
+
+1. Confirm the engagement methodology section is completely gone.
+2. Confirm analytics screenshots are no longer displayed publicly.
+3. Confirm the page has only six main sections.
+4. Confirm the visible copy is significantly shorter.
+5. Confirm no other pages were redesigned.
+6. Show the desktop and mobile preview.
+7. Give me a list of photo/video placeholders that I need to replace.
+8. Do not merge or deploy until I approve it.

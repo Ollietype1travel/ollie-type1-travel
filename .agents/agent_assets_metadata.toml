@@ -1,0 +1,72 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "_hWwOFVG6knc4WhaQo6CV"
+uri = "file://screenshots/share-home-refresh.jpg"
+type = "image"
+title = "Refreshed homepage"
+description = "Desktop preview of the refreshed Ollie Type 1 Travel homepage."
+logical_id = "2a560932-83f9-42b4-9cee-30b596ec6d1a"
+content_hash = "sha256:418586b1dc3c9190bb3ce8d71f8232707eefea7188502922a154835224e087db"
+size = 155222
+mtime_ms = 1789569538793
+storage_uri = "gcs://replit-rams-assets-kira/rams/assets/repl:4e522df7-9133-4f4b-bf97-bd59c76b3393/2a560932-83f9-42b4-9cee-30b596ec6d1a/a1ad0e7f-b99c-4545-ad79-eca4cc60b0dd"
+storage_version_token = "1789569549005431"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "kGGmDa9BKwVoU4pnJlxx6"
+uri = "file://screenshots/share-guides-refresh.jpg"
+type = "image"
+title = "Refreshed travel guides page"
+description = "Desktop preview of the updated guides and stories page."
+logical_id = "23698872-3766-42f4-aaf8-bc5dad352cc3"
+content_hash = "sha256:c2c5fb9ef62aa2f53bc4398f49e838e1695780187271f92d2e7c6b7657f9bee1"
+size = 122573
+mtime_ms = 1789569540721
+storage_uri = "gcs://replit-rams-assets-kira/rams/assets/repl:4e522df7-9133-4f4b-bf97-bd59c76b3393/23698872-3766-42f4-aaf8-bc5dad352cc3/f29af34f-7a82-4edd-ad90-ab3fdef79a13"
+storage_version_token = "1789569549750784"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "oh9v3FvQn0nYzjORL1zr3"
+uri = "file://screenshots/share-partnership-refresh.jpg"
+type = "image"
+title = "Refreshed partnership page"
+description = "Desktop preview of the updated work-with-me page."
+logical_id = "22966aca-2a77-43cb-8a27-879c3ecefebc"
+content_hash = "sha256:43ec31cebf27c446c2b404c785a93bc4ddce748a4c690889cb3852cbe13f65d3"
+size = 98703
+mtime_ms = 1789569542633
+storage_uri = "gcs://replit-rams-assets-kira/rams/assets/repl:4e522df7-9133-4f4b-bf97-bd59c76b3393/22966aca-2a77-43cb-8a27-879c3ecefebc/69dcd507-c8d0-44e2-a33e-9cf5890389fe"
+storage_version_token = "1789569550492575"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "6rbQThAWQH0gZoouAiwDn"
+uri = "file://screenshots/sam-style-home-final.jpg"
+type = "image"
+title = "Homepage — Sam-style editorial direction"
+description = "The updated homepage with centered photographic hero, restrained masthead, and calmer travel-publication styling."
+logical_id = "5257fad7-3cfa-4d9c-8baf-82448b39cadd"
+content_hash = "sha256:ed2795ad1bd5e27273eccb130476f4ccc5fea9a6ccc31f23e821caeefe542315"
+size = 151605
+mtime_ms = 1789569958830
+storage_uri = "gcs://replit-rams-assets-kira/rams/assets/repl:4e522df7-9133-4f4b-bf97-bd59c76b3393/5257fad7-3cfa-4d9c-8baf-82448b39cadd/f23cbae3-386b-487f-9e05-73f14d27eb5f"
+storage_version_token = "1789569995380175"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "c0FzmIjFHAu0fPEcepjt6"
+uri = "file://screenshots/sam-style-work-final.jpg"
+type = "image"
+title = "Work with me — matching editorial system"
+description = "The partnership page now uses the same centered, image-led visual language across the site."
+logical_id = "14c7fc83-49ef-4107-8261-1e15359d80cd"
+content_hash = "sha256:7a28018688c7b86f1960bd8cc6ef3c5bd4d3506d40b133c66104125f71b23747"
+size = 90041
+mtime_ms = 1789569960746
+storage_uri = "gcs://replit-rams-assets-kira/rams/assets/repl:4e522df7-9133-4f4b-bf97-bd59c76b3393/14c7fc83-49ef-4107-8261-1e15359d80cd/798c456d-ac0d-404a-bf18-b485e3ce6e0d"
+storage_version_token = "1789569996135220"
+content_type = "image/jpeg"

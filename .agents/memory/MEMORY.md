@@ -1,0 +1,1 @@
+- [Analytics evidence](analytics-evidence.md) — keep platform metrics tied to their source windows; never present mixed windows as one deduplicated total.

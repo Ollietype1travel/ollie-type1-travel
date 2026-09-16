@@ -47,6 +47,11 @@ There is no automated test suite. Before publishing, manually check:
 - Checklist signup and media kit download links
 - Contact email and social links
 
+The partnership page also has a dependency-free static QA check. Start the
+existing static server, then run:
+
+`python3 scripts/check-work-with-me.py`
+
 ## Build
 
 No build command is required. The site is static.
