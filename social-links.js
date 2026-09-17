@@ -17,6 +17,27 @@
     document.head.appendChild(articleCss);
   }
 
+  /* Safari can refuse nested data images when an SVG is used directly as an <img>.
+     Load the supplied smiling hero as an SVG document instead, while keeping the
+     previous mountain photo as a fallback so the hero can never become a blue box. */
+  var heroImg = document.querySelector('.home-hero-photo > img[src$="home-hero-smiling.svg"]');
+  if (heroImg) {
+    var heroObject = document.createElement('object');
+    heroObject.data = heroImg.getAttribute('src');
+    heroObject.type = 'image/svg+xml';
+    heroObject.className = 'home-hero-visual';
+    heroObject.setAttribute('aria-label', heroImg.getAttribute('alt') || 'Ollie smiling at a mountain viewpoint in Southeast Asia');
+    heroObject.style.cssText = 'display:block;width:100%;aspect-ratio:3 / 4;height:auto;min-height:0;border:0;pointer-events:none;';
+
+    var fallback = document.createElement('img');
+    fallback.src = '/Website assets/editorial-photos/selected/mountain-viewpoint.jpg';
+    fallback.alt = heroImg.getAttribute('alt') || 'Ollie at a mountain viewpoint in Southeast Asia';
+    fallback.style.cssText = 'display:block;width:100%;height:auto;';
+    heroObject.appendChild(fallback);
+
+    heroImg.replaceWith(heroObject);
+  }
+
   if (document.querySelector('.site-social-links')) return;
   var nav = document.createElement('nav');
   nav.className = 'site-social-links';
