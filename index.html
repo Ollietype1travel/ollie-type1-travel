@@ -30,13 +30,13 @@
     <main>
       <section class="home-hero" aria-labelledby="home-title">
         <div class="home-hero-photo">
-          <img id="home-hero-exact" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="720" height="960" alt="Ollie smiling at a mountain viewpoint in Southeast Asia" fetchpriority="high" decoding="async" style="opacity:0;transition:opacity .15s ease" />
+          <img id="home-hero-exact" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="240" height="520" alt="Ollie smiling at a mountain viewpoint in Southeast Asia" fetchpriority="high" decoding="async" style="opacity:0;transition:opacity .15s ease" />
           <script>
             (() => {
               const img = document.getElementById('home-hero-exact');
-              fetch('/Website%20assets/hero-chunks/hero-exact-smiling-20260917.txt?v=20260917-exact-final', { cache: 'no-store' })
+              fetch('/Website%20assets/hero-chunks/hero-exact-smiling-20260917.txt?v=20260917-smiling-v3', { cache: 'no-store' })
                 .then(response => {
-                  if (!response.ok) throw new Error('Exact smiling hero failed to load');
+                  if (!response.ok) throw new Error('Smiling hero failed to load');
                   return response.text();
                 })
                 .then(data => {
@@ -157,6 +157,6 @@
     </main>
   </div></div></div>
   <script src="/publication-shell.js?v=20261001-shell"></script>
-  <script src="/social-links.js?v=20260917-hero4"></script>
+  <script src="/social-links.js?v=20260917-hero5"></script>
 </body>
 </html>
