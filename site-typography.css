@@ -112,4 +112,58 @@ body:not(.homepage-v2) .partnership-card h3 {
   body:not(.homepage-v2) .stacked-story h3 {
     font-size: 1.1rem !important;
   }
+
+  /* Destination index: make each country unmistakable and stop photos swallowing the labels. */
+  body.publication-page .destination-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.35rem !important;
+  }
+
+  body.publication-page .destination-poster {
+    display: block !important;
+    overflow: visible !important;
+    aspect-ratio: auto !important;
+    background: transparent !important;
+  }
+
+  body.publication-page .destination-poster img {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  body.publication-page .destination-poster::after {
+    display: none !important;
+  }
+
+  body.publication-page .destination-poster .destination-copy {
+    position: relative !important;
+    z-index: 2 !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 0.9rem 0 0 !important;
+    background: var(--pub-paper) !important;
+  }
+
+  body.publication-page .destination-copy h3 {
+    margin: 0 !important;
+    color: var(--pub-ink) !important;
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    font-size: 1.35rem !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+  }
+
+  body.publication-page .destination-copy p {
+    margin: 0.35rem 0 0 !important;
+    color: var(--pub-muted) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.55 !important;
+  }
 }
