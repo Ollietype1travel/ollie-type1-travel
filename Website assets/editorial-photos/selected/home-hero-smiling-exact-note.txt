@@ -1,0 +1,1 @@
+Exact homepage hero replacement staged from the user-uploaded smiling photo on 2026-09-17. The binary hero asset is being stored under a unique filename to avoid stale-cache ambiguity.
