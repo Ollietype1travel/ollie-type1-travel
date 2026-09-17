@@ -1,5 +1,14 @@
 (function () {
   'use strict';
+
+  if (document.body.classList.contains('article-page') && !document.querySelector('link[data-article-cleanup]')) {
+    var articleCss = document.createElement('link');
+    articleCss.rel = 'stylesheet';
+    articleCss.href = '/article-cleanup.css?v=20260917-1';
+    articleCss.setAttribute('data-article-cleanup', 'true');
+    document.head.appendChild(articleCss);
+  }
+
   if (document.querySelector('.site-social-links')) return;
   var nav = document.createElement('nav');
   nav.className = 'site-social-links';
