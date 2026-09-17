@@ -1,39 +1,41 @@
-/* Article cleanup: quieter sans-serif typography and sensible image sizing on mobile. */
+/* Clean long-form reading styles: simple sans-serif type and controlled mobile images. */
 body.article-page,
-body.article-page .article-body,
-body.article-page .story-prose,
-body.article-page .article-opening-copy,
-body.article-page .article-note,
-body.article-page .author-box {
+body.about-page,
+:is(body.article-page, body.about-page) .article-body,
+:is(body.article-page, body.about-page) .story-prose,
+:is(body.article-page, body.about-page) .article-opening-copy,
+:is(body.article-page, body.about-page) .article-note,
+:is(body.article-page, body.about-page) .author-box {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
 }
 
-body.article-page .article-body,
-body.article-page .story-prose {
+:is(body.article-page, body.about-page) .article-body,
+:is(body.article-page, body.about-page) .story-prose {
   color: #44585d;
   font-size: 1rem;
   line-height: 1.78;
 }
 
-body.article-page .article-body p,
-body.article-page .story-prose p,
-body.article-page .article-body li,
-body.article-page .story-prose li {
+:is(body.article-page, body.about-page) .article-body p,
+:is(body.article-page, body.about-page) .story-prose p,
+:is(body.article-page, body.about-page) .article-body li,
+:is(body.article-page, body.about-page) .story-prose li {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   font-size: 1rem;
   line-height: 1.78;
 }
 
-body.article-page .article-opening h1,
-body.article-page .article-body h1,
-body.article-page .article-body h2,
-body.article-page .article-body h3,
-body.article-page .article-body h4,
-body.article-page .story-prose h1,
-body.article-page .story-prose h2,
-body.article-page .story-prose h3,
-body.article-page .story-prose h4,
-body.article-page .author-box h2 {
+:is(body.article-page, body.about-page) .article-opening h1,
+:is(body.article-page, body.about-page) .article-body h1,
+:is(body.article-page, body.about-page) .article-body h2,
+:is(body.article-page, body.about-page) .article-body h3,
+:is(body.article-page, body.about-page) .article-body h4,
+:is(body.article-page, body.about-page) .story-prose h1,
+:is(body.article-page, body.about-page) .story-prose h2,
+:is(body.article-page, body.about-page) .story-prose h3,
+:is(body.article-page, body.about-page) .story-prose h4,
+:is(body.article-page, body.about-page) .author-box h2,
+body.about-page .creator-hero h1 {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   font-style: normal !important;
   font-weight: 600 !important;
@@ -46,124 +48,132 @@ body.article-page .article-opening h1 {
   line-height: 1.04 !important;
 }
 
-body.article-page .article-body h2,
-body.article-page .story-prose h2 {
-  margin-top: 3.4rem !important;
+body.about-page .creator-hero h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem) !important;
+  line-height: 1.08 !important;
+}
+
+:is(body.article-page, body.about-page) .article-body h2,
+:is(body.article-page, body.about-page) .story-prose h2 {
+  margin-top: 3.2rem !important;
   margin-bottom: 1rem !important;
-  font-size: clamp(1.55rem, 3vw, 2.35rem) !important;
-  line-height: 1.14 !important;
+  font-size: clamp(1.5rem, 3vw, 2.25rem) !important;
+  line-height: 1.16 !important;
 }
 
-body.article-page .article-body h3,
-body.article-page .story-prose h3 {
-  margin-top: 2.5rem !important;
-  font-size: clamp(1.2rem, 2vw, 1.55rem) !important;
-  line-height: 1.2 !important;
+:is(body.article-page, body.about-page) .article-body h3,
+:is(body.article-page, body.about-page) .story-prose h3 {
+  margin-top: 2.4rem !important;
+  font-size: clamp(1.18rem, 2vw, 1.5rem) !important;
+  line-height: 1.22 !important;
 }
 
-body.article-page .pull-quote,
-body.article-page blockquote {
+:is(body.article-page, body.about-page) .pull-quote,
+:is(body.article-page, body.about-page) blockquote {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   font-style: normal !important;
   font-weight: 500 !important;
-  font-size: clamp(1.3rem, 2.8vw, 2rem) !important;
-  line-height: 1.35 !important;
+  font-size: clamp(1.2rem, 2.4vw, 1.8rem) !important;
+  line-height: 1.4 !important;
   letter-spacing: -0.02em !important;
 }
 
-/* Stop portrait images taking over the screen. Show the whole image where possible. */
-body.article-page .article-body figure,
-body.article-page .story-prose figure,
-body.article-page .full-photo {
+/* Keep photos useful without letting portrait shots take over several screens. */
+:is(body.article-page, body.about-page) .article-body figure,
+:is(body.article-page, body.about-page) .story-prose figure,
+:is(body.article-page, body.about-page) .full-photo {
   text-align: center;
 }
 
-body.article-page .article-body figure img,
-body.article-page .story-prose figure img,
-body.article-page .full-photo img,
-body.article-page .article-body > img,
-body.article-page .story-prose > img {
+:is(body.article-page, body.about-page) .article-body figure img,
+:is(body.article-page, body.about-page) .story-prose figure img,
+:is(body.article-page, body.about-page) .full-photo img,
+:is(body.article-page, body.about-page) .article-body > img,
+:is(body.article-page, body.about-page) .story-prose > img {
   display: block;
   width: auto !important;
   max-width: 100% !important;
   height: auto !important;
-  max-height: 44rem !important;
+  max-height: 40rem !important;
   margin-right: auto !important;
   margin-left: auto !important;
   object-fit: contain !important;
   object-position: center !important;
 }
 
-body.article-page .article-hero-image img {
-  object-position: center !important;
-}
+body.article-page .article-hero-image img { object-position: center !important; }
 
 @media (max-width: 700px) {
-  body.article-page .article-body,
-  body.article-page .story-prose {
+  :is(body.article-page, body.about-page) .article-body,
+  :is(body.article-page, body.about-page) .story-prose {
     width: min(calc(100% - 2rem), 760px) !important;
-    font-size: 0.95rem !important;
+    font-size: 0.94rem !important;
     line-height: 1.72 !important;
   }
 
-  body.article-page .article-body p,
-  body.article-page .story-prose p,
-  body.article-page .article-body li,
-  body.article-page .story-prose li {
-    font-size: 0.95rem !important;
+  :is(body.article-page, body.about-page) .article-body p,
+  :is(body.article-page, body.about-page) .story-prose p,
+  :is(body.article-page, body.about-page) .article-body li,
+  :is(body.article-page, body.about-page) .story-prose li {
+    font-size: 0.94rem !important;
     line-height: 1.72 !important;
   }
 
-  body.article-page .article-opening h1 {
-    font-size: 2rem !important;
-    line-height: 1.08 !important;
+  body.article-page .article-opening h1,
+  body.about-page .creator-hero h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.1 !important;
   }
 
-  body.article-page .article-body h2,
-  body.article-page .story-prose h2 {
-    margin-top: 2.7rem !important;
-    font-size: 1.5rem !important;
+  :is(body.article-page, body.about-page) .article-body h2,
+  :is(body.article-page, body.about-page) .story-prose h2 {
+    margin-top: 2.5rem !important;
+    font-size: 1.4rem !important;
   }
 
-  body.article-page .article-body h3,
-  body.article-page .story-prose h3 {
-    font-size: 1.18rem !important;
-  }
+  :is(body.article-page, body.about-page) .article-body h3,
+  :is(body.article-page, body.about-page) .story-prose h3 { font-size: 1.14rem !important; }
 
-  body.article-page .pull-quote,
-  body.article-page blockquote {
+  :is(body.article-page, body.about-page) .pull-quote,
+  :is(body.article-page, body.about-page) blockquote {
     width: min(calc(100% - 2rem), 760px) !important;
-    margin: 2.7rem auto !important;
-    padding-left: 1rem !important;
-    font-size: 1.25rem !important;
-    line-height: 1.4 !important;
+    margin: 2.3rem auto !important;
+    padding-left: 0.9rem !important;
+    font-size: 1.15rem !important;
+    line-height: 1.42 !important;
   }
 
-  body.article-page .article-body figure,
-  body.article-page .story-prose figure,
-  body.article-page .full-photo {
-    width: 100% !important;
-    margin: 2.2rem auto !important;
+  :is(body.article-page, body.about-page) .article-body figure,
+  :is(body.article-page, body.about-page) .story-prose figure,
+  :is(body.article-page, body.about-page) .full-photo {
+    width: min(calc(100% - 2rem), 720px) !important;
+    margin: 2rem auto !important;
   }
 
-  body.article-page .article-body figure img,
-  body.article-page .story-prose figure img,
-  body.article-page .full-photo img,
-  body.article-page .article-body > img,
-  body.article-page .story-prose > img {
-    max-height: 62svh !important;
+  :is(body.article-page, body.about-page) .article-body figure img,
+  :is(body.article-page, body.about-page) .story-prose figure img,
+  :is(body.article-page, body.about-page) .full-photo img,
+  :is(body.article-page, body.about-page) .article-body > img,
+  :is(body.article-page, body.about-page) .story-prose > img {
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 58svh !important;
     border-radius: 0 !important;
+    object-fit: contain !important;
   }
 
   body.article-page .article-opening,
-  body.article-page .article-hero-image {
-    min-height: 0 !important;
-  }
+  body.article-page .article-hero-image { min-height: 0 !important; }
 
   body.article-page .article-hero-image img {
     width: 100% !important;
     height: auto !important;
-    max-height: 62svh !important;
+    max-height: 58svh !important;
     object-fit: cover !important;
   }
+
+  body.about-page .creator-hero { min-height: 27rem !important; }
+  body.about-page .creator-hero .lead,
+  body.about-page .creator-hero-aside { font-size: 0.9rem !important; line-height: 1.6 !important; }
 }
