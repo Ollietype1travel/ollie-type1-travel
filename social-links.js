@@ -1,6 +1,14 @@
 (function () {
   'use strict';
 
+  if (!document.querySelector('link[data-site-typography]')) {
+    var siteType = document.createElement('link');
+    siteType.rel = 'stylesheet';
+    siteType.href = '/site-typography.css?v=20260917-1';
+    siteType.setAttribute('data-site-typography', 'true');
+    document.head.appendChild(siteType);
+  }
+
   if (document.body.classList.contains('article-page') && !document.querySelector('link[data-article-cleanup]')) {
     var articleCss = document.createElement('link');
     articleCss.rel = 'stylesheet';
