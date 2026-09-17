@@ -10,11 +10,11 @@
   <meta property="og:description" content="Honest solo travel stories and practical guides for travelling with Type 1 diabetes and severe allergies." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ollietype1travel.com/" />
-  <meta property="og:image" content="https://ollietype1travel.com/Website%20assets/editorial-photos/selected/home-hero-smiling.jpg" />
+  <meta property="og:image" content="https://ollietype1travel.com/Website%20assets/editorial-photos/selected/vietnam-karst-landscape.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ollie Type 1 Travel" />
   <meta name="twitter:description" content="Honest solo travel stories and practical guides for travelling with Type 1 diabetes and severe allergies." />
-  <meta name="twitter:image" content="https://ollietype1travel.com/Website%20assets/editorial-photos/selected/home-hero-smiling.jpg" />
+  <meta name="twitter:image" content="https://ollietype1travel.com/Website%20assets/editorial-photos/selected/vietnam-karst-landscape.jpg" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://ollietype1travel.com/#website","url":"https://ollietype1travel.com/","name":"Ollie Type 1 Travel","inLanguage":"en-GB"},{"@type":"Person","@id":"https://ollietype1travel.com/about/#ollie","name":"Ollie","url":"https://ollietype1travel.com/about/","sameAs":["https://www.instagram.com/ollietype1travel/","https://www.tiktok.com/@ollietype1travel","https://www.facebook.com/ollietype1travel/","https://www.youtube.com/@ollietype1travel"]}]}</script>
   <link rel="icon" href="data:," />
   <link rel="stylesheet" href="/editorial-template/assets/css/main.css" />
@@ -30,23 +30,19 @@
     <main>
       <section class="home-hero" aria-labelledby="home-title">
         <div class="home-hero-photo">
-          <img id="home-hero-exact" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="360" height="480" alt="Ollie smiling at a mountain viewpoint in Southeast Asia" fetchpriority="high" decoding="async" style="opacity:0;transition:opacity .15s ease" />
+          <img id="home-hero-exact" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="720" height="960" alt="Ollie smiling at a mountain viewpoint in Southeast Asia" fetchpriority="high" decoding="async" style="opacity:0;transition:opacity .15s ease" />
           <script>
             (() => {
               const img = document.getElementById('home-hero-exact');
-              Promise.all(Array.from({ length: 8 }, (_, i) =>
-                fetch(`/Website%20assets/hero-chunks/hero-${i}.txt?v=20260917-exact-smile-3`, { cache: 'no-store' })
-                  .then(response => {
-                    if (!response.ok) throw new Error(`hero chunk ${i} failed`);
-                    return response.text();
-                  })
-              )).then(parts => {
-                img.onload = () => { img.style.opacity = '1'; };
-                img.src = 'data:image/jpeg;base64,' + parts.map(part => part.trim()).join('');
-              }).catch(() => {
-                img.onload = () => { img.style.opacity = '1'; };
-                img.src = '/Website%20assets/editorial-photos/selected/mountain-viewpoint.jpg?v=hero-fallback-1';
-              });
+              fetch('/Website%20assets/hero-chunks/hero-exact-smiling-20260917.txt?v=20260917-exact-final', { cache: 'no-store' })
+                .then(response => {
+                  if (!response.ok) throw new Error('Exact smiling hero failed to load');
+                  return response.text();
+                })
+                .then(data => {
+                  img.onload = () => { img.style.opacity = '1'; };
+                  img.src = 'data:image/jpeg;base64,' + data.trim();
+                });
             })();
           </script>
           <div class="home-hero-overlay">
@@ -161,6 +157,6 @@
     </main>
   </div></div></div>
   <script src="/publication-shell.js?v=20261001-shell"></script>
-  <script src="/social-links.js?v=20260917-hero3"></script>
+  <script src="/social-links.js?v=20260917-hero4"></script>
 </body>
 </html>
