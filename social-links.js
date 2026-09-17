@@ -4,7 +4,7 @@
   if (!document.querySelector('link[data-site-typography]')) {
     var siteType = document.createElement('link');
     siteType.rel = 'stylesheet';
-    siteType.href = '/site-typography.css?v=20260917-1';
+    siteType.href = '/site-typography.css?v=20260917-2';
     siteType.setAttribute('data-site-typography', 'true');
     document.head.appendChild(siteType);
   }
