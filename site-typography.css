@@ -1,0 +1,115 @@
+/* Site-wide typography cleanup: use the same quiet sans-serif system as the revised homepage. */
+:root {
+  --pub-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --pub-serif: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+body,
+body input,
+body select,
+body textarea,
+body button {
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body .section-heading h2,
+body .hub-group-header h2,
+body .article-card-copy h3,
+body .stacked-story h3,
+body .destination-copy h3,
+body .route-card h3,
+body .resource-toolkit-card h3,
+body .partnership-card h3,
+body .story-prose h2,
+body .story-prose h3,
+body .article-opening h1,
+body .article-body h1,
+body .article-body h2,
+body .article-body h3,
+body .article-body h4,
+body .pull-quote,
+body blockquote {
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  font-style: normal !important;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-weight: 600 !important;
+  letter-spacing: -0.025em !important;
+}
+
+body .story-prose,
+body .article-body,
+body .article-opening-copy,
+body .editorial-copy,
+body .resource-intro,
+body .contact-panel,
+body .publication-footer,
+body .publication-nav,
+body .publication-utility,
+body .publication-kicker,
+body .section-kicker,
+body .card-kicker,
+body .text-link,
+body .publication-button,
+body .publication-checklist {
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+}
+
+body .story-prose {
+  font-style: normal !important;
+}
+
+body .pull-quote,
+body blockquote {
+  font-weight: 500 !important;
+  letter-spacing: -0.015em !important;
+}
+
+body .publication-footer-brand,
+body .publication-footer-brand span {
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  font-style: normal !important;
+}
+
+/* Keep the tiny decorative welcome line and homepage logo treatment only. */
+body.homepage-v2 .home-intro-note,
+body.homepage-v2 .publication-brand,
+body.homepage-v2 #header .publication-brand {
+  font-family: "Libre Baskerville", Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+/* Smaller, calmer titles on content indexes and cards. */
+body:not(.homepage-v2) .article-card-copy h3,
+body:not(.homepage-v2) .stacked-story h3,
+body:not(.homepage-v2) .resource-toolkit-card h3,
+body:not(.homepage-v2) .route-card h3,
+body:not(.homepage-v2) .partnership-card h3 {
+  line-height: 1.18 !important;
+}
+
+@media (max-width: 700px) {
+  body:not(.homepage-v2) .article-card-copy h3,
+  body:not(.homepage-v2) .resource-toolkit-card h3,
+  body:not(.homepage-v2) .route-card h3,
+  body:not(.homepage-v2) .partnership-card h3 {
+    font-size: 1.35rem !important;
+  }
+
+  body:not(.homepage-v2) .stacked-story h3 {
+    font-size: 1.1rem !important;
+  }
+}
