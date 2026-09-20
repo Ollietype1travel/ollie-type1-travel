@@ -232,7 +232,8 @@ body.homepage-v3 a { text-decoration: none; }
 .home-destination-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: auto;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   background: #d9e1e3;
 }
@@ -366,8 +367,16 @@ body.homepage-v3 .publication-menu-toggle {
   .home-hero-photo {
     height: min(82vh, 820px);
   }
+  .home-hero-photo::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -16px;
+    background: url("/assets/home-hero-mountain.jpeg") center 40% / cover;
+    filter: blur(12px);
+  }
   .home-hero-photo > img {
-    width: 100%;
+    width: 88%;
     height: 100%;
     object-fit: cover;
     object-position: center 40%;
@@ -454,7 +463,7 @@ body.homepage-v3 .publication-menu-toggle {
     width: 100%;
     height: auto;
     max-height: none;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
   }
   .home-article-card img { aspect-ratio: 16 / 10; }
@@ -481,4 +490,22 @@ body.homepage-v3 .publication-menu-toggle {
 @media (prefers-reduced-motion: reduce) {
   .home-article-card img,
   .home-destination-card img { transition: none; }
+}
+
+/* Homepage social buttons retain accessible names without visible platform text. */
+.home-header-socials { display: flex; align-items: center; gap: 0.3rem; }
+.home-header-socials a { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 32px; border: 0 !important; color: #fff !important; }
+.home-header-socials svg { width: 18px; height: 18px; fill: currentColor; }
+.home-header-socials a:hover { opacity: 0.75; }
+.home-header-socials a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.home-header-socials-mobile { display: none; }
+@media (max-width: 980px) {
+  body.homepage-v3 #header { grid-template-columns: 1fr auto auto; column-gap: 0.6rem; }
+  .home-header-socials-mobile { display: flex; grid-column: 2; grid-row: 1; }
+  body.homepage-v3 .publication-menu-toggle { grid-column: 3; grid-row: 1; }
+}
+@media (min-width: 981px) and (max-width: 1400px) {
+  body.homepage-v3 #header { grid-template-columns: 1fr auto; row-gap: 0.7rem; }
+  body.homepage-v3 .publication-utility { grid-column: 2; grid-row: 1; }
+  body.homepage-v3 .publication-nav { grid-column: 1 / -1; grid-row: 2; justify-content: center; padding-inline: 0; }
 }
