@@ -31,6 +31,19 @@
     ].join("");
   }
 
+  // Keep the streamlined navigation exclusive to the homepage.
+  if (header && document.body.classList.contains("homepage-v3")) {
+    header.querySelector(".publication-nav").innerHTML = [
+      '<li><a href="/">Home</a></li>',
+      '<li><a href="/type-1-travel/">Type 1 travel</a></li>',
+      '<li><a href="/destinations/">Destinations</a></li>',
+      '<li><a href="/stories/">Stories</a></li>',
+      '<li><a href="/resources/">Resources</a></li>',
+      '<li><a href="https://travel-with-ollie.kit.com/group-trip">Group trips</a></li>'
+    ].join("");
+    header.querySelector(".publication-utility").innerHTML = '<a class="publication-partnership" href="/work-with-me/">Work with me</a>';
+  }
+
   var path = window.location.pathname;
 
   if (/^\/destinations\/(thailand|laos|cambodia|indonesia|malaysia)\/$/.test(path)) {
