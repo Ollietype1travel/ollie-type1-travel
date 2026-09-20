@@ -491,3 +491,11 @@ body.homepage-v3 .publication-partnership { padding: 0.5rem 0.8rem; }
   body.homepage-v3 .publication-utility { display: flex; grid-column: 2; grid-row: 1; }
   body.homepage-v3 .publication-menu-toggle { grid-column: 3; grid-row: 1; }
 }
+
+/* Give the practical guides the same photo-card treatment as featured stories. */
+.home-guides .home-heading-row h2 { max-width: none; }
+@media (min-width: 981px) {
+  body.homepage-v3 #header { grid-template-columns: minmax(8rem, 1fr) minmax(0, 4fr) minmax(8rem, 1fr); }
+  body.homepage-v3 .publication-nav { width: 100%; justify-content: space-evenly; gap: 1rem; padding-inline: 1rem; }
+  body.homepage-v3 .publication-nav a { font-size: 0.78rem; letter-spacing: 0.075em; white-space: nowrap; }
+}
