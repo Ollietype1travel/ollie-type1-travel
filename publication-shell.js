@@ -12,36 +12,16 @@
       '<button class="publication-menu-toggle" type="button" aria-expanded="false" aria-controls="publication-nav"><span aria-hidden="true">Menu</span><span class="label">Open navigation</span></button>',
       '<ul class="publication-nav" id="publication-nav">',
       '<li><a href="/">Home</a></li>',
-      '<li><a href="/blog/">Type 1 travel guides</a></li>',
-      '<li><a href="/destinations/">Destinations</a></li>',
-      '<li><a href="/travel-tips/">Travel tips</a></li>',
-      '<li><a href="/stories/">Stories</a></li>',
-      '<li><a href="/about/">About Ollie</a></li>',
-      '<li><a href="/resources/">Resources</a></li>',
-      '<li><a href="https://www.justgiving.com/page/ollie-100km-a4d?utm_medium=FA&amp;utm_source=CL" aria-label="Donate to Action4Diabetes on JustGiving">Donate to A4D</a></li>',
-      '<li class="publication-mobile-partnership"><a href="/work-with-me/">Work with me</a></li>',
-      '</ul>',
-      '<div class="publication-utility">',
-      '<a class="publication-partnership" href="/work-with-me/">Work with me</a>',
-      '<span class="publication-utility-rule" aria-hidden="true"></span>',
-      '<a href="https://www.instagram.com/ollietype1travel/" aria-label="Ollie Type 1 Travel on Instagram">Instagram</a>',
-      '<a href="https://www.youtube.com/@ollietype1travel" aria-label="Ollie Type 1 Travel on YouTube">YouTube</a>',
-      '<a class="publication-checklist" href="https://travel-with-ollie.kit.com/efe60fb8e9" data-conversion="checklist-cta">Free checklist</a>',
-      '</div>'
-    ].join("");
-  }
-
-  // Keep the streamlined navigation exclusive to the homepage.
-  if (header && document.body.classList.contains("homepage-v3")) {
-    header.querySelector(".publication-nav").innerHTML = [
-      '<li><a href="/">Home</a></li>',
       '<li><a href="/type-1-travel/">Type 1 travel</a></li>',
       '<li><a href="/destinations/">Destinations</a></li>',
       '<li><a href="/stories/">Stories</a></li>',
       '<li><a href="/resources/">Resources</a></li>',
-      '<li><a href="https://travel-with-ollie.kit.com/group-trip">Group trips</a></li>'
+      '<li><a href="https://travel-with-ollie.kit.com/group-trip">Group trips</a></li>',
+      '</ul>',
+      '<div class="publication-utility">',
+      '<a class="publication-partnership" href="/work-with-me/">Work with me</a>',
+      '</div>'
     ].join("");
-    header.querySelector(".publication-utility").innerHTML = '<a class="publication-partnership" href="/work-with-me/">Work with me</a>';
   }
 
   var path = window.location.pathname;

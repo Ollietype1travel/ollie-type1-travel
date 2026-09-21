@@ -4436,3 +4436,16 @@ body.publication-page .publication-partnership[aria-current="page"] {
       linear-gradient(90deg, rgba(46, 91, 101, .15), transparent 70%);
   }
 }
+
+/* Consistent navigation across all current site pages. */
+body.publication-page #header .publication-partnership { padding: 0.5rem 0.8rem; font-size: 0.66rem; font-weight: 650; letter-spacing: 0.1em; }
+@media (min-width: 981px) {
+  body.publication-page #header { grid-template-columns: minmax(8rem, 1fr) minmax(0, 4fr) minmax(8rem, 1fr); }
+  body.publication-page #header .publication-nav { width: 100%; justify-content: space-evenly; gap: 1rem; padding-inline: 1rem; }
+  body.publication-page #header .publication-nav a { font-size: 0.78rem; font-weight: 650; letter-spacing: 0.075em; white-space: nowrap; }
+}
+@media (max-width: 980px) {
+  body.publication-page #header { grid-template-columns: 1fr auto auto; column-gap: 0.65rem; }
+  body.publication-page #header .publication-utility { display: flex; grid-column: 2; grid-row: 1; }
+  body.publication-page #header .publication-menu-toggle { grid-column: 3; grid-row: 1; }
+}
