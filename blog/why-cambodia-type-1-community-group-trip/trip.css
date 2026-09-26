@@ -1,0 +1,47 @@
+/* Styles scoped to the Cambodia community-trip article. */
+body.cambodia-trip .article-opening .article-hero-image img { height: 100% !important; max-height: none !important; object-fit: cover !important; }
+body.cambodia-trip .article-opening { min-height: 42rem; }
+.cambodia-trip .trip-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.25rem 0 .5rem; }
+body.cambodia-trip a.trip-button { display: inline-flex; align-items: center; justify-content: center; padding: .9rem 1.1rem; min-height: 3rem; color: #fff !important; background: #8d452e; border: 1px solid #8d452e; font: 650 .9rem/1.4 "DM Sans",sans-serif; text-decoration: none; text-align: center; }
+body.cambodia-trip a.trip-button.secondary { background: transparent; color: #24434b !important; border-color: #24434b; }
+body.cambodia-trip a.trip-button:hover { background: #24434b; color: #fff !important; }
+body.cambodia-trip a.trip-button:focus-visible { outline: 3px solid #24434b; outline-offset: 3px; }
+.cambodia-trip .trip-summary,.cambodia-trip .trip-opening-cta { padding: clamp(1.2rem,3vw,2rem); background: #edf2ef; margin: 2rem 0; }
+.cambodia-trip .trip-note { border-left: 3px solid #b76c4c; padding: .4rem 1.4rem; margin: 2rem 0; }
+.cambodia-trip .trip-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.cambodia-trip .trip-facts dt { font-weight: 650; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+.cambodia-trip .trip-facts dd { margin: .25rem 0 0; color: #24434b; }
+.cambodia-trip .trip-itinerary { padding-left: 1.3rem; }
+.cambodia-trip .trip-itinerary li { padding: .5rem 0; }
+.cambodia-trip .trip-itinerary h3 { margin: 0 0 .4rem !important; }
+.cambodia-trip .trip-inclusions { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.cambodia-trip .trip-small { font-size: .85rem !important; line-height: 1.6 !important; }
+.cambodia-trip .trip-kicker { text-transform: uppercase; letter-spacing: .08em; font-size: .78rem !important; }
+body.cambodia-trip .article-body figure.trip-photo { width: min(100%, 430px) !important; margin: 2.5rem auto !important; }
+.cambodia-trip .trip-photo-frame { width: 100%; aspect-ratio: 9 / 16; overflow: hidden; }
+.cambodia-trip .trip-photo-frame.group { aspect-ratio: 3 / 4; }
+.cambodia-trip .trip-photo-frame.original { aspect-ratio: 1520 / 2704; }
+body.cambodia-trip .article-body figure.trip-photo img { width: 100% !important; height: 100% !important; max-height: none !important; object-fit: cover !important; }
+.cambodia-trip figcaption { margin-top: .65rem; font-size: .85rem; line-height: 1.5; }
+@media(max-width:700px) {
+ body.cambodia-trip .article-opening { min-height: 0; }
+ body.cambodia-trip .article-opening .article-hero-image { height: 27rem !important; }
+ .cambodia-trip .trip-inclusions { grid-template-columns: 1fr; gap: .5rem; }
+ .cambodia-trip .trip-actions { flex-direction: column; }
+ .cambodia-trip .trip-facts { gap: 1rem; }
+}
+
+.cambodia-trip .trip-photo-frame.natural { aspect-ratio: 3 / 4; }
+.cambodia-trip .trip-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+body.cambodia-trip .article-body .trip-gallery figure.trip-photo { margin: 1rem 0 !important; width: 100% !important; }
+@media(max-width:500px) { .cambodia-trip .trip-gallery { grid-template-columns: 1fr; } }
+
+/* Keep the shared article layers and link overrides readable on this post. */
+body.publication-page.cambodia-trip #header { background: #24434b !important; }
+body.publication-page.cambodia-trip .article-opening .article-hero-image { z-index: 0; height: 100% !important; }
+body.publication-page.cambodia-trip .article-opening::after { z-index: 1; }
+body.publication-page.cambodia-trip .article-opening-copy { z-index: 2; }
+body.publication-page.cambodia-trip .article-opening header.main a { color: #fff !important; }
+body.publication-page.article-page.cambodia-trip #main .article-body a.trip-button { color: #fff !important; }
+body.publication-page.article-page.cambodia-trip #main .article-body a.trip-button.secondary { color: #24434b !important; }
+body.publication-page.article-page.cambodia-trip #main .article-body a.trip-button:hover { color: #fff !important; }
