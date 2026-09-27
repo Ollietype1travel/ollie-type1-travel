@@ -88,3 +88,31 @@ body.publication-page.article-page.cambodia-trip .article-body { margin-top: 2re
 }
 body.publication-page.article-page.cambodia-trip .article-body > p:first-child { font-size: 1rem !important; line-height: 1.78 !important; font-weight: 400 !important; }
 @media(max-width:700px) { body.publication-page.article-page.cambodia-trip .article-body > p:first-child { font-size: .94rem !important; } }
+
+/* Compact editorial crops: ordinary photos never exceed 400px tall. */
+.cambodia-trip .trip-story-row { max-width: 760px; margin-inline: auto; grid-template-columns: minmax(0, 1fr) minmax(0, 44%); gap: 2rem; }
+.cambodia-trip .trip-community { grid-template-columns: minmax(0, 44%) minmax(0, 1fr); }
+.cambodia-trip .trip-photo-pair { max-width: 760px; margin: 2rem auto; gap: 2rem; }
+body.cambodia-trip .article-body figure.trip-photo,
+body.cambodia-trip .article-body .trip-community figure.trip-photo { max-width: 320px; }
+.cambodia-trip .trip-photo-frame,
+.cambodia-trip .trip-photo-frame.screenshot { aspect-ratio: 4 / 5; max-height: 400px; }
+body.cambodia-trip .article-body figure.trip-photo img { max-height: 400px !important; }
+body.cambodia-trip .article-body figure.trip-feature { width: 78% !important; max-width: 746px; margin: 2rem auto !important; }
+.cambodia-trip .trip-feature .trip-photo-frame { aspect-ratio: 16 / 9; max-height: 420px; }
+body.cambodia-trip .article-body figure.trip-feature img { max-height: 420px !important; }
+body.cambodia-trip .article-body img[src$="local-friends.jpg"] { object-position: 50% 68% !important; }
+body.cambodia-trip .article-body img[src$="lotus-farm.jpg"] { object-position: 50% 35% !important; }
+body.cambodia-trip .article-body img[src$="ta-prohm-friends.jpg"] { object-position: 62% 48% !important; }
+body.cambodia-trip .article-body img[src$="island-beach.jpg"] { object-position: 50% 61% !important; }
+body.cambodia-trip .article-body img[src$="community-glucose-check.jpg"] { object-position: 50% 53% !important; }
+body.cambodia-trip .article-body img[src$="community-conversation.jpg"] { object-position: 50% 54% !important; }
+@media(max-width:700px) {
+ .cambodia-trip .trip-story-row, .cambodia-trip .trip-photo-pair { grid-template-columns: 1fr; gap: 1.25rem; }
+ body.cambodia-trip .article-body figure.trip-photo,
+ body.cambodia-trip .article-body .trip-community figure.trip-photo,
+ body.cambodia-trip .article-body figure.trip-photo:has(.screenshot) { max-width: 280px; margin-inline: auto !important; }
+ .cambodia-trip .trip-photo-frame, .cambodia-trip .trip-photo-frame.screenshot { max-height: 350px; }
+ body.cambodia-trip .article-body figure.trip-photo img { max-height: 350px !important; }
+ body.cambodia-trip .article-body figure.trip-feature { width: 100% !important; max-width: none; }
+}
