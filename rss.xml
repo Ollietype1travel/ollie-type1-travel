@@ -5,7 +5,7 @@
     <link>https://ollietype1travel.com/blog/</link>
     <description>First-hand travel stories and practical guides for travelling with Type 1 diabetes and severe food allergies.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 28 Sep 2026 11:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 11:34:43 +0000</lastBuildDate>
     <item>
       <title>Why I’m Going Back to Cambodia</title>
       <link>https://ollietype1travel.com/blog/why-cambodia-type-1-community-group-trip/</link>
@@ -31,6 +31,14 @@
       <media:content url="https://ollietype1travel.com/Website%20assets/editorial-photos/selected/angkor-sunrise.jpg" medium="image" />
     </item>
     <item>
+      <title>Can You Stay in Hostels With Type 1 Diabetes?</title>
+      <link>https://ollietype1travel.com/blog/can-you-stay-in-hostels-with-type-1-diabetes/</link>
+      <guid isPermaLink="true">https://ollietype1travel.com/blog/can-you-stay-in-hostels-with-type-1-diabetes/</guid>
+      <description>My first-hand guide to hostel fridges, insulin storage, diabetes equipment and nighttime hypos while travelling with Type 1 diabetes.</description>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <media:content url="https://ollietype1travel.com/Website%20assets/editorial-photos/selected/ollie-portrait-hue.jpg" medium="image" />
+    </item>
+    <item>
       <title>The Day My Insulin Froze on the Ha Giang Loop</title>
       <link>https://ollietype1travel.com/blog/insulin-froze-ha-giang-loop-vietnam/</link>
       <guid isPermaLink="true">https://ollietype1travel.com/blog/insulin-froze-ha-giang-loop-vietnam/</guid>
@@ -39,12 +47,12 @@
       <media:content url="https://ollietype1travel.com/Website%20assets/editorial-photos/selected/ha-giang-back.jpg" medium="image" />
     </item>
     <item>
-      <title>Can You Stay in Hostels With Type 1 Diabetes?</title>
-      <link>https://ollietype1travel.com/blog/can-you-stay-in-hostels-with-type-1-diabetes/</link>
-      <guid isPermaLink="true">https://ollietype1travel.com/blog/can-you-stay-in-hostels-with-type-1-diabetes/</guid>
-      <description>My first-hand guide to hostel fridges, insulin storage, diabetes equipment and nighttime hypos while travelling with Type 1 diabetes.</description>
+      <title>6 Things Solo Travelling Taught Me About Type 1 Diabetes</title>
+      <link>https://ollietype1travel.com/blog/solo-travel-type-1-diabetes-lessons/</link>
+      <guid isPermaLink="true">https://ollietype1travel.com/blog/solo-travel-type-1-diabetes-lessons/</guid>
+      <description>Six lessons about capability, preparation, hypos and healthcare access from five months travelling solo with Type 1 diabetes.</description>
       <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <media:content url="https://ollietype1travel.com/Website%20assets/editorial-photos/selected/ollie-portrait-hue.jpg" medium="image" />
+      <media:content url="https://ollietype1travel.com/Website%20assets/submitted-photos/cambodia-temple-together.jpg" medium="image" />
     </item>
     <item>
       <title>Food Allergy Translation Cards in Southeast Asia</title>
@@ -63,14 +71,6 @@
       <media:content url="https://ollietype1travel.com/Website%20assets/editorial-photos/selected/volcano-close.jpg" medium="image" />
     </item>
     <item>
-      <title>What Travelling With Type 1 Diabetes Taught Me About Fear</title>
-      <link>https://ollietype1travel.com/blog/type-1-diabetes-travel-fear/</link>
-      <guid isPermaLink="true">https://ollietype1travel.com/blog/type-1-diabetes-travel-fear/</guid>
-      <description>Travelling with Type 1 diabetes did not make me fearless. It changed what confidence, planning and acting through fear meant.</description>
-      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <media:content url="https://ollietype1travel.com/Website%20assets/submitted-photos/cao-bang-with-local-guide-wide.jpg" medium="image" />
-    </item>
-    <item>
       <title>The First Time I Ate Out Abroad With Severe Allergies</title>
       <link>https://ollietype1travel.com/blog/first-time-ate-out-abroad-severe-allergies/</link>
       <guid isPermaLink="true">https://ollietype1travel.com/blog/first-time-ate-out-abroad-severe-allergies/</guid>
@@ -79,12 +79,12 @@
       <media:content url="https://ollietype1travel.com/Website%20assets/editorial-photos/selected/beach-local-guide.jpg" medium="image" />
     </item>
     <item>
-      <title>6 Things Solo Travelling Taught Me About Type 1 Diabetes</title>
-      <link>https://ollietype1travel.com/blog/solo-travel-type-1-diabetes-lessons/</link>
-      <guid isPermaLink="true">https://ollietype1travel.com/blog/solo-travel-type-1-diabetes-lessons/</guid>
-      <description>Six lessons about capability, preparation, hypos and healthcare access from five months travelling solo with Type 1 diabetes.</description>
+      <title>What Travelling With Type 1 Diabetes Taught Me About Fear</title>
+      <link>https://ollietype1travel.com/blog/type-1-diabetes-travel-fear/</link>
+      <guid isPermaLink="true">https://ollietype1travel.com/blog/type-1-diabetes-travel-fear/</guid>
+      <description>Travelling with Type 1 diabetes did not make me fearless. It changed what confidence, planning and acting through fear meant.</description>
       <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <media:content url="https://ollietype1travel.com/Website%20assets/submitted-photos/cambodia-temple-together.jpg" medium="image" />
+      <media:content url="https://ollietype1travel.com/Website%20assets/submitted-photos/cao-bang-with-local-guide-wide.jpg" medium="image" />
     </item>
   </channel>
 </rss>
