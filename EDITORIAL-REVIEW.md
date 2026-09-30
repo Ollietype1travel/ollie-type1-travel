@@ -60,7 +60,6 @@ This file is intentionally outside `dist/` and is not part of the public site.
 Airalo currently appears in:
 
 - `/blog/flying-from-uk-with-insulin-pens-needles-cgm/`
-- `/blog/travel-with-type-1-diabetes/`
 - `/destinations/vietnam/cao-bang-loop/`
 
 It is absent from these genuine articles:
@@ -71,6 +70,5 @@ It is absent from these genuine articles:
 - `/blog/insulin-froze-ha-giang-loop-vietnam/`
 - `/blog/keeping-insulin-cool-southeast-asia/`
 - `/blog/solo-travel-type-1-diabetes-lessons/`
-- `/blog/type-1-diabetes-travel-fear/`
 
 No missing placements were added during this design-only pass.

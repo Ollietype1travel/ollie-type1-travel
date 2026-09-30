@@ -55,7 +55,6 @@
     "/blog/insulin-froze-ha-giang-loop-vietnam/": [
       ["How I keep insulin cool while backpacking", "/blog/keeping-insulin-cool-southeast-asia/"],
       ["My hostel guide for Type 1 diabetes", "/blog/can-you-stay-in-hostels-with-type-1-diabetes/"],
-      ["What travelling taught me about fear", "/blog/type-1-diabetes-travel-fear/"]
     ],
     "/blog/flying-from-uk-with-insulin-pens-needles-cgm/": [
       ["My Type 1 travel packing resources", "/resources/"],
