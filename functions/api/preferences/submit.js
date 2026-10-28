@@ -30,8 +30,8 @@ export async function onRequestPost({ request, env }) {
     // A signup-session token can only ever be used once.
     if (mode === 'session' && sub.fields && sub.fields.survey_completed_at) return failVerify();
 
-    // Link tokens are single use: cleared in the same write that records the answers.
-    const extra = mode === 'link' ? { preferences_token: '', preferences_token_expires: '' } : {};
+    // Finishing by either route clears any emailed-link code, so the survey cannot be re-opened with an old email.
+    const extra = { preferences_token: '', preferences_token_expires: '' };
     await applyPreferences(env, sub, body.answers, extra);
     return json({ ok: true });
   } catch (e) {

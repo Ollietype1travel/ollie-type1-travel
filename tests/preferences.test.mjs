@@ -68,6 +68,35 @@ test('signup flow: token for a fresh subscriber, answers saved to the SAME subsc
   assert.ok(!kit.log.some((l) => l.startsWith('POST /subscribers')), 'must never create subscribers');
 });
 
+test('session stores a 14-day emailed-link code; that code works once and is cleared on save', async () => {
+  const kit = makeKit();
+  await call(session, { email: 'new@example.com' });
+  const f = kit.subs.get(1).fields;
+  assert.ok(f.preferences_token && f.preferences_token.length >= 40);
+  const days = (Date.parse(f.preferences_token_expires) - Date.now()) / 86400000;
+  assert.ok(days > 13 && days <= 14);
+  // The follow-up email link (?s=<id>&t=<code>) saves answers for that subscriber only.
+  const r = await call(submit, { s: '1', t: f.preferences_token, answers });
+  assert.equal(r.status, 200);
+  assert.equal(kit.subs.get(1).fields.preferences_token, '');
+  assert.equal((await call(submit, { s: '1', t: f.preferences_token, answers })).status, 403);
+  assert.deepEqual(kit.subs.get(3).fields, {});
+});
+
+test('a link with a blank code (subscriber has none yet) is refused', async () => {
+  makeKit();
+  assert.equal((await call(submit, { s: '1', t: '', answers })).status, 403);
+  assert.equal((await call(submit, { s: '1', t: undefined, answers })).status, 403);
+});
+
+test('finishing the signup flow clears the emailed-link code', async () => {
+  const kit = makeKit();
+  const s = await (await call(session, { email: 'new@example.com' })).json();
+  assert.ok(kit.subs.get(1).fields.preferences_token);
+  await call(submit, { token: s.token, answers });
+  assert.equal(kit.subs.get(1).fields.preferences_token, '');
+});
+
 test('other subscribers are untouched', async () => {
   const kit = makeKit();
   const s = await (await call(session, { email: 'new@example.com' })).json();

@@ -3,11 +3,14 @@
 // NOT trusted as proof of identity. It only lets us look up the subscriber, and we only issue
 // a short-lived token if that subscriber signed up in the last few minutes and has not already
 // completed the survey. Every failure returns the same generic response.
-import { json, failVerify, readJson, sameOrigin, checkTurnstile, tooMany, validEmail, signSession } from '../../_lib/security.js';
-import { findSubscriberByEmail } from '../../_lib/kit.js';
+import { json, failVerify, readJson, sameOrigin, checkTurnstile, tooMany, validEmail, signSession, randomToken } from '../../_lib/security.js';
+import { findSubscriberByEmail, updateFields } from '../../_lib/kit.js';
 
 const SIGNUP_WINDOW_MS = 15 * 60_000;
 const TOKEN_TTL_S = 30 * 60;
+// Also store a personal code on the subscriber, so the survey link in a follow-up email
+// (?s={{ subscriber.id }}&t={{ subscriber.preferences_token }}) works for the next 14 days.
+const EMAIL_LINK_TTL_MS = 14 * 24 * 60 * 60_000;
 
 export async function onRequestPost({ request, env }) {
   if (!env.KIT_API_KEY || !env.PREFS_SIGNING_SECRET) return json({ ok: false, error: 'config' }, 500);
@@ -24,6 +27,17 @@ export async function onRequestPost({ request, env }) {
     const fresh = sub && Date.now() - Date.parse(sub.created_at) <= SIGNUP_WINDOW_MS;
     const done = sub && sub.fields && sub.fields.survey_completed_at;
     if (!sub || sub.state !== 'active' || !fresh || done) return failVerify();
+    const f = sub.fields || {};
+    const live = f.preferences_token && f.preferences_token_expires && Date.parse(f.preferences_token_expires) > Date.now();
+    if (!live) {
+      // Best effort: the survey itself must still work if this write fails.
+      try {
+        await updateFields(env, sub, {
+          preferences_token: randomToken(32),
+          preferences_token_expires: new Date(Date.now() + EMAIL_LINK_TTL_MS).toISOString(),
+        });
+      } catch { /* ignore */ }
+    }
     return json({ ok: true, token: await signSession(env.PREFS_SIGNING_SECRET, sub.id, TOKEN_TTL_S) });
   } catch {
     return json({ ok: false, error: 'unavailable' }, 503);
