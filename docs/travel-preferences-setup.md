@@ -27,5 +27,5 @@ Rate limiting: add a WAF rate-limiting rule for URI path starting with `/api/pre
 
 ## Finding subscribers
 Fields: Travel Destinations, Preferred Travel Months, Preferred Travel Years, Trip Budget, Age Range, Travel Companions, Survey Completed At.
-Tags: `Interest - …` (24), `Travel Month - …` (13), `Travel Year - …` (3), `Travel Preferences Completed`.
-Example: Subscribers → filter **Tag is** `Interest - Southeast Asia` AND **Tag is** `Travel Month - February` AND **Trip Budget is** `£1,250–£2,000`. "Any of these months" needs a separate segment per month or an export.
+Tags: `Interest - <country>` (57 countries and polar regions), `Region - <region>` (10, added automatically for any country picked in that region), `Travel Month - …` (13), `Travel Year - …` (3), `Travel Preferences Completed`, `Preferences Link Requested`.
+Example: Subscribers → filter **Tag is** `Region - Southeast Asia` (or a single country such as `Interest - Thailand`) AND **Tag is** `Travel Month - February` AND **Trip Budget is** `£1,250–£2,000`. "Any of these months" needs a separate segment per month or an export.

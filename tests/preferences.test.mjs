@@ -51,7 +51,7 @@ const req = (body, origin = ORIGIN) => new Request('https://ollietype1travel.com
   method: 'POST', headers: { 'content-type': 'application/json', origin, 'cf-connecting-ip': String(Math.random()) }, body: JSON.stringify(body),
 });
 const call = (fn, body, env = ENV, origin) => fn({ request: req(body, origin), env });
-const answers = { destinations: ['Southeast Asia', 'Brazil', 'Southern Europe'], months: ['February', 'March', 'November'], years: ['2027', '2028'], budget: '£1,250–£2,000', age: '25–34', companions: 'Friend' };
+const answers = { destinations: ['Thailand', 'Vietnam', 'Brazil', 'Spain'], months: ['February', 'March', 'November'], years: ['2027', '2028'], budget: '£1,250–£2,000', age: '25–34', companions: 'Friend' };
 
 test('signup flow: token for a fresh subscriber, answers saved to the SAME subscriber, nothing created', async () => {
   const kit = makeKit();
@@ -60,7 +60,7 @@ test('signup flow: token for a fresh subscriber, answers saved to the SAME subsc
   const r = await call(submit, { token: s.token, answers });
   assert.equal((await r.json()).ok, true);
   const tags = kit.subTags.get(1);
-  for (const t of ['Interest - Southeast Asia', 'Interest - Brazil', 'Interest - Southern Europe', 'Travel Month - February', 'Travel Month - March', 'Travel Month - November', 'Travel Year - 2027', 'Travel Year - 2028', TAG_COMPLETED, 'Group Trip Waitlist']) assert.ok(tags.has(t), t);
+  for (const t of ['Interest - Thailand', 'Interest - Vietnam', 'Interest - Brazil', 'Interest - Spain', 'Region - Southeast Asia', 'Region - Europe', 'Region - Central & South America', 'Travel Month - February', 'Travel Month - March', 'Travel Month - November', 'Travel Year - 2027', 'Travel Year - 2028', TAG_COMPLETED, 'Group Trip Waitlist']) assert.ok(tags.has(t), t);
   assert.equal(kit.subs.get(1).fields.preferred_travel_months, 'February, March, November');
   assert.equal(kit.subs.get(1).fields.trip_budget, '£1,250–£2,000');
   assert.ok(kit.subs.get(1).fields.survey_completed_at);
@@ -117,11 +117,11 @@ test('changing answers removes only obsolete survey tags and keeps unrelated tag
   const f = kit.subs.get(1).fields;
   assert.ok(f.preferences_token && f.preferences_token_expires);
   assert.ok(kit.subTags.get(1).has(TAG_LINK_REQUESTED));
-  const r = await call(submit, { s: '1', t: f.preferences_token, answers: { destinations: ['Peru'], months: [`I'm flexible`], years: ['Just browsing'], budget: 'Not sure yet', age: '', companions: '' } });
+  const r = await call(submit, { s: '1', t: f.preferences_token, answers: { destinations: ['Peru', 'Kyrgyzstan'], months: [`I'm flexible`], years: ['Just browsing'], budget: 'Not sure yet', age: '', companions: '' } });
   assert.equal(r.status, 200);
   const tags = kit.subTags.get(1);
-  for (const gone of ['Interest - Brazil', 'Interest - Southeast Asia', 'Travel Month - February', 'Travel Year - 2027', 'Travel Year - 2028']) assert.ok(!tags.has(gone), gone);
-  for (const kept of ['Interest - Peru', 'Travel Month - Flexible', 'Travel Year - Browsing', 'Checklist Legacy', 'Group Trip Waitlist', TAG_COMPLETED]) assert.ok(tags.has(kept), kept);
+  for (const gone of ['Interest - Brazil', 'Interest - Thailand', 'Region - Southeast Asia', 'Region - Europe', 'Travel Month - February', 'Travel Year - 2027', 'Travel Year - 2028']) assert.ok(!tags.has(gone), gone);
+  for (const kept of ['Interest - Peru', 'Interest - Kyrgyzstan', 'Region - Central Asia', 'Region - Central & South America', 'Travel Month - Flexible', 'Travel Year - Browsing', 'Checklist Legacy', 'Group Trip Waitlist', TAG_COMPLETED]) assert.ok(tags.has(kept), kept);
   assert.equal(kit.subs.get(1).fields.age_range, '');
   // Link token is single use.
   assert.equal(kit.subs.get(1).fields.preferences_token, '');
@@ -144,7 +144,7 @@ test('validation: exclusivity, unknown values, empty submissions', async () => {
   makeKit();
   const t = (await (await call(session, { email: 'new@example.com' })).json()).token;
   for (const bad of [
-    { months: ["I'm flexible", 'May'] }, { years: ['Just browsing', '2027'] }, { destinations: ['Atlantis'] },
+    { months: ["I'm flexible", 'May'] }, { years: ['Just browsing', '2027'] }, { destinations: ['Atlantis'] }, { destinations: ['Brunei'] },
     { budget: '£5' }, { destinations: 'Peru' }, {}, { destinations: [], months: [] }, null, [],
   ]) assert.equal((await call(submit, { token: t, answers: bad })).status, 400, JSON.stringify(bad));
 });

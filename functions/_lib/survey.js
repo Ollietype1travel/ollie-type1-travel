@@ -3,10 +3,14 @@
 
 export const DESTINATIONS = {
   'North America': ['USA', 'Canada', 'Mexico'],
-  'Central & South America': ['Brazil', 'Colombia', 'Peru', 'Costa Rica', 'Argentina', 'Other Central or South America'],
-  'Europe': ['Southern Europe', 'Western Europe', 'Eastern Europe', 'Northern Europe'],
-  'Asia & Pacific': ['Southeast Asia', 'East Asia', 'South Asia', 'Australia & New Zealand', 'Pacific Islands'],
-  'Africa & Middle East': ['North Africa', 'East Africa', 'Southern Africa', 'Middle East'],
+  'Central & South America': ['Costa Rica', 'Colombia', 'Ecuador', 'Peru', 'Brazil', 'Chile', 'Argentina'],
+  'Europe': ['Spain', 'Italy', 'France', 'Portugal', 'Greece', 'Croatia', 'Switzerland', 'Austria', 'Germany', 'Norway', 'Iceland', 'Turkey'],
+  'Southeast Asia': ['Thailand', 'Vietnam', 'Cambodia', 'Laos', 'Myanmar', 'Malaysia', 'Singapore', 'Indonesia', 'Philippines'],
+  'East & South Asia': ['Japan', 'South Korea', 'China', 'Taiwan', 'India', 'Sri Lanka', 'Nepal'],
+  'Central Asia': ['Kazakhstan', 'Kyrgyzstan', 'Uzbekistan', 'Tajikistan'],
+  'Australia & Pacific': ['Australia', 'New Zealand', 'Fiji'],
+  'Africa': ['Morocco', 'Egypt', 'Kenya', 'Tanzania', 'Namibia', 'Botswana', 'South Africa'],
+  'Middle East': ['Jordan', 'UAE', 'Oman'],
   'Polar Regions': ['Arctic', 'Antarctica'],
 };
 export const ALL_DESTINATIONS = Object.values(DESTINATIONS).flat();
@@ -23,11 +27,14 @@ export const COMPANIONS = ['Solo', 'Partner', 'Friend', 'Family', 'Not sure yet'
 export const TAG_COMPLETED = 'Travel Preferences Completed';
 export const TAG_LINK_REQUESTED = 'Preferences Link Requested';
 const destTag = (d) => `Interest - ${d}`;
+// Every selected country also adds its region tag, so you can segment by region as well as country.
+const regionTag = (r) => `Region - ${r}`;
 const monthTag = (m) => `Travel Month - ${m === MONTH_FLEXIBLE ? 'Flexible' : m}`;
 const yearTag = (y) => `Travel Year - ${y === YEAR_BROWSING ? 'Browsing' : y}`;
 
 export const MANAGED_TAGS = new Set([
   ...ALL_DESTINATIONS.map(destTag),
+  ...Object.keys(DESTINATIONS).map(regionTag),
   ...MONTHS.map(monthTag),
   monthTag(MONTH_FLEXIBLE),
   ...YEARS.map(yearTag),
@@ -70,9 +77,12 @@ export function validateAnswers(raw) {
   return { destinations: ordered, months, years, budget, age, companions };
 }
 
+const REGION_OF = Object.fromEntries(Object.entries(DESTINATIONS).flatMap(([r, list]) => list.map((d) => [d, r])));
+
 export function desiredTags(a) {
   return new Set([
     ...a.destinations.map(destTag),
+    ...a.destinations.map((d) => regionTag(REGION_OF[d])),
     ...a.months.map(monthTag),
     ...a.years.map(yearTag),
   ]);
