@@ -14,13 +14,13 @@ const EMAIL_LINK_TTL_MS = 14 * 24 * 60 * 60_000;
 
 export async function onRequestPost({ request, env }) {
   if (!env.KIT_API_KEY || !env.PREFS_SIGNING_SECRET) return json({ ok: false, error: 'config' }, 500);
-  if (!sameOrigin(request, env)) return failVerify();
+  if (!sameOrigin(request, env)) return failVerify('origin');
   const ip = request.headers.get('cf-connecting-ip') || 'unknown';
   if (tooMany(`session:${ip}`, 8)) return json({ ok: false, error: 'rate' }, 429);
 
   const body = await readJson(request);
-  if (!body || !validEmail(body.email)) return failVerify();
-  if (!(await checkTurnstile(env, body.turnstile, ip))) return failVerify();
+  if (!body || !validEmail(body.email)) return failVerify('email-format');
+  if (!(await checkTurnstile(env, body.turnstile, ip))) return failVerify('turnstile');
 
   try {
     const sub = await findSubscriberByEmail(env, body.email.trim());

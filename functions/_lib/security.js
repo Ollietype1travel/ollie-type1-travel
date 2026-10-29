@@ -16,7 +16,9 @@ export function json(body, status = 200) {
 
 // Generic, non-revealing failure. The same body is used for every verification failure
 // so the endpoints cannot be used to discover who is on the list.
-export const failVerify = () => json({ ok: false, error: 'verify' }, 403);
+// `reason` is only ever passed for checks that run before any subscriber lookup, so it says
+// nothing about whether an address is subscribed.
+export const failVerify = (reason) => json(reason ? { ok: false, error: 'verify', reason } : { ok: false, error: 'verify' }, 403);
 
 export function b64url(bytes) {
   let s = '';
