@@ -2,15 +2,15 @@
    Layout: tour-operator page. Photo hero with an essentials bar, trip cards with price per person,
    a trip detail with sticky booking panel, then community, FAQ and a photo CTA. */
 :root {
-  --tc-ink: #12302f;
-  --tc-teal: #1f5f5b;
-  --tc-teal-dark: #0f3a3b;
-  --tc-muted: #5a6f6d;
-  --tc-mist: #eef3f1;
+  --tc-ink: #0f2742;
+  --tc-teal: #1e3a5f;
+  --tc-teal-dark: #0f2742;
+  --tc-muted: #5b6676;
+  --tc-mist: #f4f6f9;
   --tc-paper: #fbfcfa;
   --tc-white: #ffffff;
-  --tc-line: rgba(18, 48, 47, 0.12);
-  --tc-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --tc-line: rgba(15, 39, 66, 0.12);
+  --tc-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
 
 /* ---------- Base for the club page ---------- */
@@ -41,7 +41,7 @@ body.club-page { background: var(--tc-paper); }
   font: 600 0.95rem/1.2 var(--tc-sans); letter-spacing: 0; text-transform: none; text-decoration: none;
   box-shadow: none; height: auto; transition: background-color 0.15s ease, border-color 0.15s ease;
 }
-.club-page .tc-btn:focus-visible, .club-page .tc-textlink:focus-visible, .club-page .tc-link-light:focus-visible, .club-page summary:focus-visible { outline: 3px solid #8fc1bb; outline-offset: 3px; }
+.club-page .tc-btn:focus-visible, .club-page .tc-textlink:focus-visible, .club-page .tc-link-light:focus-visible, .club-page summary:focus-visible { outline: 3px solid #cbd5e1; outline-offset: 3px; }
 .club-page .tc-btn-dark { background: var(--tc-teal-dark); color: var(--tc-white) !important; }
 .club-page .tc-btn-dark:hover { background: var(--tc-teal); }
 .club-page .tc-btn-light { background: var(--tc-white); color: var(--tc-teal-dark) !important; }
@@ -57,11 +57,11 @@ body.club-page { background: var(--tc-paper); }
 /* ---------- Hero ---------- */
 .tc-hero { position: relative; isolation: isolate; padding-bottom: 2.5rem; overflow: hidden; }
 .tc-hero-img { position: absolute; inset: 0; width: 100%; height: 100% !important; object-fit: cover; object-position: center 60%; z-index: -2; }
-.tc-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10, 40, 40, 0.82) 0%, rgba(10, 40, 40, 0.55) 45%, rgba(10, 40, 40, 0.1) 100%), linear-gradient(0deg, rgba(10, 40, 40, 0.55) 0%, transparent 40%); }
+.tc-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(15, 39, 66, 0.82) 0%, rgba(15, 39, 66, 0.55) 45%, rgba(15, 39, 66, 0.1) 100%), linear-gradient(0deg, rgba(15, 39, 66, 0.55) 0%, transparent 40%); }
 .tc-hero-inner { padding-block: clamp(6rem, 14vw, 9.5rem) clamp(3rem, 7vw, 5rem); }
 .club-page .tc-hero h1 { color: var(--tc-white); font-size: clamp(2.4rem, 5.6vw, 4.4rem); line-height: 1.02; font-weight: 700; letter-spacing: -0.035em; max-width: 13ch; }
 .club-page .tc-hero-sub { color: rgba(255, 255, 255, 0.9); font-size: 1.15rem; max-width: 34rem; margin-top: 1.25rem; }
-.tc-hero-bar { list-style: none; margin: 0; padding: 1.25rem 1.5rem; background: var(--tc-white); border-radius: 18px; box-shadow: 0 20px 50px rgba(10, 40, 40, 0.18); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.tc-hero-bar { list-style: none; margin: 0; padding: 1.25rem 1.5rem; background: var(--tc-white); border-radius: 18px; box-shadow: 0 20px 50px rgba(15, 39, 66, 0.18); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
 .tc-hero-bar li { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0; min-width: 0; }
 .tc-hero-bar li + li { border-left: 1px solid var(--tc-line); padding-left: 1rem; }
 .tc-hero-bar .tc-ico { width: 1.5rem; height: 1.5rem; color: var(--tc-teal); margin-top: 0.1rem; }
@@ -70,8 +70,8 @@ body.club-page { background: var(--tc-paper); }
 
 /* ---------- Trip cards ---------- */
 .tc-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
-.tc-card { display: grid; grid-template-rows: auto 1fr; background: var(--tc-white); border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(10, 40, 40, 0.06), 0 12px 32px rgba(10, 40, 40, 0.08); min-width: 0; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.tc-card:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(10, 40, 40, 0.06), 0 18px 40px rgba(10, 40, 40, 0.14); }
+.tc-card { display: grid; grid-template-rows: auto 1fr; background: var(--tc-white); border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(15, 39, 66, 0.06), 0 12px 32px rgba(15, 39, 66, 0.08); min-width: 0; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.tc-card:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(15, 39, 66, 0.06), 0 18px 40px rgba(15, 39, 66, 0.14); }
 .tc-card-media { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; }
 .tc-card-media img { width: 100%; height: 100% !important; object-fit: cover; }
 .tc-badge { position: absolute; top: 1rem; left: 1rem; padding: 0.4rem 0.75rem; border-radius: 999px; background: var(--tc-teal-dark); color: var(--tc-white); font: 700 0.74rem/1 var(--tc-sans); letter-spacing: 0.02em; }
@@ -115,7 +115,7 @@ body.club-page { background: var(--tc-paper); }
 .tc-itinerary details[open] summary::after, .tc-faq details[open] summary::after { transform: rotate(-135deg); top: 1.55rem; }
 .tc-day { flex: none; width: 4rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tc-teal); }
 .club-page .tc-itinerary p { padding: 0 2.5rem 1.1rem 5rem; color: var(--tc-muted); font-size: 0.95rem; }
-.tc-book { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 6rem); display: grid; gap: 0.85rem; padding: 1.6rem; background: var(--tc-white); border-radius: 18px; box-shadow: 0 1px 2px rgba(10, 40, 40, 0.06), 0 16px 40px rgba(10, 40, 40, 0.12); }
+.tc-book { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 6rem); display: grid; gap: 0.85rem; padding: 1.6rem; background: var(--tc-white); border-radius: 18px; box-shadow: 0 1px 2px rgba(15, 39, 66, 0.06), 0 16px 40px rgba(15, 39, 66, 0.12); }
 .club-page .tc-book-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.35rem; font-size: 2rem; font-weight: 700; color: var(--tc-ink); font-variant-numeric: tabular-nums; }
 .tc-book-price small { font-size: 0.85rem; font-weight: 500; color: var(--tc-muted); }
 .tc-book-facts { margin: 0.25rem 0 0.5rem; display: grid; }
@@ -146,7 +146,7 @@ body.club-page { background: var(--tc-paper); }
 /* ---------- Final CTA ---------- */
 .tc-final { position: relative; isolation: isolate; overflow: hidden; text-align: center; }
 .tc-final img { position: absolute; inset: 0; width: 100%; height: 100% !important; object-fit: cover; object-position: center 40%; z-index: -2; }
-.tc-final::after { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(10, 40, 40, 0.62); }
+.tc-final::after { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(15, 39, 66, 0.62); }
 .tc-final-inner { padding-block: clamp(5rem, 12vw, 8rem); display: grid; justify-items: center; }
 .club-page .tc-final h2 { color: var(--tc-white); max-width: 20ch; font-size: clamp(2rem, 4.4vw, 3.2rem); }
 .tc-final .tc-hero-actions { justify-content: center; }
@@ -155,7 +155,7 @@ body.club-page { background: var(--tc-paper); }
 .club-kicker { margin: 0 0 0.9rem; font: 700 0.76rem/1 var(--tc-sans); letter-spacing: 0.14em; text-transform: uppercase; }
 .club-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .club-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0.8rem 1.5rem; border-radius: 999px; border: 1.5px solid transparent; font: 600 0.95rem/1.2 var(--tc-sans); text-decoration: none; transition: background-color 0.15s ease; }
-.club-btn:focus-visible { outline: 3px solid #8fc1bb; outline-offset: 3px; }
+.club-btn:focus-visible { outline: 3px solid #cbd5e1; outline-offset: 3px; }
 .club-btn-primary { background: var(--tc-white); color: var(--tc-teal-dark) !important; }
 .club-btn-primary:hover { background: var(--tc-mist); }
 .club-btn-ghost { border-color: rgba(255, 255, 255, 0.6); color: var(--tc-white) !important; }
@@ -173,9 +173,9 @@ body.club-page { background: var(--tc-paper); }
 .home-pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
 .home-pillar { position: relative; display: block; border-radius: 14px; overflow: hidden; color: var(--tc-white); text-decoration: none; aspect-ratio: 4 / 5; max-width: 100%; border-bottom: 0 !important; }
 .home-pillar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-.home-pillar::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(10, 40, 40, 0.88)); }
+.home-pillar::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(15, 39, 66, 0.88)); }
 .home-pillar:hover img { transform: scale(1.04); }
-.home-pillar:focus-visible { outline: 3px solid #8fc1bb; outline-offset: 3px; }
+.home-pillar:focus-visible { outline: 3px solid #cbd5e1; outline-offset: 3px; }
 .home-pillar-copy { position: absolute; z-index: 1; left: 1.25rem; right: 1.25rem; bottom: 1.25rem; }
 .home-page .home-pillar-copy strong { display: block; font: 700 1.4rem/1.2 var(--tc-sans); letter-spacing: -0.01em; margin-bottom: 0.35rem; color: var(--tc-white); }
 .home-pillar-copy span { font: 400 0.92rem/1.5 var(--tc-sans); color: rgba(255, 255, 255, 0.85); }
@@ -203,7 +203,7 @@ body.club-page { background: var(--tc-paper); }
   .tc-g4 { display: none; }
   .club-page .tc-itinerary p { padding-left: 0; padding-right: 0; }
   .home-pillar { aspect-ratio: 16 / 10; }
-  .tc-hero::after { background: linear-gradient(180deg, rgba(10, 40, 40, 0.35) 0%, rgba(10, 40, 40, 0.85) 75%); }
+  .tc-hero::after { background: linear-gradient(180deg, rgba(15, 39, 66, 0.35) 0%, rgba(15, 39, 66, 0.85) 75%); }
 }
 @media (max-width: 480px) {
   .tc-hero-bar { grid-template-columns: minmax(0, 1fr); padding: 1rem 1.25rem; }

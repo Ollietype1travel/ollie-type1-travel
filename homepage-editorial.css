@@ -1,12 +1,12 @@
 /* Homepage v3 — quiet travel-blog layout. Scoped so other pages keep their own styles. */
 body.homepage-v3 {
-  --home-paper: #fffefa;
-  --home-soft: #f3f3ef;
-  --home-ink: #24434b;
+  --home-paper: #ffffff;
+  --home-soft: #f4f6f9;
+  --home-ink: #0f2742;
   --home-muted: #66777c;
-  --home-line: rgba(36, 67, 75, 0.16);
-  --home-accent: #8aa2ac;
-  --home-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --home-line: rgba(15, 39, 66, 0.16);
+  --home-accent: #5b6676;
+  --home-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --home-serif: "Libre Baskerville", Georgia, serif;
   background: var(--home-paper);
   color: var(--home-muted);
@@ -50,7 +50,7 @@ body.homepage-v3 a { text-decoration: none; }
   text-transform: uppercase;
 }
 .home-text-link:hover,
-.home-text-link:focus-visible { color: #738f99 !important; }
+.home-text-link:focus-visible { color: #5b6676 !important; }
 
 /* HERO — preserve the existing portrait frame on mobile. */
 .home-hero { background: var(--home-paper); }
@@ -75,7 +75,7 @@ body.homepage-v3 a { text-decoration: none; }
   inset: 0;
   content: "";
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(20, 53, 62, 0.34) 0%, rgba(20, 53, 62, 0.08) 34%, transparent 56%);
+  background: linear-gradient(180deg, rgba(15, 39, 66, 0.34) 0%, rgba(15, 39, 66, 0.08) 34%, transparent 56%);
 }
 .home-hero-overlay {
   position: absolute;
@@ -97,7 +97,7 @@ body.homepage-v3 a { text-decoration: none; }
   font-size: clamp(2.35rem, 5vw, 4rem);
   font-weight: 500;
   line-height: 1.05;
-  text-shadow: 0 1px 12px rgba(12,43,51,0.24);
+  text-shadow: 0 1px 12px rgba(15, 39, 66, 0.24);
 }
 .home-actions {
   display: flex;
@@ -115,7 +115,7 @@ body.homepage-v3 a { text-decoration: none; }
   padding: 0 1rem;
   border: 1px solid rgba(255,255,255,0.85) !important;
   border-radius: 0;
-  background: rgba(29,66,74,0.18);
+  background: rgba(15, 39, 66, 0.18);
   color: #fff !important;
   font: 650 0.72rem/1 var(--home-sans);
   letter-spacing: 0.08em;
@@ -200,7 +200,7 @@ body.homepage-v3 a { text-decoration: none; }
   aspect-ratio: 16 / 10;
   object-position: center 60%;
   object-fit: cover;
-  background: #d9e1e3;
+  background: #f4f6f9;
 }
 .home-card-label {
   margin: 0.75rem 0 0.3rem;
@@ -235,7 +235,7 @@ body.homepage-v3 a { text-decoration: none; }
   height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  background: #d9e1e3;
+  background: #f4f6f9;
 }
 .home-destination-card h3 {
   margin: 0.75rem 0 0;
@@ -294,7 +294,7 @@ body.homepage-v3 a { text-decoration: none; }
 .home-checklist {
   padding: 3.8rem 0;
   border-top: 1px solid var(--home-line);
-  background: #799ca8;
+  background: #5b6676;
   text-align: center;
 }
 .home-checklist .home-kicker { color: rgba(255,255,255,0.78); }
@@ -333,7 +333,7 @@ body.homepage-v3 .publication-masthead {
   min-height: 4.3rem;
   padding-top: 0.85rem;
   padding-bottom: 0.85rem;
-  background: linear-gradient(180deg, rgba(26,59,69,0.34), rgba(26,59,69,0));
+  background: linear-gradient(180deg, rgba(15, 39, 66, 0.34), rgba(15, 39, 66, 0));
 }
 body.homepage-v3 .publication-brand,
 body.homepage-v3 #header .publication-brand {
@@ -399,7 +399,7 @@ body.homepage-v3 .publication-menu-toggle {
     object-fit: cover;
   }
   .home-hero-photo::after {
-    background: linear-gradient(180deg, rgba(19,53,62,0.42) 0%, rgba(19,53,62,0.08) 42%, transparent 60%);
+    background: linear-gradient(180deg, rgba(15, 39, 66, 0.42) 0%, rgba(15, 39, 66, 0.08) 42%, transparent 60%);
   }
   .home-hero-overlay {
     top: 5.8rem;

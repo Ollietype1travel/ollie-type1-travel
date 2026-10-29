@@ -1,19 +1,19 @@
 /* Cambodia article only: editorial photography and booking details. */
 .cambodia-trip .trip-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.25rem 0 .5rem; }
-body.cambodia-trip a.trip-button { display: inline-flex; align-items: center; justify-content: center; padding: .9rem 1.1rem; min-height: 3rem; color: #fff !important; background: #8d452e; border: 1px solid #8d452e; font: 650 .9rem/1.4 "DM Sans",sans-serif; text-decoration: none; text-align: center; }
-body.cambodia-trip a.trip-button.secondary { background: transparent; color: #24434b !important; border-color: #24434b; }
-body.cambodia-trip a.trip-button:hover { background: #24434b; color: #fff !important; }
-body.cambodia-trip a.trip-button:focus-visible { outline: 3px solid #24434b; outline-offset: 3px; }
-.cambodia-trip .trip-summary,.cambodia-trip .trip-opening-cta { padding: clamp(1.2rem,3vw,2rem); background: #edf2ef; margin: 2rem 0; }
-.cambodia-trip .trip-opening-cta { max-width: 760px; margin: 1.5rem auto 3rem; border-top: 4px solid #8d452e; box-shadow: 0 14px 34px rgba(36,67,75,.12); }
+body.cambodia-trip a.trip-button { display: inline-flex; align-items: center; justify-content: center; padding: .9rem 1.1rem; min-height: 3rem; color: #fff !important; background: #8d452e; border: 1px solid #8d452e; font: 650 .9rem/1.4 "Inter",sans-serif; text-decoration: none; text-align: center; }
+body.cambodia-trip a.trip-button.secondary { background: transparent; color: #0f2742 !important; border-color: #0f2742; }
+body.cambodia-trip a.trip-button:hover { background: #0f2742; color: #fff !important; }
+body.cambodia-trip a.trip-button:focus-visible { outline: 3px solid #0f2742; outline-offset: 3px; }
+.cambodia-trip .trip-summary,.cambodia-trip .trip-opening-cta { padding: clamp(1.2rem,3vw,2rem); background: #f4f6f9; margin: 2rem 0; }
+.cambodia-trip .trip-opening-cta { max-width: 760px; margin: 1.5rem auto 3rem; border-top: 4px solid #8d452e; box-shadow: 0 14px 34px rgba(15, 39, 66, .12); }
 .cambodia-trip .trip-opening-cta h2 { margin-bottom: .7rem !important; }
 .cambodia-trip .trip-opening-cta .trip-actions { margin: 1rem 0 .65rem; }
-body.cambodia-trip .trip-opening-cta a.trip-button.whatsapp-primary { width: 100%; min-height: 3.65rem; padding: 1rem 1.25rem; background: #1f6f5d; border-color: #1f6f5d; font-size: 1rem; letter-spacing: .025em; }
-body.cambodia-trip .trip-opening-cta a.trip-button.whatsapp-primary:hover { background: #24434b; border-color: #24434b; }
+body.cambodia-trip .trip-opening-cta a.trip-button.whatsapp-primary { width: 100%; min-height: 3.65rem; padding: 1rem 1.25rem; background: #1e3a5f; border-color: #1e3a5f; font-size: 1rem; letter-spacing: .025em; }
+body.cambodia-trip .trip-opening-cta a.trip-button.whatsapp-primary:hover { background: #0f2742; border-color: #0f2742; }
 .cambodia-trip .trip-note { border-left: 3px solid #b76c4c; padding: .4rem 1.4rem; margin: 2rem 0; }
 .cambodia-trip .trip-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .cambodia-trip .trip-facts dt { font-weight: 650; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
-.cambodia-trip .trip-facts dd { margin: .25rem 0 0; color: #24434b; }
+.cambodia-trip .trip-facts dd { margin: .25rem 0 0; color: #0f2742; }
 .cambodia-trip .trip-itinerary { padding-left: 1.3rem; }
 .cambodia-trip .trip-itinerary li { padding: .5rem 0; }
 .cambodia-trip .trip-itinerary h3 { margin: 0 0 .4rem !important; }
@@ -21,16 +21,16 @@ body.cambodia-trip .trip-opening-cta a.trip-button.whatsapp-primary:hover { back
 .cambodia-trip .trip-small { font-size: .85rem !important; line-height: 1.6 !important; }
 .cambodia-trip .trip-kicker { text-transform: uppercase; letter-spacing: .08em; font-size: .78rem !important; }
 
-body.publication-page.cambodia-trip #header { position: relative; background: #24434b !important; }
+body.publication-page.cambodia-trip #header { position: relative; background: #0f2742 !important; }
 .cambodia-trip .trip-hero { width: min(1120px, calc(100% - 3rem)); margin: 3.5rem auto; display: grid; grid-template-columns: 1fr; gap: 2rem; }
 .cambodia-trip .trip-hero-photo { display: block; width: 100%; aspect-ratio: 2 / 1; max-height: 500px; overflow: hidden; }
 .cambodia-trip .trip-hero-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 43%; }
 body.cambodia-trip .trip-title h1 { font-size: clamp(3rem,6vw,5.5rem); line-height: 1.05; margin: .6rem 0 1rem; }
 body.cambodia-trip .trip-subtitle { font-size: clamp(1.3rem,2.3vw,1.8rem); line-height: 1.4; }
-body.cambodia-trip .trip-title .article-meta, body.cambodia-trip .trip-title .article-updated { color: #52646a; }
+body.cambodia-trip .trip-title .article-meta, body.cambodia-trip .trip-title .article-updated { color: #1e3a5f; }
 body.cambodia-trip .trip-title .eyebrow { color: #8d452e; }
 body.cambodia-trip .trip-title .article-standfirst { font-size: 1.05rem; margin-top: 1.5rem; }
-body.cambodia-trip .trip-title a { font-family: "DM Sans", sans-serif; }
+body.cambodia-trip .trip-title a { font-family: "Inter", sans-serif; }
 body.cambodia-trip .article-body { width: min(calc(100% - 3rem), 960px); }
 body.cambodia-trip .article-body > p, body.cambodia-trip .article-body > h2, body.cambodia-trip .article-body > ol { max-width: 760px; margin-left: auto; margin-right: auto; }
 .cambodia-trip .trip-soft-cta { border-left: 2px solid #b76c4c; padding: .6rem 1rem; margin-block: 2rem; }
@@ -47,7 +47,7 @@ body.cambodia-trip .article-body figure.trip-inset { float: right; width: 38% !i
 .cambodia-trip .trip-reflection { display: flow-root; max-width: 760px; margin: 2rem auto 3rem; }
 .cambodia-trip figcaption { text-align: left; margin-top: .65rem; font-size: .85rem; line-height: 1.5; }
 body.publication-page.article-page.cambodia-trip #main .article-body a.trip-button { color: #fff !important; }
-body.publication-page.article-page.cambodia-trip #main .article-body a.trip-button.secondary { color: #24434b !important; }
+body.publication-page.article-page.cambodia-trip #main .article-body a.trip-button.secondary { color: #0f2742 !important; }
 body.publication-page.article-page.cambodia-trip #main .article-body a.trip-button:hover { color: #fff !important; }
 @media(max-width:700px) {
  .cambodia-trip .trip-hero { grid-template-columns: 1fr; width: calc(100% - 2rem); margin: 2rem auto; gap: 1.5rem; }
@@ -57,7 +57,7 @@ body.publication-page.article-page.cambodia-trip #main .article-body a.trip-butt
  body.cambodia-trip .article-body figure.trip-inset { float: none; width: 100% !important; margin: 0 0 1.5rem !important; }
 }
 
-body.cambodia-trip .trip-title p { font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important; text-transform: none; letter-spacing: normal; }
+body.cambodia-trip .trip-title p { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important; text-transform: none; letter-spacing: normal; }
 body.cambodia-trip .trip-title .eyebrow { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
 body.cambodia-trip .article-body figure.trip-photo .screenshot img { height: 100% !important; object-fit: cover !important; }
 
@@ -85,7 +85,7 @@ body.cambodia-trip .trip-hero { margin-top: 0; gap: 2rem; }
 body.cambodia-trip .trip-title { width: min(100%, 760px); margin: 0 auto; }
 body.publication-page.article-page.cambodia-trip .trip-title h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.18; font-weight: 700 !important; letter-spacing: normal !important; margin: 0 0 1.25rem; }
 body.publication-page.article-page.cambodia-trip .trip-title p { font-size: 1rem; font-weight: 400; line-height: 1.78; letter-spacing: normal; text-transform: none; margin: 0 0 1rem; }
-body.cambodia-trip .trip-meta { color: #52646a; }
+body.cambodia-trip .trip-meta { color: #1e3a5f; }
 body.publication-page.article-page.cambodia-trip .article-body :is(h2,h3) { font-weight: 700 !important; letter-spacing: normal !important; font-style: normal !important; text-transform: none; }
 body.publication-page.article-page.cambodia-trip .article-body { margin-top: 2rem; }
 @media(max-width:700px) {

@@ -3,10 +3,10 @@ body.theme-editorial {
   --ed-muted: #6d7480;
   --ed-line: #dfe3e8;
   --ed-paper: #fff;
-  --ed-soft: #f5f7f8;
-  --ed-accent: #1f8f87;
-  --ed-accent-dark: #14635e;
-  --ed-sand: #f2eee6;
+  --ed-soft: #f4f6f9;
+  --ed-accent: #1e3a5f;
+  --ed-accent-dark: #1e3a5f;
+  --ed-sand: #f4f6f9;
   margin: 0;
   background: var(--ed-paper);
   color: var(--ed-ink);
