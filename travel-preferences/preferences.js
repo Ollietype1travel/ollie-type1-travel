@@ -10,6 +10,7 @@
   var FLEX = "I'm flexible", BROWSING = 'Just browsing';
   var ui = { checking: $('pf-checking'), link: $('pf-link'), form: $('pf-form'), saved: $('pf-saved'), skipped: $('pf-skipped') };
   var identity = null; // { token } or { s, t }
+  var pendingSession = null; // set while a sign-up is still being confirmed
   var siteKey = (document.querySelector('meta[name="turnstile-sitekey"]') || {}).content || '';
   var hasTurnstile = siteKey && siteKey.indexOf('REPLACE_') !== 0;
 
@@ -20,12 +21,14 @@
   }
 
   // ---- Turnstile (loaded only when a site key is configured) ----
-  function turnstileToken(containerId) {
+  // onInteractive runs if Cloudflare needs the visitor to tick the box, so its container can be shown.
+  function turnstileToken(containerId, onInteractive) {
     return new Promise(function (resolve) {
       if (!hasTurnstile) { resolve(''); return; }
       function render() {
         window.turnstile.render('#' + containerId, {
-          sitekey: siteKey, appearance: 'interaction-only', callback: resolve, 'error-callback': function () { resolve(''); }, 'expired-callback': function () { resolve(''); }
+          sitekey: siteKey, appearance: 'interaction-only', callback: resolve, 'error-callback': function () { resolve(''); }, 'expired-callback': function () { resolve(''); },
+          'before-interactive-callback': onInteractive || function () {}
         });
       }
       if (window.turnstile) { render(); return; }
@@ -57,12 +60,15 @@
 
     if (s && t) { identity = { s: s, t: t }; show('form'); return; }
     if (email) {
-      turnstileToken('pf-turnstile-check').then(function (ts) {
-        post('session', { email: email, turnstile: ts }).then(function (d) {
-          if (d.ok && d.token) { identity = { token: d.token }; show('form'); }
-          else { $('pf-link-msg').textContent = "I couldn't match that sign-up automatically. For your privacy, I'll email you a personal link to your preferences instead." + ' (code ' + (d.status || '?') + (d.error ? ' ' + d.error : '') + (d.reason ? ' ' + d.reason : '') + ')'; show('link'); }
-        }, function () { show('link'); });
-      });
+      // Show the survey straight away and confirm the sign-up behind it. Saving waits for this
+      // if it hasn't finished; only a visitor who needs to tick the robot check sees it.
+      show('form');
+      pendingSession = turnstileToken('pf-turnstile-check', function () { show('checking'); }).then(function (ts) {
+        return post('session', { email: email, turnstile: ts });
+      }).then(function (d) {
+        if (d.ok && d.token) { identity = { token: d.token }; if (!ui.checking.hidden) show('form'); }
+        else { $('pf-link-msg').textContent = "I couldn't match that sign-up automatically. For your privacy, I'll email you a personal link to your preferences instead." + ' (code ' + (d.status || '?') + (d.error ? ' ' + d.error : '') + (d.reason ? ' ' + d.reason : '') + ')'; show('link'); }
+      }, function () { show('link'); });
       return;
     }
     show('link');
@@ -139,17 +145,22 @@
       err.textContent = 'Pick at least one answer, or choose "Skip for now".'; err.hidden = false; err.scrollIntoView({ block: 'center', behavior: 'smooth' }); return;
     }
     btn.disabled = true; btn.textContent = 'SAVING…';
-    var body = Object.assign({ answers: a }, identity);
-    post('submit', body).then(function (d) {
+    Promise.resolve(pendingSession).then(function () {
+      // A sign-up that could not be confirmed has already switched to the link screen.
+      if (!identity) { btn.disabled = false; btn.textContent = 'SAVE MY PREFERENCES →'; return; }
+      return post('submit', Object.assign({ answers: a }, identity)).then(onSaved, onSaveError);
+    });
+    function onSaved(d) {
       if (d.ok) { show('saved'); return; }
       btn.disabled = false; btn.textContent = 'SAVE MY PREFERENCES →';
       if (d.status === 403) { err.textContent = 'This link has expired or has already been used. Request a new one below.'; identity = null; show('link'); return; }
       err.textContent = d.status === 400 ? 'Some answers could not be read. Please check them and try again.' : "Sorry, that didn't save. Your answers are still here, so please try again in a moment.";
       err.hidden = false; err.scrollIntoView({ block: 'center', behavior: 'smooth' });
-    }, function () {
+    }
+    function onSaveError() {
       btn.disabled = false; btn.textContent = 'SAVE MY PREFERENCES →';
       err.textContent = "Sorry, that didn't save. Your answers are still here, so please try again in a moment."; err.hidden = false;
-    });
+    }
   });
   $('pf-skip').addEventListener('click', function () { show('skipped'); });
 

@@ -12,7 +12,8 @@ const TOKEN_TTL_S = 30 * 60;
 // (?s={{ subscriber.id }}&t={{ subscriber.preferences_token }}) works for the next 14 days.
 const EMAIL_LINK_TTL_MS = 14 * 24 * 60 * 60_000;
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost(context) {
+  const { request, env } = context;
   if (!env.KIT_API_KEY || !env.PREFS_SIGNING_SECRET) return json({ ok: false, error: 'config' }, 500);
   if (!sameOrigin(request, env)) return failVerify('origin');
   const ip = request.headers.get('cf-connecting-ip') || 'unknown';
@@ -34,13 +35,13 @@ export async function onRequestPost({ request, env }) {
     const f = sub.fields || {};
     const live = f.preferences_token && f.preferences_token_expires && Date.parse(f.preferences_token_expires) > Date.now();
     if (!live) {
-      // Best effort: the survey itself must still work if this write fails.
-      try {
-        await updateFields(env, sub, {
-          preferences_token: randomToken(32),
-          preferences_token_expires: new Date(Date.now() + EMAIL_LINK_TTL_MS).toISOString(),
-        });
-      } catch { /* ignore */ }
+      // Best effort: the survey itself must still work if this write fails. It runs after the
+      // response when the platform allows it, so the visitor doesn't wait for it.
+      const write = updateFields(env, sub, {
+        preferences_token: randomToken(32),
+        preferences_token_expires: new Date(Date.now() + EMAIL_LINK_TTL_MS).toISOString(),
+      }).catch(() => { /* ignore */ });
+      if (context.waitUntil) context.waitUntil(write); else await write;
     }
     return json({ ok: true, token: await signSession(env.PREFS_SIGNING_SECRET, sub.id, TOKEN_TTL_S) });
   } catch {
