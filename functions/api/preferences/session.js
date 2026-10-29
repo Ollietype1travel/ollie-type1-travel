@@ -4,7 +4,7 @@
 // a short-lived token if that subscriber signed up in the last few minutes and has not already
 // completed the survey. Every failure returns the same generic response.
 import { json, failVerify, readJson, sameOrigin, checkTurnstile, tooMany, validEmail, signSession, randomToken } from '../../_lib/security.js';
-import { findSubscriberByEmail, updateFields } from '../../_lib/kit.js';
+import { findRecentSignup, updateFields } from '../../_lib/kit.js';
 
 const SIGNUP_WINDOW_MS = 15 * 60_000;
 const TOKEN_TTL_S = 30 * 60;
@@ -23,7 +23,7 @@ export async function onRequestPost({ request, env }) {
   if (!(await checkTurnstile(env, body.turnstile, ip))) return failVerify('turnstile');
 
   try {
-    const sub = await findSubscriberByEmail(env, body.email.trim());
+    const sub = await findRecentSignup(env, body.email.trim(), SIGNUP_WINDOW_MS);
     const fresh = sub && Date.now() - Date.parse(sub.created_at) <= SIGNUP_WINDOW_MS;
     const done = sub && sub.fields && sub.fields.survey_completed_at;
     if (!sub || sub.state !== 'active' || !fresh || done) {

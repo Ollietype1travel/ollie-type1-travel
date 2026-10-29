@@ -39,6 +39,25 @@ export async function findSubscriberByEmail(env, email) {
   return s || null;
 }
 
+// The waitlist form that redirects to the survey (override with env.KIT_FORM_ID).
+const SIGNUP_FORM_ID = '9892604';
+
+// Kit's subscriber search is eventually consistent and can miss a signup for a minute or more,
+// so a lookup straight after the redirect finds nothing. The form's own subscriber list shows
+// new signups at once, so check the last few minutes of it before giving up.
+export async function findRecentSignup(env, email, windowMs) {
+  const found = await findSubscriberByEmail(env, email);
+  if (found) return found;
+  let s;
+  try {
+    const since = new Date(Date.now() - windowMs).toISOString();
+    const data = await call(env, 'GET', `/forms/${env.KIT_FORM_ID || SIGNUP_FORM_ID}/subscribers?added_after=${encodeURIComponent(since)}&per_page=1000`);
+    s = (data.subscribers || []).find((x) => x.email_address && x.email_address.toLowerCase() === email.toLowerCase());
+  } catch { return null; }
+  if (!s) return null;
+  try { return (await getSubscriber(env, s.id)) || s; } catch { return s; }
+}
+
 export async function getSubscriber(env, id) {
   try {
     const data = await call(env, 'GET', `/subscribers/${id}`);
