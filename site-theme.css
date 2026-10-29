@@ -623,3 +623,36 @@ html body:is(.link-bio-page, .media-kit-page) { background: #fff !important; col
 html body:is(.link-bio-page, .media-kit-page) :is(h1, h2, h3, h4, strong.stat, .stat, [class*="stat"] strong, [class*="metric"] strong) { font-family: var(--site-display) !important; font-style: normal !important; color: var(--site-ink); letter-spacing: -0.02em; }
 html body:is(.link-bio-page, .media-kit-page) :is(p, li, span, small, a, dt, dd, em) { font-family: var(--site-sans) !important; font-style: normal; }
 html body:is(.link-bio-page, .media-kit-page) :is(.eyebrow, .tag, [class*="kicker"], [class*="overline"]) { color: var(--site-teal) !important; }
+
+/* Homepage hero on desktop: the photo is portrait, so show all of it rather than cropping
+   it to the screen width, with a blurred copy of the same photo filling the sides. */
+@media (min-width: 900px) {
+  body.homepage-v3 .home-hero-photo { height: min(86vh, 860px) !important; background: var(--site-teal-dark) !important; }
+  body.homepage-v3 .home-hero-photo::before {
+    content: ""; position: absolute; inset: -60px; z-index: -1; pointer-events: none;
+    background: url("/assets/home-hero-mountain.jpeg") center 40% / cover no-repeat;
+    filter: blur(32px) brightness(0.72) saturate(1.1);
+  }
+  body.homepage-v3 .home-hero-photo > img {
+    position: relative; z-index: 0;
+    width: auto !important; height: 100% !important; max-width: 100%;
+    aspect-ratio: 1535 / 2048 !important; object-fit: cover !important;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Homepage menu sits on the photo: white text on a darker fade so every link reads. */
+@media (min-width: 981px) {
+  html body.publication-page.homepage-v3 #header.publication-masthead {
+    background: linear-gradient(180deg, rgba(10, 22, 40, 0.78) 0%, rgba(10, 22, 40, 0.45) 65%, rgba(10, 22, 40, 0) 100%) !important;
+  }
+  html body.publication-page.homepage-v3 #header .publication-nav a,
+  html body.publication-page.homepage-v3 #header .publication-brand,
+  html body.publication-page.homepage-v3 #header .publication-brand small {
+    color: #fff !important; opacity: 1 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), 0 0 14px rgba(0, 0, 0, 0.35) !important;
+  }
+  html body.publication-page.homepage-v3 #header .publication-nav a[aria-current] { color: var(--site-accent-soft) !important; border-color: var(--site-accent-soft) !important; }
+  html body.publication-page.homepage-v3 #header .publication-nav a:hover { color: var(--site-accent-soft) !important; }
+}
+html body.publication-page.homepage-v3 #header .publication-brand small { color: #fff !important; opacity: 1 !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important; }
