@@ -26,7 +26,11 @@ export async function onRequestPost({ request, env }) {
     const sub = await findSubscriberByEmail(env, body.email.trim());
     const fresh = sub && Date.now() - Date.parse(sub.created_at) <= SIGNUP_WINDOW_MS;
     const done = sub && sub.fields && sub.fields.survey_completed_at;
-    if (!sub || sub.state !== 'active' || !fresh || done) return failVerify();
+    if (!sub || sub.state !== 'active' || !fresh || done) {
+      // Server-side log only (visible in Cloudflare real-time logs). The response stays generic.
+      console.log('session refused:', !sub ? 'not-found' : sub.state !== 'active' ? 'state=' + sub.state : !fresh ? 'stale' : 'already-completed');
+      return failVerify();
+    }
     const f = sub.fields || {};
     const live = f.preferences_token && f.preferences_token_expires && Date.parse(f.preferences_token_expires) > Date.now();
     if (!live) {
