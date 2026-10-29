@@ -291,3 +291,24 @@ body.homepage-v3 #header .publication-brand span,
 body.homepage-v3 #header .publication-brand small { color: var(--site-white) !important; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35); }
 body.homepage-v3 .home-hero .home-welcome { color: var(--site-white) !important; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35); }
 body.homepage-v3 .home-hero h1 { text-shadow: 0 2px 18px rgba(0, 0, 0, 0.3); }
+
+/* Homepage menu over the hero photo: white text on a soft dark fade (desktop) */
+@media (min-width: 981px) {
+  body.homepage-v3 #header,
+  body.homepage-v3 .publication-masthead {
+    background: linear-gradient(180deg, rgba(8, 30, 31, 0.62) 0%, rgba(8, 30, 31, 0.32) 60%, rgba(8, 30, 31, 0) 100%) !important;
+    padding-bottom: 1.6rem !important;
+  }
+  body.homepage-v3 .publication-nav a {
+    color: #fff !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+    opacity: 0.92;
+  }
+  body.homepage-v3 .publication-nav a:hover,
+  body.homepage-v3 .publication-nav a[aria-current] { color: #fff !important; opacity: 1; }
+  body.homepage-v3 .publication-nav a[aria-current]::after,
+  body.homepage-v3 .publication-nav a[aria-current] { border-color: #fff !important; }
+}
