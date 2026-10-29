@@ -25,7 +25,7 @@
       if (!hasTurnstile) { resolve(''); return; }
       function render() {
         window.turnstile.render('#' + containerId, {
-          sitekey: siteKey, callback: resolve, 'error-callback': function () { resolve(''); }, 'expired-callback': function () { resolve(''); }
+          sitekey: siteKey, appearance: 'interaction-only', callback: resolve, 'error-callback': function () { resolve(''); }, 'expired-callback': function () { resolve(''); }
         });
       }
       if (window.turnstile) { render(); return; }
