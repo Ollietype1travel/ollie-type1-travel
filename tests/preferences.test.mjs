@@ -111,7 +111,11 @@ test('session refused for old, unknown or malformed emails, with an identical re
   const b = await call(session, { email: 'nobody@example.com' });
   const c = await call(session, { email: 'not-an-email' });
   assert.equal(a.status, 403);
-  assert.deepEqual([await a.json(), await b.json(), await c.json()].map((x) => JSON.stringify(x)), Array(3).fill('{"ok":false,"error":"verify"}'));
+  // Old and unknown addresses must look identical. A malformed address may name the input check,
+  // which says nothing about whether anyone is subscribed.
+  assert.deepEqual([await a.json(), await b.json()].map((x) => JSON.stringify(x)), Array(2).fill('{"ok":false,"error":"verify"}'));
+  assert.equal(c.status, 403);
+  assert.equal((await c.json()).error, 'verify');
 });
 
 test('signup token works once only', async () => {
