@@ -58,7 +58,7 @@
       turnstileToken('pf-turnstile-check').then(function (ts) {
         post('session', { email: email, turnstile: ts }).then(function (d) {
           if (d.ok && d.token) { identity = { token: d.token }; show('form'); }
-          else { $('pf-link-msg').textContent = "I couldn't match that sign-up automatically. For your privacy, I'll email you a personal link to your preferences instead."; show('link'); }
+          else { $('pf-link-msg').textContent = "I couldn't match that sign-up automatically. For your privacy, I'll email you a personal link to your preferences instead." + ' (code ' + (d.status || '?') + (d.error ? ' ' + d.error : '') + ')'; show('link'); }
         }, function () { show('link'); });
       });
       return;
