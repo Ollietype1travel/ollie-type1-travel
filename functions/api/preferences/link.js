@@ -23,19 +23,21 @@ export async function onRequestPost({ request, env }) {
 
   try {
     const sub = await findSubscriberByEmail(env, body.email.trim());
-    if (sub && sub.state === 'active') {
-      const ids = await tagIdMap(env);
-      const tagId = ids.get(TAG_LINK_REQUESTED);
-      if (tagId) {
-        await updateFields(env, sub, {
-          preferences_token: randomToken(32),
-          preferences_token_expires: new Date(Date.now() + TOKEN_TTL_MS).toISOString(),
-        });
-        // Remove then add so the Kit "tag added" automation fires on every request.
-        await removeTag(env, tagId, sub.id);
-        await addTag(env, tagId, sub.id);
-      }
-    }
+    if (sub && sub.state === 'active') await sendLink(env, sub);
   } catch { /* swallow: the response must not reveal anything */ }
   return generic();
+}
+
+// Also used by submit.js when an email-only save reaches someone who has already saved.
+export async function sendLink(env, sub) {
+  const ids = await tagIdMap(env);
+  const tagId = ids.get(TAG_LINK_REQUESTED);
+  if (!tagId) return;
+  await updateFields(env, sub, {
+    preferences_token: randomToken(32),
+    preferences_token_expires: new Date(Date.now() + TOKEN_TTL_MS).toISOString(),
+  });
+  // Remove then add so the Kit "tag added" automation fires on every request.
+  await removeTag(env, tagId, sub.id);
+  await addTag(env, tagId, sub.id);
 }

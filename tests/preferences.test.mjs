@@ -213,3 +213,34 @@ test('survey page markup matches the backend lists', async () => {
   for (const d of ALL_DESTINATIONS) assert.ok(html.includes(`value="${d.replace(/&/g, '&amp;')}"`), d);
   for (const m of MONTHS) assert.ok(html.includes(`value="${m}"`), m);
 });
+
+test('email-only save: fills in a subscriber who has never saved, never overwrites, answers identically', async () => {
+  const kit = makeKit();
+  // Older subscriber, never saved: answers go onto their record.
+  const first = await call(submit, { email: 'old@example.com', turnstile: 'x', answers });
+  assert.equal(first.status, 200);
+  assert.ok(kit.subs.get(2).fields.survey_completed_at);
+  assert.equal(kit.subs.get(2).fields.trip_budget, '£1,250–£2,000');
+  assert.ok(kit.subTags.get(2).has(TAG_COMPLETED));
+  // Second email-only save for the same address: nothing changes, a link is sent instead.
+  const again = await call(submit, { email: 'old@example.com', turnstile: 'x', answers: { ...answers, budget: 'Under £750' } });
+  assert.equal(kit.subs.get(2).fields.trip_budget, '£1,250–£2,000');
+  assert.ok(kit.subTags.get(2).has(TAG_LINK_REQUESTED));
+  assert.ok(kit.subs.get(2).fields.preferences_token);
+  // Unknown address: nothing created, same response as the other two.
+  const unknown = await call(submit, { email: 'nobody@example.com', turnstile: 'x', answers });
+  assert.deepEqual(await again.json(), await unknown.json());
+  assert.deepEqual(await first.json(), { ok: true });
+  assert.equal(kit.subs.size, 3);
+  assert.ok(!kit.log.some((l) => l.startsWith('POST /subscribers')), 'must never create subscribers');
+});
+
+test('email-only save: needs Turnstile, rejects bad answers the same way for any email', async () => {
+  const kit = makeKit();
+  const strict = { ...ENV, TURNSTILE_SECRET_KEY: 's', ALLOW_INSECURE_DEV: '' };
+  assert.equal((await call(submit, { email: 'old@example.com', answers }, strict)).status, 403);
+  assert.ok(!kit.subs.get(2).fields.survey_completed_at);
+  for (const email of ['old@example.com', 'nobody@example.com']) {
+    assert.equal((await call(submit, { email, turnstile: 'x', answers: { destinations: ['Atlantis'] } })).status, 400);
+  }
+});

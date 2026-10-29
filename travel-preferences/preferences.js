@@ -22,11 +22,14 @@
 
   // ---- Turnstile (loaded only when a site key is configured) ----
   // onInteractive runs if Cloudflare needs the visitor to tick the box, so its container can be shown.
+  // Each call gets a fresh token (tokens are single use), replacing any earlier widget in the container.
+  var widgets = {};
   function turnstileToken(containerId, onInteractive) {
     return new Promise(function (resolve) {
       if (!hasTurnstile) { resolve(''); return; }
       function render() {
-        window.turnstile.render('#' + containerId, {
+        if (widgets[containerId] !== undefined) window.turnstile.remove(widgets[containerId]);
+        widgets[containerId] = window.turnstile.render('#' + containerId, {
           sitekey: siteKey, appearance: 'interaction-only', callback: resolve, 'error-callback': function () { resolve(''); }, 'expired-callback': function () { resolve(''); },
           'before-interactive-callback': onInteractive || function () {}
         });
@@ -67,27 +70,22 @@
         return post('session', { email: email, turnstile: ts });
       }).then(function (d) {
         if (d.ok && d.token) { identity = { token: d.token }; if (!ui.checking.hidden) show('form'); }
-        else { $('pf-link-msg').textContent = "I couldn't match that sign-up automatically. For your privacy, I'll email you a personal link to your preferences instead." + ' (code ' + (d.status || '?') + (d.error ? ' ' + d.error : '') + (d.reason ? ' ' + d.reason : '') + ')'; show('link'); }
+        else { $('pf-link-msg').textContent = "I couldn't match your sign-up automatically. Pop in the email you signed up with and I'll link your answers to it." + ' (code ' + (d.status || '?') + (d.error ? ' ' + d.error : '') + (d.reason ? ' ' + d.reason : '') + ')'; show('link'); }
       }, function () { show('link'); });
       return;
     }
     show('link');
   }
 
-  // ---- Request a personal link ----
+  // ---- Link answers to an email: straight to the survey; the server decides on save ----
   $('pf-link-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var email = $('pf-link-email').value.trim(), err = $('pf-link-error');
     err.hidden = true;
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email address.'; err.hidden = false; return; }
-    var btn = e.target.querySelector('button[type=submit]'); btn.disabled = true;
-    turnstileToken('pf-turnstile-link').then(function (ts) {
-      return post('link', { email: email, turnstile: ts });
-    }).then(function (d) {
-      btn.disabled = false;
-      if (d.ok) { $('pf-link-sent').hidden = false; $('pf-link-form').hidden = true; }
-      else { err.textContent = 'Something went wrong. Please try again in a moment.'; err.hidden = false; }
-    }, function () { btn.disabled = false; err.textContent = 'Something went wrong. Please try again in a moment.'; err.hidden = false; });
+    identity = { email: email };
+    show('form');
+    window.scrollTo({ top: 0 });
   });
 
   // ---- Destination dropdowns ----
@@ -145,14 +143,21 @@
       err.textContent = 'Pick at least one answer, or choose "Skip for now".'; err.hidden = false; err.scrollIntoView({ block: 'center', behavior: 'smooth' }); return;
     }
     btn.disabled = true; btn.textContent = 'SAVING…';
+    var emailOnly = !!(identity && identity.email);
     Promise.resolve(pendingSession).then(function () {
       // A sign-up that could not be confirmed has already switched to the link screen.
       if (!identity) { btn.disabled = false; btn.textContent = 'SAVE MY PREFERENCES →'; return; }
-      return post('submit', Object.assign({ answers: a }, identity)).then(onSaved, onSaveError);
+      if (!emailOnly) return post('submit', Object.assign({ answers: a }, identity)).then(onSaved, onSaveError);
+      // An email alone proves nothing, so this save needs a fresh Turnstile check.
+      return turnstileToken('pf-turnstile-check', function () { show('checking'); }).then(function (ts) {
+        if (!ui.checking.hidden) show('form');
+        return post('submit', { email: identity.email, turnstile: ts, answers: a });
+      }).then(onSaved, onSaveError);
     });
     function onSaved(d) {
-      if (d.ok) { show('saved'); return; }
+      if (d.ok) { $('pf-saved-note').hidden = !emailOnly; show('saved'); return; }
       btn.disabled = false; btn.textContent = 'SAVE MY PREFERENCES →';
+      if (d.status === 403 && emailOnly) { err.textContent = "Sorry, I couldn't check that it's really you. Please try again in a moment."; err.hidden = false; return; }
       if (d.status === 403) { err.textContent = 'This link has expired or has already been used. Request a new one below.'; identity = null; show('link'); return; }
       err.textContent = d.status === 400 ? 'Some answers could not be read. Please check them and try again.' : "Sorry, that didn't save. Your answers are still here, so please try again in a moment.";
       err.hidden = false; err.scrollIntoView({ block: 'center', behavior: 'smooth' });
