@@ -46,6 +46,10 @@
   function init() {
     var p = new URLSearchParams(location.search);
     var email = p.get('email') || p.get('email_address') || '';
+    if (!email) {
+      // Kit does not document its parameter name, so accept an email from any parameter.
+      p.forEach(function (v) { if (!email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())) email = v.trim(); });
+    }
     var s = p.get('s'), t = p.get('t');
     if (location.search) history.replaceState(null, '', location.pathname);
 
