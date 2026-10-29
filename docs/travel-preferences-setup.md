@@ -34,6 +34,7 @@ Rate limiting: add a WAF rate-limiting rule for URI path starting with `/api/pre
   (confirm `subscriber.id` renders in a test send; if it does not, tell me and we switch to an email-based key).
 
 ## Finding subscribers
-Fields: Travel Destinations, Preferred Travel Months, Preferred Travel Years, Trip Budget, Age Range, Travel Companions, Survey Completed At.
-Tags: `Interest - <country>` (57 countries and polar regions), `Region - <region>` (10, added automatically for any country picked in that region), `Travel Month - …` (13), `Travel Year - …` (3), `Travel Preferences Completed`, `Preferences Link Requested`.
+Fields: Travel Destinations, Top Destination, Preferred Travel Months, Preferred Travel Years, Trip Budget, Age Range, Travel Companions, Booking Interest, Survey Completed At. Multi-choice answers (destinations, months, years, companions) are stored comma-separated.
+Tags: `Interest - <country>` (57 countries and polar regions), `Region - <region>` (10, added automatically for any country picked in that region), `Travel Month - …` (13), `Travel Year - …` (2027, 2028, 2029 or later, Not sure yet; the old `Travel Year - Browsing` is removed on the next save), `Travel Preferences Completed`, `Preferences Link Requested`.
+Saving again (through the emailed link) updates the same subscriber: fields are overwritten and survey tags that no longer apply are removed. The API never creates or duplicates subscribers.
 Example: Subscribers → filter **Tag is** `Region - Southeast Asia` (or a single country such as `Interest - Thailand`) AND **Tag is** `Travel Month - February` AND **Trip Budget is** `£1,250–£2,000`. "Any of these months" needs a separate segment per month or an export.

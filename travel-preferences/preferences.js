@@ -7,7 +7,7 @@
   'use strict';
   var $ = function (id) { return document.getElementById(id); };
   var API = '/api/preferences/';
-  var FLEX = "I'm flexible", BROWSING = 'Just browsing';
+  var FLEX = "I'm flexible", UNSURE = 'Not sure yet';
   var ui = { checking: $('pf-checking'), link: $('pf-link'), form: $('pf-form'), saved: $('pf-saved'), skipped: $('pf-skipped') };
   var identity = null; // { token } or { s, t }
   var pendingSession = null; // set while a sign-up is still being confirmed
@@ -101,6 +101,25 @@
     Array.prototype.forEach.call(boxes, function (b) { b.addEventListener('change', update); });
   });
 
+  // ---- Top pick: offered from the destinations chosen above ----
+  var top = $('top');
+  function refreshTop() {
+    var chosen = values('destinations'), current = top.value;
+    top.innerHTML = '';
+    var first = document.createElement('option');
+    first.value = '';
+    first.textContent = chosen.length ? 'Select your top pick' : 'Choose destinations above first';
+    top.appendChild(first);
+    chosen.forEach(function (d) {
+      var o = document.createElement('option');
+      o.value = d; o.textContent = d;
+      top.appendChild(o);
+    });
+    top.disabled = !chosen.length;
+    top.value = chosen.indexOf(current) >= 0 ? current : '';
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="destinations"]'), function (b) { b.addEventListener('change', refreshTop); });
+
   // ---- Mutually exclusive pills ----
   function exclusive(groupId, special) {
     var boxes = document.querySelectorAll('#' + groupId + ' input');
@@ -115,13 +134,14 @@
     });
   }
   exclusive('pf-months', FLEX);
-  exclusive('pf-years', BROWSING);
+  exclusive('pf-years', UNSURE);
+  exclusive('pf-companions', UNSURE);
 
   // Radios: tap the selected one again to clear it (every question is optional).
-  Array.prototype.forEach.call(document.querySelectorAll('#pf-companions input'), function (r) {
+  Array.prototype.forEach.call(document.querySelectorAll('#pf-booking input'), function (r) {
     r.addEventListener('click', function () {
       if (r.dataset.was === '1') { r.checked = false; r.dataset.was = ''; }
-      else { Array.prototype.forEach.call(document.querySelectorAll('#pf-companions input'), function (o) { o.dataset.was = ''; }); r.dataset.was = '1'; }
+      else { Array.prototype.forEach.call(document.querySelectorAll('#pf-booking input'), function (o) { o.dataset.was = ''; }); r.dataset.was = '1'; }
     });
   });
 
@@ -129,8 +149,8 @@
     return Array.prototype.map.call(document.querySelectorAll('input[name="' + name + '"]:checked'), function (i) { return i.value; });
   }
   function collect() {
-    var comp = values('companions');
-    return { destinations: values('destinations'), months: values('months'), years: values('years'), budget: $('budget').value, age: $('age').value, companions: comp[0] || '' };
+    var booking = values('booking');
+    return { destinations: values('destinations'), top: top.value, months: values('months'), years: values('years'), budget: $('budget').value, age: $('age').value, companions: values('companions'), booking: booking[0] || '' };
   }
 
   // ---- Submit and skip ----
@@ -139,7 +159,7 @@
     var err = $('pf-error'), btn = $('pf-save');
     err.hidden = true;
     var a = collect();
-    if (!a.destinations.length && !a.months.length && !a.years.length && !a.budget && !a.age && !a.companions) {
+    if (!a.destinations.length && !a.months.length && !a.years.length && !a.budget && !a.age && !a.companions.length && !a.booking) {
       err.textContent = 'Pick at least one answer, or choose "Skip for now".'; err.hidden = false; err.scrollIntoView({ block: 'center', behavior: 'smooth' }); return;
     }
     btn.disabled = true; btn.textContent = 'SAVING…';

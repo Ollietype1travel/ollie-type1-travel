@@ -17,11 +17,18 @@ export const ALL_DESTINATIONS = Object.values(DESTINATIONS).flat();
 
 export const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 export const MONTH_FLEXIBLE = "I'm flexible";
-export const YEARS = ['2027', '2028'];
-export const YEAR_BROWSING = 'Just browsing';
+export const YEARS = ['2027', '2028', '2029 or later'];
+export const YEAR_UNSURE = 'Not sure yet';
 export const BUDGETS = ['Under £750', '£750–£1,250', '£1,250–£2,000', '£2,000+', 'Not sure yet'];
-export const AGES = ['18–24', '25–34', '35–44', '45–54', '55+', 'Prefer not to say'];
-export const COMPANIONS = ['Solo', 'Partner', 'Friend', 'Family', 'Not sure yet'];
+export const AGES = ['18–24', '25–34', '35–44', '45–54', '55–64', '65+', 'Prefer not to say'];
+export const COMPANIONS = ['Solo', 'Partner', 'Friend', 'Family'];
+export const COMPANIONS_UNSURE = 'Not sure yet';
+export const BOOKING_INTEREST = [
+  'Very interested – actively looking to book',
+  'Interested – if the right trip comes along',
+  'Maybe – need more details',
+  'Just exploring',
+];
 
 // Tag names. Only tags in MANAGED_TAGS are ever added or removed by the survey.
 export const TAG_COMPLETED = 'Travel Preferences Completed';
@@ -30,7 +37,9 @@ const destTag = (d) => `Interest - ${d}`;
 // Every selected country also adds its region tag, so you can segment by region as well as country.
 const regionTag = (r) => `Region - ${r}`;
 const monthTag = (m) => `Travel Month - ${m === MONTH_FLEXIBLE ? 'Flexible' : m}`;
-const yearTag = (y) => `Travel Year - ${y === YEAR_BROWSING ? 'Browsing' : y}`;
+const yearTag = (y) => `Travel Year - ${y}`;
+// Tags from earlier versions of the survey: still managed, so a new save removes them.
+const LEGACY_TAGS = ['Travel Year - Browsing'];
 
 export const MANAGED_TAGS = new Set([
   ...ALL_DESTINATIONS.map(destTag),
@@ -38,7 +47,8 @@ export const MANAGED_TAGS = new Set([
   ...MONTHS.map(monthTag),
   monthTag(MONTH_FLEXIBLE),
   ...YEARS.map(yearTag),
-  yearTag(YEAR_BROWSING),
+  yearTag(YEAR_UNSURE),
+  ...LEGACY_TAGS,
 ]);
 
 const unique = (a) => [...new Set(a)];
@@ -58,23 +68,32 @@ export function validateAnswers(raw) {
 
   const destinations = validList(raw.destinations, ALL_DESTINATIONS, ALL_DESTINATIONS.length);
   let months = validList(raw.months, [...MONTHS, MONTH_FLEXIBLE], MONTHS.length + 1);
-  let years = validList(raw.years, [...YEARS, YEAR_BROWSING], YEARS.length + 1);
+  let years = validList(raw.years, [...YEARS, YEAR_UNSURE], YEARS.length + 1);
+  // Older versions of the page sent a single companion as a string.
+  const rawCompanions = typeof raw.companions === 'string' ? (raw.companions ? [raw.companions] : []) : raw.companions;
+  let companions = validList(rawCompanions, [...COMPANIONS, COMPANIONS_UNSURE], COMPANIONS.length + 1);
 
-  // "Flexible" / "Just browsing" are mutually exclusive with the specific options.
+  // "Flexible" / "Not sure yet" are mutually exclusive with the specific options.
   if (months.includes(MONTH_FLEXIBLE) && months.length > 1) throw new Error('invalid');
-  if (years.includes(YEAR_BROWSING) && years.length > 1) throw new Error('invalid');
-  // Keep calendar order so stored values are consistent.
+  if (years.includes(YEAR_UNSURE) && years.length > 1) throw new Error('invalid');
+  if (companions.includes(COMPANIONS_UNSURE) && companions.length > 1) throw new Error('invalid');
+  // Keep a fixed order so stored values are consistent.
   months = months.includes(MONTH_FLEXIBLE) ? months : MONTHS.filter((m) => months.includes(m));
-  years = years.includes(YEAR_BROWSING) ? years : YEARS.filter((y) => years.includes(y));
+  years = years.includes(YEAR_UNSURE) ? years : YEARS.filter((y) => years.includes(y));
+  companions = companions.includes(COMPANIONS_UNSURE) ? companions : COMPANIONS.filter((c) => companions.includes(c));
 
   const budget = raw.budget ? oneOf(raw.budget, BUDGETS) : null;
   const age = raw.age ? oneOf(raw.age, AGES) : null;
-  const companions = raw.companions ? oneOf(raw.companions, COMPANIONS) : null;
-  if ((raw.budget && !budget) || (raw.age && !age) || (raw.companions && !companions)) throw new Error('invalid');
+  const booking = raw.booking ? oneOf(raw.booking, BOOKING_INTEREST) : null;
+  if ((raw.budget && !budget) || (raw.age && !age) || (raw.booking && !booking)) throw new Error('invalid');
 
   const ordered = ALL_DESTINATIONS.filter((d) => destinations.includes(d));
-  if (!ordered.length && !months.length && !years.length && !budget && !age && !companions) throw new Error('empty');
-  return { destinations: ordered, months, years, budget, age, companions };
+  // The top pick has to be one of the destinations chosen above.
+  const top = raw.top ? oneOf(raw.top, ordered) : null;
+  if (raw.top && !top) throw new Error('invalid');
+
+  if (!ordered.length && !months.length && !years.length && !budget && !age && !companions.length && !booking) throw new Error('empty');
+  return { destinations: ordered, top, months, years, budget, age, companions, booking };
 }
 
 const REGION_OF = Object.fromEntries(Object.entries(DESTINATIONS).flatMap(([r, list]) => list.map((d) => [d, r])));
@@ -94,9 +113,11 @@ export function fieldValues(a, nowIso) {
     travel_destinations: a.destinations.join(', '),
     preferred_travel_months: a.months.join(', '),
     preferred_travel_years: a.years.join(', '),
+    top_destination: a.top || '',
     trip_budget: a.budget || '',
     age_range: a.age || '',
-    travel_companions: a.companions || '',
+    travel_companions: a.companions.join(', '),
+    booking_interest: a.booking || '',
     survey_completed_at: nowIso,
   };
 }

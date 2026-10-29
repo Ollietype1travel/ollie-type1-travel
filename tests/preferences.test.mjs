@@ -150,11 +150,11 @@ test('changing answers removes only obsolete survey tags and keeps unrelated tag
   const f = kit.subs.get(1).fields;
   assert.ok(f.preferences_token && f.preferences_token_expires);
   assert.ok(kit.subTags.get(1).has(TAG_LINK_REQUESTED));
-  const r = await call(submit, { s: '1', t: f.preferences_token, answers: { destinations: ['Peru', 'Kyrgyzstan'], months: [`I'm flexible`], years: ['Just browsing'], budget: 'Not sure yet', age: '', companions: '' } });
+  const r = await call(submit, { s: '1', t: f.preferences_token, answers: { destinations: ['Peru', 'Kyrgyzstan'], months: [`I'm flexible`], years: ['Not sure yet'], budget: 'Not sure yet', age: '', companions: '' } });
   assert.equal(r.status, 200);
   const tags = kit.subTags.get(1);
   for (const gone of ['Interest - Brazil', 'Interest - Thailand', 'Region - Southeast Asia', 'Region - Europe', 'Travel Month - February', 'Travel Year - 2027', 'Travel Year - 2028']) assert.ok(!tags.has(gone), gone);
-  for (const kept of ['Interest - Peru', 'Interest - Kyrgyzstan', 'Region - Central Asia', 'Region - Central & South America', 'Travel Month - Flexible', 'Travel Year - Browsing', 'Checklist Legacy', 'Group Trip Waitlist', TAG_COMPLETED]) assert.ok(tags.has(kept), kept);
+  for (const kept of ['Interest - Peru', 'Interest - Kyrgyzstan', 'Region - Central Asia', 'Region - Central & South America', 'Travel Month - Flexible', 'Travel Year - Not sure yet', 'Checklist Legacy', 'Group Trip Waitlist', TAG_COMPLETED]) assert.ok(tags.has(kept), kept);
   assert.equal(kit.subs.get(1).fields.age_range, '');
   // Link token is single use.
   assert.equal(kit.subs.get(1).fields.preferences_token, '');
@@ -177,7 +177,7 @@ test('validation: exclusivity, unknown values, empty submissions', async () => {
   makeKit();
   const t = (await (await call(session, { email: 'new@example.com' })).json()).token;
   for (const bad of [
-    { months: ["I'm flexible", 'May'] }, { years: ['Just browsing', '2027'] }, { destinations: ['Atlantis'] }, { destinations: ['Brunei'] },
+    { months: ["I'm flexible", 'May'] }, { years: ['Not sure yet', '2027'] }, { companions: ['Not sure yet', 'Solo'] }, { destinations: ['Spain'], top: 'Peru' }, { booking: 'Desperate' }, { age: '55+' }, { destinations: ['Atlantis'] }, { destinations: ['Brunei'] },
     { budget: '£5' }, { destinations: 'Peru' }, {}, { destinations: [], months: [] }, null, [],
   ]) assert.equal((await call(submit, { token: t, answers: bad })).status, 400, JSON.stringify(bad));
 });
@@ -243,4 +243,32 @@ test('email-only save: needs Turnstile, rejects bad answers the same way for any
   for (const email of ['old@example.com', 'nobody@example.com']) {
     assert.equal((await call(submit, { email, turnstile: 'x', answers: { destinations: ['Atlantis'] } })).status, 400);
   }
+});
+
+test('new questions: top pick, booking interest, multi companions and years are saved', async () => {
+  const kit = makeKit();
+  const t = (await (await call(session, { email: 'new@example.com' })).json()).token;
+  const r = await call(submit, { token: t, answers: {
+    destinations: ['Japan', 'Peru'], top: 'Peru', years: ['2028', '2029 or later'], age: '65+',
+    companions: ['Partner', 'Solo'], booking: 'Maybe – need more details',
+  } });
+  assert.equal(r.status, 200);
+  const f = kit.subs.get(1).fields;
+  assert.equal(f.top_destination, 'Peru');
+  assert.equal(f.booking_interest, 'Maybe – need more details');
+  assert.equal(f.travel_companions, 'Solo, Partner');
+  assert.equal(f.preferred_travel_years, '2028, 2029 or later');
+  assert.equal(f.age_range, '65+');
+  assert.ok(kit.subTags.get(1).has('Travel Year - 2029 or later'));
+});
+
+test('a re-save through an emailed link updates the same subscriber and drops old year tags', async () => {
+  const kit = makeKit();
+  kit.subTags.get(2).add('Travel Year - Browsing');
+  await call(link, { email: 'old@example.com' });
+  const f = kit.subs.get(2).fields;
+  assert.equal((await call(submit, { s: '2', t: f.preferences_token, answers: { years: ['Not sure yet'] } })).status, 200);
+  assert.ok(!kit.subTags.get(2).has('Travel Year - Browsing'));
+  assert.ok(kit.subTags.get(2).has('Travel Year - Not sure yet'));
+  assert.equal(kit.subs.size, 3);
 });
