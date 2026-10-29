@@ -48,8 +48,10 @@
     var email = p.get('email') || p.get('email_address') || '';
     if (!email) {
       // Kit does not document its parameter name, so accept an email from any parameter.
-      p.forEach(function (v) { if (!email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())) email = v.trim(); });
+      p.forEach(function (v) { if (!email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim().replace(/ /g, '+'))) email = v.trim(); });
     }
+    // A raw "+" in a URL is read as a space; put it back so addresses like name+tag@gmail.com survive.
+    email = email.trim().replace(/ /g, '+');
     var s = p.get('s'), t = p.get('t');
     if (location.search) history.replaceState(null, '', location.pathname);
 
