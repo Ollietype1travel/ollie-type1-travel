@@ -1,0 +1,213 @@
+/* Type 1 Travel Club: /club/ page plus the homepage club band and "Start here" cards.
+   Layout: tour-operator page. Photo hero with an essentials bar, trip cards with price per person,
+   a trip detail with sticky booking panel, then community, FAQ and a photo CTA. */
+:root {
+  --tc-ink: #12302f;
+  --tc-teal: #1f5f5b;
+  --tc-teal-dark: #0f3a3b;
+  --tc-muted: #5a6f6d;
+  --tc-mist: #eef3f1;
+  --tc-paper: #fbfcfa;
+  --tc-white: #ffffff;
+  --tc-line: rgba(18, 48, 47, 0.12);
+  --tc-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+/* ---------- Base for the club page ---------- */
+body.club-page { background: var(--tc-paper); }
+.club-page main { font-family: var(--tc-sans); color: var(--tc-ink); }
+.club-page main h1, .club-page main h2, .club-page main h3 { font-family: var(--tc-sans); color: var(--tc-ink); letter-spacing: -0.02em; text-wrap: balance; margin: 0; }
+.club-page main h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.12; font-weight: 700; }
+.club-page main h3 { font-size: 1.12rem; line-height: 1.3; font-weight: 700; }
+.club-page main p { margin: 0; line-height: 1.65; }
+.club-page main a { border-bottom: 0; }
+.tc-wrap { width: min(calc(100% - 3rem), 1180px); margin: 0 auto; }
+.tc-ico { width: 1.1em; height: 1.1em; flex: none; vertical-align: -0.15em; }
+.club-page .tc-eyebrow { font: 700 0.76rem/1 var(--tc-sans); letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85); margin-bottom: 1rem; }
+.club-page .tc-eyebrow-dark { color: var(--tc-teal); }
+.tc-lede { font-size: 1.08rem; color: var(--tc-muted); max-width: 40rem; }
+.club-page .tc-muted { color: var(--tc-muted); margin-top: 0.75rem; }
+.tc-muted a { color: var(--tc-teal); font-weight: 600; }
+.tc-section { padding-block: clamp(3.5rem, 8vw, 6rem); }
+.tc-section-tint { background: var(--tc-mist); }
+.tc-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2.25rem; }
+.tc-head-centre { justify-content: center; text-align: center; }
+.club-page .tc-head-centre h2 { max-width: 22ch; margin-inline: auto; }
+
+/* ---------- Buttons ---------- */
+.club-page .tc-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 3rem; padding: 0.8rem 1.5rem; border-radius: 999px; border: 1.5px solid transparent;
+  font: 600 0.95rem/1.2 var(--tc-sans); letter-spacing: 0; text-transform: none; text-decoration: none;
+  box-shadow: none; height: auto; transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.club-page .tc-btn:focus-visible, .club-page .tc-textlink:focus-visible, .club-page .tc-link-light:focus-visible, .club-page summary:focus-visible { outline: 3px solid #8fc1bb; outline-offset: 3px; }
+.club-page .tc-btn-dark { background: var(--tc-teal-dark); color: var(--tc-white) !important; }
+.club-page .tc-btn-dark:hover { background: var(--tc-teal); }
+.club-page .tc-btn-light { background: var(--tc-white); color: var(--tc-teal-dark) !important; }
+.club-page .tc-btn-light:hover { background: var(--tc-mist); }
+.club-page .tc-btn-outline { background: transparent; border-color: var(--tc-line); color: var(--tc-teal-dark) !important; }
+.club-page .tc-btn-outline:hover { border-color: var(--tc-teal-dark); }
+.club-page .tc-btn-block { width: 100%; }
+.club-page .tc-textlink { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--tc-teal) !important; font-weight: 600; text-decoration: none; }
+.club-page .tc-textlink:hover { color: var(--tc-teal-dark) !important; }
+.club-page .tc-link-light { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--tc-white) !important; font-weight: 600; text-decoration: none; }
+.tc-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-top: 1.75rem; }
+
+/* ---------- Hero ---------- */
+.tc-hero { position: relative; isolation: isolate; padding-bottom: 2.5rem; overflow: hidden; }
+.tc-hero-img { position: absolute; inset: 0; width: 100%; height: 100% !important; object-fit: cover; object-position: center 60%; z-index: -2; }
+.tc-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10, 40, 40, 0.82) 0%, rgba(10, 40, 40, 0.55) 45%, rgba(10, 40, 40, 0.1) 100%), linear-gradient(0deg, rgba(10, 40, 40, 0.55) 0%, transparent 40%); }
+.tc-hero-inner { padding-block: clamp(6rem, 14vw, 9.5rem) clamp(3rem, 7vw, 5rem); }
+.club-page .tc-hero h1 { color: var(--tc-white); font-size: clamp(2.4rem, 5.6vw, 4.4rem); line-height: 1.02; font-weight: 700; letter-spacing: -0.035em; max-width: 13ch; }
+.club-page .tc-hero-sub { color: rgba(255, 255, 255, 0.9); font-size: 1.15rem; max-width: 34rem; margin-top: 1.25rem; }
+.tc-hero-bar { list-style: none; margin: 0; padding: 1.25rem 1.5rem; background: var(--tc-white); border-radius: 18px; box-shadow: 0 20px 50px rgba(10, 40, 40, 0.18); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.tc-hero-bar li { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0; min-width: 0; }
+.tc-hero-bar li + li { border-left: 1px solid var(--tc-line); padding-left: 1rem; }
+.tc-hero-bar .tc-ico { width: 1.5rem; height: 1.5rem; color: var(--tc-teal); margin-top: 0.1rem; }
+.tc-hero-bar span { display: grid; gap: 0.15rem; font-size: 0.85rem; color: var(--tc-muted); line-height: 1.4; }
+.tc-hero-bar strong { color: var(--tc-ink); font-size: 0.98rem; }
+
+/* ---------- Trip cards ---------- */
+.tc-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.tc-card { display: grid; grid-template-rows: auto 1fr; background: var(--tc-white); border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(10, 40, 40, 0.06), 0 12px 32px rgba(10, 40, 40, 0.08); min-width: 0; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.tc-card:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(10, 40, 40, 0.06), 0 18px 40px rgba(10, 40, 40, 0.14); }
+.tc-card-media { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; }
+.tc-card-media img { width: 100%; height: 100% !important; object-fit: cover; }
+.tc-badge { position: absolute; top: 1rem; left: 1rem; padding: 0.4rem 0.75rem; border-radius: 999px; background: var(--tc-teal-dark); color: var(--tc-white); font: 700 0.74rem/1 var(--tc-sans); letter-spacing: 0.02em; }
+.tc-badge-soft { background: rgba(255, 255, 255, 0.92); color: var(--tc-teal-dark); }
+.tc-card-body { display: grid; grid-template-rows: auto auto 1fr auto; gap: 0.6rem; padding: 1.25rem 1.35rem 1.35rem; }
+.club-page .tc-card-place { display: flex; align-items: center; gap: 0.35rem; color: var(--tc-teal); font-size: 0.85rem; font-weight: 600; }
+.club-page .tc-card h3 { font-size: 1.25rem; }
+.club-page .tc-card h3 a { color: var(--tc-ink); text-decoration: none; }
+.tc-card-meta { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; color: var(--tc-muted); font-size: 0.9rem; }
+.tc-card-meta li { display: flex; align-items: center; gap: 0.35rem; padding: 0; }
+.club-page .tc-card-note { color: var(--tc-muted); font-size: 0.92rem; }
+.tc-card-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; padding-top: 1rem; margin-top: 0.4rem; border-top: 1px solid var(--tc-line); }
+.club-page .tc-price { display: grid; font-size: 1.5rem; font-weight: 700; line-height: 1.1; color: var(--tc-ink); font-variant-numeric: tabular-nums; }
+.tc-price small { font-size: 0.76rem; font-weight: 500; color: var(--tc-muted); }
+.club-page .tc-price-soon { font-size: 0.95rem; font-weight: 600; color: var(--tc-muted); align-self: center; }
+.club-page .tc-card-foot .tc-btn { min-height: 2.6rem; padding: 0.6rem 1.1rem; font-size: 0.9rem; }
+
+/* ---------- Why ---------- */
+.tc-why { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+.tc-why li { background: var(--tc-white); border-radius: 18px; padding: 1.6rem 1.4rem; display: grid; gap: 0.6rem; align-content: start; min-width: 0; }
+.tc-why-ico { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--tc-mist); color: var(--tc-teal); margin-bottom: 0.4rem; }
+.tc-why-ico .tc-ico { width: 1.35rem; height: 1.35rem; }
+.club-page .tc-why p { color: var(--tc-muted); font-size: 0.95rem; }
+
+/* ---------- Trip detail ---------- */
+.tc-gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 13rem 13rem; gap: 0.6rem; margin-bottom: 2.75rem; border-radius: 18px; overflow: hidden; }
+.tc-gallery img { width: 100%; height: 100% !important; object-fit: cover; }
+.tc-g1 { grid-row: span 2; object-position: center 72%; }
+.tc-g2 { grid-row: span 2; }
+.tc-detail { display: grid; grid-template-columns: minmax(0, 1fr) 22rem; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.tc-detail-main { display: grid; gap: 1.25rem; min-width: 0; }
+.tc-highlights { list-style: none; margin: 0.25rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem 1.5rem; }
+.tc-highlights li { position: relative; padding-left: 1.6rem; color: var(--tc-ink); font-size: 0.96rem; line-height: 1.5; }
+.tc-highlights li::before { content: ""; position: absolute; left: 0; top: 0.2rem; width: 1.1rem; height: 1.1rem; border-radius: 50%; background: var(--tc-mist) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4.5 8.2 2.2 2.2 4.8-4.8' fill='none' stroke='%231f5f5b' stroke-width='1.8'/%3E%3C/svg%3E") center / 0.85rem no-repeat; }
+.club-page .tc-subhead { margin-top: 1rem; font-size: 1.35rem; }
+.tc-itinerary { border-top: 1px solid var(--tc-line); }
+.tc-itinerary details, .tc-faq details { border-bottom: 1px solid var(--tc-line); }
+.tc-itinerary summary, .tc-faq summary { list-style: none; cursor: pointer; position: relative; display: flex; align-items: baseline; gap: 1rem; padding: 1rem 2.5rem 1rem 0; font-weight: 600; color: var(--tc-ink); }
+.tc-itinerary summary::-webkit-details-marker, .tc-faq summary::-webkit-details-marker { display: none; }
+.tc-itinerary summary::after, .tc-faq summary::after { content: ""; position: absolute; right: 0.4rem; top: 1.3rem; width: 0.55rem; height: 0.55rem; border-right: 2px solid var(--tc-teal); border-bottom: 2px solid var(--tc-teal); transform: rotate(45deg); transition: transform 0.2s ease; }
+.tc-itinerary details[open] summary::after, .tc-faq details[open] summary::after { transform: rotate(-135deg); top: 1.55rem; }
+.tc-day { flex: none; width: 4rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tc-teal); }
+.club-page .tc-itinerary p { padding: 0 2.5rem 1.1rem 5rem; color: var(--tc-muted); font-size: 0.95rem; }
+.tc-book { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 6rem); display: grid; gap: 0.85rem; padding: 1.6rem; background: var(--tc-white); border-radius: 18px; box-shadow: 0 1px 2px rgba(10, 40, 40, 0.06), 0 16px 40px rgba(10, 40, 40, 0.12); }
+.club-page .tc-book-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.35rem; font-size: 2rem; font-weight: 700; color: var(--tc-ink); font-variant-numeric: tabular-nums; }
+.tc-book-price small { font-size: 0.85rem; font-weight: 500; color: var(--tc-muted); }
+.tc-book-facts { margin: 0.25rem 0 0.5rem; display: grid; }
+.tc-book-facts div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.65rem 0; border-top: 1px solid var(--tc-line); font-size: 0.9rem; }
+.tc-book-facts dt { color: var(--tc-muted); margin: 0; font-weight: 500; }
+.tc-book-facts dd { margin: 0; font-weight: 600; text-align: right; color: var(--tc-ink); }
+.club-page .tc-book-note { font-size: 0.8rem; color: var(--tc-muted); text-align: center; }
+
+/* ---------- Ticker ---------- */
+.tc-ticker { background: var(--tc-teal-dark); color: rgba(255, 255, 255, 0.92); overflow: hidden; padding-block: 1.1rem; }
+.tc-ticker-track { display: flex; width: max-content; gap: 3rem; animation: tc-scroll 38s linear infinite; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+.tc-ticker-track span { display: inline-flex; align-items: center; gap: 3rem; }
+.tc-ticker-track span::after { content: ""; width: 0.4rem; height: 0.4rem; border-radius: 50%; background: rgba(255, 255, 255, 0.4); }
+@keyframes tc-scroll { to { transform: translateX(calc(-50% - 1.5rem)); } }
+
+/* ---------- Community ---------- */
+.tc-community { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.tc-community > div:last-child { display: grid; gap: 1rem; }
+.tc-community-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.tc-community-photos img { width: 100%; height: auto !important; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 18px; }
+.tc-community-photos img:last-child { margin-top: 3rem; }
+
+/* ---------- FAQ ---------- */
+.tc-faq-wrap { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.tc-faq { border-top: 1px solid var(--tc-line); }
+.club-page .tc-faq p { padding: 0 2.5rem 1.2rem 0; color: var(--tc-muted); }
+
+/* ---------- Final CTA ---------- */
+.tc-final { position: relative; isolation: isolate; overflow: hidden; text-align: center; }
+.tc-final img { position: absolute; inset: 0; width: 100%; height: 100% !important; object-fit: cover; object-position: center 40%; z-index: -2; }
+.tc-final::after { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(10, 40, 40, 0.62); }
+.tc-final-inner { padding-block: clamp(5rem, 12vw, 8rem); display: grid; justify-items: center; }
+.club-page .tc-final h2 { color: var(--tc-white); max-width: 20ch; font-size: clamp(2rem, 4.4vw, 3.2rem); }
+.tc-final .tc-hero-actions { justify-content: center; }
+
+/* ---------- Homepage club band ---------- */
+.club-kicker { margin: 0 0 0.9rem; font: 700 0.76rem/1 var(--tc-sans); letter-spacing: 0.14em; text-transform: uppercase; }
+.club-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.club-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0.8rem 1.5rem; border-radius: 999px; border: 1.5px solid transparent; font: 600 0.95rem/1.2 var(--tc-sans); text-decoration: none; transition: background-color 0.15s ease; }
+.club-btn:focus-visible { outline: 3px solid #8fc1bb; outline-offset: 3px; }
+.club-btn-primary { background: var(--tc-white); color: var(--tc-teal-dark) !important; }
+.club-btn-primary:hover { background: var(--tc-mist); }
+.club-btn-ghost { border-color: rgba(255, 255, 255, 0.6); color: var(--tc-white) !important; }
+.club-btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
+.home-club { background: var(--tc-teal-dark); color: var(--tc-white); padding-block: clamp(3rem, 7vw, 5rem); }
+.home-club-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.home-club-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.home-club-photos img { width: 100%; max-width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 14px; }
+.home-club-photos img:last-child { margin-top: 2.5rem; }
+.home-page .home-club .club-kicker { color: rgba(255, 255, 255, 0.75); }
+.home-page .home-club h2 { font-family: var(--tc-sans); font-weight: 700; letter-spacing: -0.02em; font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.12; margin: 0 0 1rem; color: var(--tc-white); text-wrap: balance; }
+.home-page .home-club p { color: rgba(255, 255, 255, 0.85); line-height: 1.7; margin: 0 0 1.6rem; }
+
+/* Homepage "Start here" cards */
+.home-pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.home-pillar { position: relative; display: block; border-radius: 14px; overflow: hidden; color: var(--tc-white); text-decoration: none; aspect-ratio: 4 / 5; max-width: 100%; border-bottom: 0 !important; }
+.home-pillar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.home-pillar::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(10, 40, 40, 0.88)); }
+.home-pillar:hover img { transform: scale(1.04); }
+.home-pillar:focus-visible { outline: 3px solid #8fc1bb; outline-offset: 3px; }
+.home-pillar-copy { position: absolute; z-index: 1; left: 1.25rem; right: 1.25rem; bottom: 1.25rem; }
+.home-page .home-pillar-copy strong { display: block; font: 700 1.4rem/1.2 var(--tc-sans); letter-spacing: -0.01em; margin-bottom: 0.35rem; color: var(--tc-white); }
+.home-pillar-copy span { font: 400 0.92rem/1.5 var(--tc-sans); color: rgba(255, 255, 255, 0.85); }
+
+/* ---------- Motion and responsive ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .tc-ticker-track { animation: none; }
+  .tc-card, .home-pillar img, .club-page .tc-btn, .club-btn { transition: none; }
+  .tc-card:hover { transform: none; }
+}
+@media (max-width: 1000px) {
+  .tc-why { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tc-hero-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tc-hero-bar li:nth-child(3) { border-left: 0; padding-left: 0; }
+  .tc-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tc-detail { grid-template-columns: minmax(0, 1fr); }
+  .tc-book { position: static; }
+}
+@media (max-width: 720px) {
+  .tc-wrap { width: min(calc(100% - 2rem), 1180px); }
+  .tc-cards, .tc-community, .tc-faq-wrap, .home-club-grid, .home-pillars, .tc-highlights { grid-template-columns: minmax(0, 1fr); }
+  .tc-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 14rem 9rem; }
+  .tc-g1 { grid-row: span 1; grid-column: span 2; }
+  .tc-g2 { grid-row: span 1; }
+  .tc-g4 { display: none; }
+  .club-page .tc-itinerary p { padding-left: 0; padding-right: 0; }
+  .home-pillar { aspect-ratio: 16 / 10; }
+  .tc-hero::after { background: linear-gradient(180deg, rgba(10, 40, 40, 0.35) 0%, rgba(10, 40, 40, 0.85) 75%); }
+}
+@media (max-width: 480px) {
+  .tc-hero-bar { grid-template-columns: minmax(0, 1fr); padding: 1rem 1.25rem; }
+  .tc-hero-bar li + li { border-left: 0; padding-left: 0; border-top: 1px solid var(--tc-line); padding-top: 0.85rem; }
+  .tc-hero-bar li:nth-child(3) { border-top: 1px solid var(--tc-line); padding-top: 0.85rem; }
+  .tc-why { grid-template-columns: minmax(0, 1fr); }
+}

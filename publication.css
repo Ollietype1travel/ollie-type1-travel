@@ -4449,3 +4449,105 @@ body.publication-page #header .publication-partnership { padding: 0.5rem 0.8rem;
   body.publication-page #header .publication-utility { display: flex; grid-column: 2; grid-row: 1; }
   body.publication-page #header .publication-menu-toggle { grid-column: 3; grid-row: 1; }
 }
+
+/* ===== Calmer buttons and cards (Oct 2026) =====
+   One button style site-wide: dark teal, gently rounded, sentence case.
+   Secondary actions are quiet text links, not outlined boxes. */
+body.publication-page .button,
+body.publication-page a.button,
+body.publication-page .button.primary,
+body.publication-page .button.button-primary,
+body.publication-page .publication-button,
+body.publication-page .home-solid-button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  height: auto !important;
+  min-height: 3rem;
+  padding: 0.85rem 1.5rem !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  background: #123f42 !important;
+  color: #fff !important;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  line-height: 1.2 !important;
+  white-space: normal;
+  transition: background-color 0.15s ease;
+}
+body.publication-page .button:hover,
+body.publication-page .publication-button:hover,
+body.publication-page .home-solid-button:hover { background: #286d69 !important; }
+body.publication-page .button:focus-visible,
+body.publication-page .publication-button:focus-visible { outline: 3px solid #8fc1bb; outline-offset: 3px; }
+
+/* Second button in a pair becomes a text link */
+body.publication-page .article-actions .actions li + li .button,
+body.publication-page .button.button-secondary {
+  background: transparent !important;
+  color: #123f42 !important;
+  padding-inline: 0.25rem !important;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+body.publication-page .article-actions .actions li + li .button:hover,
+body.publication-page .button.button-secondary:hover { background: transparent !important; color: #286d69 !important; }
+body.publication-page .article-actions .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin: 0; padding: 0; }
+body.publication-page .article-actions .actions li { padding: 0; margin: 0; }
+
+/* Checklist prompt inside articles: soft panel, no orange stripe */
+body.publication-page .inline-checklist-cta {
+  border-left: 0 !important;
+  border-radius: 10px;
+  background: #e7efeb !important;
+}
+
+/* Keep reading: photo cards, no boxes */
+body.publication-page .keep-reading { border-top: 0; }
+body.publication-page .keep-reading > h2 { font-size: 1.6rem; margin-bottom: 1.25rem; }
+body.publication-page .keep-reading-grid { gap: 1.5rem; }
+body.publication-page .keep-reading-grid a {
+  display: grid;
+  gap: 0.7rem;
+  align-content: start;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0;
+  background: none;
+  text-decoration: none;
+}
+body.publication-page .keep-reading-grid img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: opacity 0.2s ease;
+}
+body.publication-page .keep-reading-grid a:hover img { opacity: 0.88; }
+body.publication-page .keep-reading-grid span {
+  margin: 0;
+  color: #173b3d;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.08rem;
+  line-height: 1.4;
+}
+body.publication-page .keep-reading-grid strong {
+  color: #286d69;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media (max-width: 720px) {
+  body.publication-page .keep-reading-grid { grid-template-columns: minmax(0, 1fr); }
+  body.publication-page .keep-reading-grid a { grid-template-columns: 7.5rem minmax(0, 1fr); align-items: center; column-gap: 1rem; }
+  body.publication-page .keep-reading-grid img { grid-row: span 2; aspect-ratio: 1; }
+}

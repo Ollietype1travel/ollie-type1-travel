@@ -16,6 +16,7 @@
       '<li><a href="/destinations/">Destinations</a></li>',
       '<li><a href="/stories/">Stories</a></li>',
       '<li><a href="/resources/">Resources</a></li>',
+      '<li><a href="/club/">Travel Club</a></li>',
       '<li><a href="https://travel-with-ollie.kit.com/group-trip">Group trips</a></li>',
       '</ul>',
       '<div class="publication-utility">',
@@ -42,7 +43,7 @@
   }
   document.querySelectorAll(".publication-nav a, .publication-partnership").forEach(function (link) {
     var href = link.getAttribute("href");
-    var sectionLink = ["/blog/", "/destinations/", "/type-1-travel/", "/travel-tips/", "/stories/", "/about/", "/resources/"].indexOf(href) !== -1;
+    var sectionLink = ["/blog/", "/destinations/", "/type-1-travel/", "/travel-tips/", "/stories/", "/about/", "/resources/", "/club/"].indexOf(href) !== -1;
     if ((sectionLink && path.indexOf(href) === 0) || path === href) {
       link.setAttribute("aria-current", "page");
     }

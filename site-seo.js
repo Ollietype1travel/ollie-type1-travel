@@ -85,8 +85,24 @@
   var keepReading = document.createElement("nav");
   keepReading.className = "keep-reading";
   keepReading.setAttribute("aria-labelledby", "keep-reading-title");
+  var photoFor = {
+    "/blog/can-you-stay-in-hostels-with-type-1-diabetes/": "/Website assets/editorial-photos/selected/ollie-portrait-hue.jpg",
+    "/blog/first-time-ate-out-abroad-severe-allergies/": "/Website assets/editorial-photos/selected/beach-local-guide.jpg",
+    "/blog/flying-from-uk-with-insulin-pens-needles-cgm/": "/Website assets/editorial-photos/selected/mountain-viewpoint.jpg",
+    "/blog/food-allergy-translation-cards-southeast-asia/": "/Website assets/editorial-photos/selected/ollie-hue-temple.jpg",
+    "/blog/insulin-froze-ha-giang-loop-vietnam/": "/Website assets/editorial-photos/selected/ha-giang-back.jpg",
+    "/blog/keeping-insulin-cool-southeast-asia/": "/Website assets/editorial-photos/selected/volcano-close.jpg",
+    "/blog/solo-travel-type-1-diabetes-lessons/": "/Website assets/submitted-photos/cambodia-temple-together.jpg",
+    "/blog/type-1-diabetes-in-cambodia/": "/assets/cambodia-group-trip/angkor-wat-sunrise.jpg",
+    "/blog/why-cambodia-type-1-community-group-trip/": "/assets/cambodia-group-trip/ollie-angkor-wat.jpg",
+    "/resources/": "/Website assets/editorial-photos/selected/vietnam-karst-landscape.jpg",
+    "/stories/": "/Website assets/editorial-photos/selected/ha-giang-back.jpg",
+    "/blog/": "/Website assets/editorial-photos/selected/vietnam-river-selfie.jpg"
+  };
+  var fallbackPhoto = "/Website assets/editorial-photos/selected/vietnam-karst-landscape.jpg";
   keepReading.innerHTML = '<h2 id="keep-reading-title">Keep reading</h2><div class="keep-reading-grid">' + suggestions.map(function (item) {
-    return '<a href="' + item[1] + '" data-conversion="related-article"><span>' + item[0] + '</span><strong>Read next &rarr;</strong></a>';
+    var photo = photoFor[item[1]] || fallbackPhoto;
+    return '<a href="' + item[1] + '" data-conversion="related-article"><img src="' + photo + '" alt="" loading="lazy" decoding="async" /><span>' + item[0] + '</span><strong>Read story &rarr;</strong></a>';
   }).join("") + "</div>";
 
   var actions = article.querySelector(".article-actions");
